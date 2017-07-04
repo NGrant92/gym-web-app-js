@@ -66,6 +66,7 @@ const accounts = {
     user.lastName = newUser.lastName;
     user.email = newUser.email;
     user.address = newUser.address;
+    user.password = newUser.password;
     user.gender = newUser.gender;
     user.height = newUser.height;
     user.weight = newUser.weight;
