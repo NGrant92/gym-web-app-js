@@ -1,0 +1,44 @@
+{
+  "playlistCollection": [
+    {
+      "id": "a5bcfc0b-9e12-48ff-82ef-d0b39d240e75",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "homerPlay1",
+      "songs": [
+        {
+          "id": "d0788422-92d9-4e34-b109-6132c7b44683",
+          "title": "pick of destiny",
+          "artist": "tenacious d",
+          "duration": 10
+        }
+      ],
+      "duration": 10
+    },
+    {
+      "id": "61305971-5b16-4595-ba4b-1201a786d9b2",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "homerPlay2",
+      "songs": []
+    },
+    {
+      "id": "5a03bda4-8c11-4e03-b5c9-ace8277fc674",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "title": "mergePlay1",
+      "songs": [
+        {
+          "id": "73c80563-e682-43e2-88f5-bc636524633e",
+          "title": "fuel",
+          "artist": "metallica",
+          "duration": 10
+        }
+      ],
+      "duration": 10
+    },
+    {
+      "id": "56082971-e667-443b-8efa-863df5619d97",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "title": "margePlay2",
+      "songs": []
+    }
+  ]
+}
