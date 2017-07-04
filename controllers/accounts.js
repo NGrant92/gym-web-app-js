@@ -45,17 +45,33 @@ const accounts = {
     const password = user.password === request.body.password;
 
     if (password) {
-      response.cookie('playlist', user.email);
+      response.cookie('playlist', user.id);
       logger.info(`logging in ${user.email}`);
       response.redirect('/dashboard');
     } else {
       response.redirect('/login');
     }
   },
-
+  
   getCurrentUser(request) {
-    const userEmail = request.cookies.playlist;
-    return userstore.getUserByEmail(userEmail);
+    const userId = request.cookies.playlist;
+    return userstore.getUserById(userId);
+  },
+  
+  setAccount(request, response){
+    let user = accounts.getCurrentUser(request);
+    const newUser = request.body;
+  
+    user.firstName = newUser.firstName;
+    user.lastName = newUser.lastName;
+    user.email = newUser.email;
+    user.address = newUser.address;
+    user.gender = newUser.gender;
+    user.height = newUser.height;
+    user.weight = newUser.weight;
+    
+    logger.info(`updating ${newUser.email}`);
+    response.redirect('/dashboard');
   },
 };
 

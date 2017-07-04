@@ -26,6 +26,6 @@ router.get('/playlist/:id/deletesong/:songid', playlist.deleteSong);
 router.post('/playlist/:id/addsong', playlist.addSong);
 
 router.get('/settings', settings.index);
-router.post('/settings/:id', settings.updateSettings);
+router.post('/settings/update', accounts.setAccount);
 
 module.exports = router;
