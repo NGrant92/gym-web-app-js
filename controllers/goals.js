@@ -1,10 +1,10 @@
 'use strict';
 
 const logger = require('../utils/logger');
-const playlistStore = require('../models/playlist-store');
+const playlistStore = require('../models/goal-store');
 const uuid = require('uuid');
 
-const playlist = {
+const goals = {
   
   index(request, response) {
     const playlistId = request.params.id;
@@ -17,7 +17,7 @@ const playlist = {
     response.render('playlist', viewData);
   },
   
-   deleteSong(request, response) {
+   deleteGoal(request, response) {
     const playlistId = request.params.id;
     const songId = request.params.songid;
     logger.debug(`Deleting Song ${songId} from Playlist ${playlistId}`);
@@ -25,7 +25,7 @@ const playlist = {
     response.redirect('/playlist/' + playlistId);
   },
   
-  addSong(request, response) {
+  addGoal(request, response) {
     const playlistId = request.params.id;
     const playlist = playlistStore.getPlaylist(playlistId);
     const newSong = {

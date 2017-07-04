@@ -3,7 +3,7 @@
 const accounts = require ('./accounts.js');
 const uuid = require('uuid');
 const logger = require('../utils/logger');
-const playlistStore = require('../models/playlist-store');
+const playlistStore = require('../models/goal-store');
 
 const settings = {
   index(request, response) {
@@ -11,7 +11,6 @@ const settings = {
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: 'Profile Settings',
-      playlists: playlistStore.getUserPlaylists(loggedInUser.id),
       user: loggedInUser,
     };
     logger.info('about to render', playlistStore.getAllPlaylists());

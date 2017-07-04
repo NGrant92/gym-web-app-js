@@ -6,7 +6,7 @@ const router = express.Router();
 const accounts = require('./controllers/accounts.js');
 const dashboard = require('./controllers/dashboard.js');
 const about = require('./controllers/about.js');
-const playlist = require('./controllers/playlist.js');
+const playlist = require('./controllers/goals.js');
 const settings = require('./controllers/settings.js');
 
 router.get('/', accounts.index);
@@ -21,9 +21,9 @@ router.get('/dashboard/deleteplaylist/:id', dashboard.deletePlaylist);
 router.post('/dashboard/addplaylist', dashboard.addPlaylist);
 
 router.get('/about', about.index);
-router.get('/playlist/:id', playlist.index);
-router.get('/playlist/:id/deletesong/:songid', playlist.deleteSong);
-router.post('/playlist/:id/addsong', playlist.addSong);
+router.get('/goals/:id', goal.index);
+router.get('/goals/:id/deletegoal/:goalid', goal.deleteGoal);
+router.post('/goals/:id/addgoal', goal.addGoal);
 
 router.get('/settings', settings.index);
 router.post('/settings/update', accounts.setAccount);
