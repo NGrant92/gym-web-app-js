@@ -18,7 +18,7 @@ router.post('/authenticate', accounts.authenticate);
 
 router.get('/dashboard', dashboard.index);
 router.get('/dashboard/deletegoal/:id', dashboard.deleteGoals);
-router.post('/dashboard/addgoal', dashboard.addGoal);
+router.post('/dashboard/:goallistid/addgoal', dashboard.addGoal);
 
 router.get('/about', about.index);
 

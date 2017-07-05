@@ -1,0 +1,24 @@
+<table class="ui table">
+  <thead>
+    <tr>
+      <th>Goal</th>
+      <th>Achieve by:</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each goallist.goals}}
+      <tr>
+        <td>
+          {{goal}}
+        </td>
+        <td>
+          {{date}}
+        </td>
+        <td>
+          <a href="/dashboard/{{goallist.id}}/deletegoal/{{id}}" class="ui red icon button"><i class = "trash outline icon"></i></a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -10,8 +10,8 @@ const dashboard = {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
-      title: 'Playlist Dashboard',
-      goals: goalStore.getUserGoalList(loggedInUser.id),
+      title: 'Dashboard',
+      goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
     };
     logger.info('about to render', goalStore.getAllGoalLists());
@@ -33,10 +33,11 @@ const dashboard = {
 
   addGoal(request, response) {
     const goalsId = request.params.id;
-    const goals = goalStore.getGoalList(goalsId);
+    //const goals = goalStore.getGoalList(goalsId);
     const newGoal = {
       id: uuid(),
       goal: request.body.goal,
+      date: request.body.date + ' ' + request.body.month,
     };
 
     logger.debug('New Goal = ', newGoal);
