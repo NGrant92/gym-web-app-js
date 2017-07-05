@@ -6,11 +6,13 @@
       "goals": [
         {
           "id": "d0788422-92d9-4e34-b109-6132c7b44683",
-          "goal": "buy duff"
+          "goal": "buy duff",
+          "date": "01 January"
         },
         {
           "id": "e0788422-92d9-4e34-b109-6132c7b44683",
-          "goal": "get buff"
+          "goal": "get buff",
+          "date": "01 January"
         }
       ]
     },
@@ -21,7 +23,8 @@
       "goals": [
         {
           "id": "73c80563-e682-43e2-88f5-bc636524633e",
-          "goal": "make homer get buff not duff"
+          "goal": "make homer get buff not duff",
+          "date": "01 January"
         }
       ]
     }

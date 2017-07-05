@@ -14,7 +14,7 @@ const dashboard = {
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
     };
-    logger.info('about to render', goalStore.getAllGoalLists());
+    logger.info('about to render', goalStore.getUserGoalList(loggedInUser.id));
     response.render('dashboard', viewData);
   },
 
