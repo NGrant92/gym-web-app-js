@@ -15,7 +15,7 @@ const userStore = {
   addUser(user) {
     this.store.add(this.collection, user);
   },
-  
+
   getUserById(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },

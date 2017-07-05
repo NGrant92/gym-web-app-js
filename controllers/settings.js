@@ -1,6 +1,6 @@
 'use strict';
 
-const accounts = require ('./accounts.js');
+const accounts = require('./accounts.js');
 const uuid = require('uuid');
 const logger = require('../utils/logger');
 const playlistStore = require('../models/goal-store');

@@ -17,13 +17,10 @@ router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
 
 router.get('/dashboard', dashboard.index);
-router.get('/dashboard/deleteplaylist/:id', dashboard.deletePlaylist);
-router.post('/dashboard/addplaylist', dashboard.addPlaylist);
+router.get('/dashboard/deletegoal/:id', dashboard.deleteGoals);
+router.post('/dashboard/addgoal', dashboard.addGoal);
 
 router.get('/about', about.index);
-router.get('/goals/:id', goal.index);
-router.get('/goals/:id/deletegoal/:goalid', goal.deleteGoal);
-router.post('/goals/:id/addgoal', goal.addGoal);
 
 router.get('/settings', settings.index);
 router.post('/settings/update', accounts.setAccount);

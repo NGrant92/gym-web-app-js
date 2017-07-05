@@ -52,16 +52,16 @@ const accounts = {
       response.redirect('/login');
     }
   },
-  
+
   getCurrentUser(request) {
     const userId = request.cookies.playlist;
     return userstore.getUserById(userId);
   },
-  
-  setAccount(request, response){
+
+  setAccount(request, response) {
     let user = accounts.getCurrentUser(request);
     const newUser = request.body;
-  
+
     user.firstName = newUser.firstName;
     user.lastName = newUser.lastName;
     user.email = newUser.email;
@@ -70,7 +70,7 @@ const accounts = {
     user.gender = newUser.gender;
     user.height = newUser.height;
     user.weight = newUser.weight;
-    
+
     logger.info(`updating ${newUser.email}`);
     response.redirect('/dashboard');
   },
