@@ -1,11 +1,12 @@
 'use strict';
 
+const logger = require('../utils/logger');
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 
 const goalStore = {
 
-  store: new JsonStore('./models/goal-store.json', { goalsCollection: [] }),
+  store: new JsonStore('./models/goal-store.json', { goalCollection: [] }),
   collection: 'goalCollection',
 
   getAllGoalLists() {
@@ -36,13 +37,14 @@ const goalStore = {
     this.store.save();
   },
 
-  addGoal(id, goal) {
-    const goalList = this.getGoalList(id);
-    goalList.goals.push(goal);
+  addGoal(userId, newGoal) {
+    const goalList = this.getUserGoalList(userId);
+    logger.debug(`goalList `, goalList);
+    goalList[0].goals.push(newGoal);
     this.store.save();
   },
 
-  removeSong(id, goalId) {
+  removeGoal(id, goalId) {
     const goalList = this.getGoalList(id);
     const goals = goalList.goals;
     _.remove(goals, { id: goalId });

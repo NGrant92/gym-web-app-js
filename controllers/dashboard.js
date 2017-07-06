@@ -32,8 +32,10 @@ const dashboard = {
   },
 
   addGoal(request, response) {
-    const goalsId = request.params.id;
-    //const goals = goalStore.getGoalList(goalsId);
+
+    const userId = request.params.id;
+
+    //const goals = goalStore.getUserGoalList(userId);
     const newGoal = {
       id: uuid(),
       goal: request.body.goal,
@@ -41,8 +43,16 @@ const dashboard = {
     };
 
     logger.debug('New Goal = ', newGoal);
-    goalStore.addGoal(goalsId, newGoal);
-    response.redirect('/dashboard/' + goalsId);
+    goalStore.addGoal(userId, newGoal);
+    response.redirect('/dashboard/');
+  },
+  
+  deleteGoal(request, response) {
+    const userId = request.params.id;
+    const goalId = request.params.goalid;
+    logger.debug(`Deleting Song ${goalId} from Member ${userId}`);
+    goalStore.removeGoal(userId, goalId);
+    response.redirect('/dashboard/');
   },
 
   deleteGoals(request, response) {
