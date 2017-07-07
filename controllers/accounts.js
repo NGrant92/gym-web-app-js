@@ -32,6 +32,7 @@ const accounts = {
     response.render('signup', viewData);
   },
 
+  //TODO: make a blank goals array and a default profile image
   register(request, response) {
     const user = request.body;
     user.id = uuid();
