@@ -23,12 +23,13 @@
     "node": "6.10.x"
   },
   "repository": {
-    "url": "https://github.com/wit-ictskills-studio-2017/glitch-template-1.git"
+    "url": "https://github.com/NGrant92/gym-web-app-js.git"
   },
   "license": "MIT",
   "keywords": [
     "node",
     "glitch",
-    "express"
+    "express",
+    "cloudinary"
   ]
 }

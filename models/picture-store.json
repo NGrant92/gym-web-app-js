@@ -1,0 +1,22 @@
+{
+  "pictures": [
+    {
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "photos": [
+        {
+          "img": "http://res.cloudinary.com/ngrant/image/upload/v1499434484/arnold-flex_tgsq0c.png",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "photos": [
+        {
+          "img": "http://res.cloudinary.com/ngrant/image/upload/v1499434950/woman-flex_h0wqgi.jpg",
+          "title": ""
+        }
+      ]
+    }
+  ]
+}

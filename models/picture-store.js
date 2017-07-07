@@ -10,20 +10,20 @@ try {
   const env = require('../.data/.env.json');
   cloudinary.config(env.cloudinary);
 }
-catch(e) {
+catch (e) {
   logger.info('You must provide a Cloudinary credentials file - see README.md');
   process.exit(1);
 }
 
 const pictureStore = {
-  
+
   store: new JsonStore('./models/picture-store.json', { pictures: [] }),
   collection: 'pictures',
-  
+
   getAlbum(userid) {
     return this.store.findOneBy(this.collection, { userid: userid });
   },
-  
+
   addPicture(userId, title, imageFile, response) {
     let album = this.getAlbum(userId);
     if (!album) {
@@ -34,7 +34,7 @@ const pictureStore = {
       this.store.add(this.collection, album);
       this.store.save();
     }
-    
+
     imageFile.mv('tempimage', err => {
       if (!err) {
         cloudinary.uploader.upload('tempimage', result => {
@@ -50,7 +50,7 @@ const pictureStore = {
       }
     });
   },
-  
+
   deletePicture(userId, image) {
     const id = path.parse(image);
     let album = this.getAlbum(userId);
@@ -60,7 +60,7 @@ const pictureStore = {
       console.log(result);
     });
   },
-  
+
   deleteAllPictures(userId) {
     let album = this.getAlbum(userId);
     if (album) {
