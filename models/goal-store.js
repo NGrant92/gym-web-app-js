@@ -44,9 +44,10 @@ const goalStore = {
     this.store.save();
   },
 
-  removeGoal(id, goalId) {
-    const goalList = this.getGoalList(id);
-    const goals = goalList.goals;
+  removeGoal(userId, goalId) {
+    const goalList = this.getUserGoalList(userId);
+    logger.debug(`goalList `, goalList);
+    const goals = goalList[0].goals;
     _.remove(goals, { id: goalId });
     this.store.save();
   },

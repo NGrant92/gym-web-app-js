@@ -46,7 +46,7 @@ const dashboard = {
     goalStore.addGoal(userId, newGoal);
     response.redirect('/dashboard/');
   },
-  
+
   deleteGoal(request, response) {
     const userId = request.params.id;
     const goalId = request.params.goalid;
