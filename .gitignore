@@ -50,6 +50,5 @@ jspm_packages
 .yarn-integrity
 
 #.env.json files will hold confidential information
-*.env.json
-
-
+/.env.json
+/.data
