@@ -21,8 +21,8 @@ const goalStore = {
     return this.store.findBy(this.collection, { userid: userid });
   },
 
-  addGoalList(goal) {
-    this.store.add(this.collection, goal);
+  addGoalList(goalList) {
+    this.store.add(this.collection, goalList);
     this.store.save();
   },
 

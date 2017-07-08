@@ -14,23 +14,10 @@ const dashboard = {
       title: 'Dashboard',
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
-      profilepic: pictureStore.getAlbum(loggedInUser.id).photos[0].img,
+      profilepic: pictureStore.getPicture(loggedInUser.id).img,
     };
     logger.info('about to render', viewData);
     response.render('dashboard', viewData);
-  },
-
-  //TODO Remove and auto generate an empty array when a member registers
-  addGoals(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    const newGoal = {
-      id: uuid(),
-      userid: loggedInUser.id,
-      goals: [],
-    };
-    logger.debug('Creating a new Goal List', newGoal);
-    goalStore.addGoalList(newGoal);
-    response.redirect('/dashboard');
   },
 
   addGoal(request, response) {

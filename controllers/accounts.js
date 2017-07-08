@@ -1,6 +1,8 @@
 'use strict';
 
 const userstore = require('../models/user-store');
+const goalStore = require('../models/goal-store');
+const picturestore = require('../models/picture-store');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
 
@@ -32,12 +34,34 @@ const accounts = {
     response.render('signup', viewData);
   },
 
-  //TODO: make a blank goals array and a default profile image
   register(request, response) {
     const user = request.body;
-    user.id = uuid();
+    const newUserId = uuid();
+    let profilePic = '';
+
+    user.trainer = false;
+    user.id = newUserId;
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
+
+    if (user.gender === 'Male') {
+      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499434484/arnold-flex_tgsq0c.png';
+    }
+    else {
+      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499434950/woman-flex_h0wqgi.jpg';
+    }
+
+    picturestore.addPicture(newUserId, profilePic);
+    logger.info(`adding default profile pic`);
+
+    const newGoalList = {
+      id: uuid(),
+      userid: newUserId,
+      goals: [],
+    };
+    logger.info('Creating a new Goal List', newGoalList);
+    goalStore.addGoalList(newGoalList);
+
     response.redirect('/');
   },
 

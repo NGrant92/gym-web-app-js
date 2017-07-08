@@ -24,7 +24,7 @@
   "requireSpaceAfterComma": true,
   "disallowYodaConditions": true,
   "disallowKeywords": [ "with" ],
-  "disallowKeywordsOnNewLine": ["else"],
+  //"disallowKeywordsOnNewLine": ["else"],
   "disallowMultipleLineBreaks": true,
   "disallowMultipleLineStrings": true,
   "disallowMultipleVarDecl": true,

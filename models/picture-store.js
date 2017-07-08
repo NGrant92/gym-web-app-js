@@ -20,35 +20,35 @@ const pictureStore = {
   store: new JsonStore('./models/picture-store.json', { pictures: [] }),
   collection: 'pictures',
 
-  getAlbum(userid) {
+  getPicture(userid) {
     return this.store.findOneBy(this.collection, { userid: userid });
   },
 
-  addPicture(userId, title, imageFile, response) {
-    let album = this.getAlbum(userId);
-    if (!album) {
-      album = {
+  addPicture(userId, imageFile, response) {
+    let picture = this.getPicture(userId);
+    if (!picture) {
+      picture = {
         userid: userId,
-        photos: [],
+        img: imageFile,
       };
-      this.store.add(this.collection, album);
+      this.store.add(this.collection, picture);
       this.store.save();
     }
-
-    imageFile.mv('tempimage', err => {
-      if (!err) {
-        cloudinary.uploader.upload('tempimage', result => {
-          console.log(result);
-          const picture = {
-            img: result.url,
-            title: title,
-          };
-          album.photos.push(picture);
-          this.store.save();
-          response();
-        });
-      }
-    });
+    else {
+      imageFile.mv('tempimage', err => {
+        if (!err) {
+          cloudinary.uploader.upload('tempimage', result => {
+            console.log(result);
+            const img = {
+              img: result.url,
+            };
+            album.photos.push(img);
+            this.store.save();
+            response();
+          });
+        }
+      });
+    }
   },
 
   deletePicture(userId, image) {

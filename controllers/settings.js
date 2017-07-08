@@ -3,7 +3,7 @@
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
 const logger = require('../utils/logger');
-const playlistStore = require('../models/goal-store');
+const pictureStore = require('../models/picture-store.js');
 
 const settings = {
   index(request, response) {
@@ -12,8 +12,9 @@ const settings = {
     const viewData = {
       title: 'Profile Settings',
       user: loggedInUser,
+      profilepic: pictureStore.getPicture(loggedInUser.id).img,
     };
-    logger.info('about to render', playlistStore.getAllPlaylists());
+    logger.info('about to render', loggedInUser);
     response.render('settings', viewData);
   },
 };
