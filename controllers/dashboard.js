@@ -5,6 +5,7 @@ const uuid = require('uuid');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const pictureStore = require('../models/picture-store.js');
+const assessStore = require('../models/assess-store.js');
 
 const dashboard = {
   index(request, response) {
@@ -15,8 +16,9 @@ const dashboard = {
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
       profilepic: pictureStore.getPicture(loggedInUser.id).img,
+      assessments: assessStore.getUserAssessmentList(loggedInUser.id),
     };
-    logger.info('about to render', viewData);
+    logger.info('about to render', viewData.assessments);
     response.render('dashboard', viewData);
   },
 

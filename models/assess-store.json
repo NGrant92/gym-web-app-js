@@ -1,0 +1,56 @@
+{
+  "assessmentCollection": [
+    {
+      "id": "a5bcfc0b-9e12-48ff-82ef-d0b39d240e75",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "assessments": [
+        {
+          "date": "2017-05-11 22:58:37.244",
+          "weight": "180",
+          "chest": "99",
+          "thigh": "88",
+          "upperArm": "77",
+          "waist": "66",
+          "hips": "55",
+          "comment": "buy less duff"
+        },
+        {
+          "date": "2017-05-18 22:58:37.244",
+          "weight": "175",
+          "chest": "55",
+          "thigh": "44",
+          "upperArm": "33",
+          "waist": "22",
+          "hips": "11",
+          "comment": "buy more less duff"
+        }
+      ]
+    },
+    {
+      "id": "5a03bda4-8c11-4e03-b5c9-ace8277fc674",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "assessments": [
+        {
+          "date": "2017-05-11 22:58:37.244",
+          "weight": "100",
+          "chest": "99",
+          "thigh": "88",
+          "upperArm": "77",
+          "waist": "66",
+          "hips": "55",
+          "comment": "many gains"
+        },
+        {
+          "date": "2017-05-11 22:58:37.244",
+          "weight": "100",
+          "chest": "55",
+          "thigh": "44",
+          "upperArm": "33",
+          "waist": "22",
+          "hips": "11",
+          "comment": "good work"
+        }
+      ]
+    }
+  ]
+}

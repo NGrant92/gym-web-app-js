@@ -1,0 +1,32 @@
+<table class = "ui celled table middle aligned segment">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Weight</th>
+      <th>Chest</th>
+      <th>Thigh</th>
+      <th>Upper Arm</th>
+      <th>Waist</th>
+      <th>Hips</th>
+      <th>Comments</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each assessments}}
+    {{#each assessments}}
+    <tr>
+      <td>{{date}}</td>
+      <td>{{weight}}</td>
+      <td>{{chest}}</td>
+      <td>{{thigh}}</td>
+      <td>{{upperArm}}</td>
+      <td>{{waist}}</td>
+      <td>{{hips}}</td>
+      <td>{{comment}}</td>
+      <td><a href="/dashboard/{{../../user.id}}/deleteAssessment/{{id}}" class="ui icon button"><i class="trash icon"></i></a></td>
+    </tr>
+    {{/each}}
+  {{/each}}
+  </tbody>
+</table>
