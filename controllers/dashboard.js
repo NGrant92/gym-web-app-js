@@ -75,23 +75,6 @@ const dashboard = {
     assessStore.removeAssessment(userId, assessId);
     response.redirect('/dashboard/');
   },
-
-  currentDate() {
-    const today = new Date();
-    let day = today.getDate();
-    let month = today.getMonth();
-    const year = today.getFullYear();
-
-    if (day < 10) {
-      day = '0' + day;
-    }
-
-    if (month < 10) {
-      month = '0' + month;
-    }
-
-    return day + '-' + month + '-' + year;
-  },
 };
 
 module.exports = dashboard;
