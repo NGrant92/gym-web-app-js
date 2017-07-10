@@ -16,7 +16,7 @@ const dashboard = {
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
       profilepic: pictureStore.getPicture(loggedInUser.id).img,
-      assessments: assessStore.getUserAssessmentList(loggedInUser.id),
+      assessments: assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments.reverse(),
     };
     logger.info('about to render', viewData.assessments);
     response.render('dashboard', viewData);

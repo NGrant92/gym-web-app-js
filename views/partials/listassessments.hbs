@@ -13,7 +13,6 @@
     </tr>
   </thead>
   <tbody>
-  {{#each assessments}}
     {{#each assessments}}
     <tr>
       <td>{{date}}</td>
@@ -24,9 +23,8 @@
       <td>{{waist}}</td>
       <td>{{hips}}</td>
       <td>{{comment}}</td>
-      <td><a href="/dashboard/{{../../user.id}}/deleteAssessment/{{id}}" class="ui icon button"><i class="trash icon"></i></a></td>
+      <td><a href="/dashboard/{{../user.id}}/deleteAssessment/{{id}}" class="ui icon button"><i class="trash icon"></i></a></td>
     </tr>
-    {{/each}}
   {{/each}}
   </tbody>
 </table>
