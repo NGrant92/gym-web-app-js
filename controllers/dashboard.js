@@ -51,7 +51,7 @@ const dashboard = {
 
     const newAssess = {
       id: uuid(),
-      date: '',
+      date: this.currentDate(),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
@@ -72,6 +72,23 @@ const dashboard = {
     logger.debug(`Deleting Assessment ${assessId} from Member ${userId}`);
     assessStore.removeAssessment(userId, assessId);
     response.redirect('/dashboard/');
+  },
+
+  currentDate() {
+    const today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth();
+    const year = today.getFullYear();
+
+    if (day < 10) {
+      day = '0' + day;
+    }
+
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    return day + '-' + month + '-' + year;
   },
 };
 
