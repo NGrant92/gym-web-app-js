@@ -12,7 +12,16 @@ const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
-    const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments.reverse();
+    const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
+  
+    //This sort function is used to sort the assessments by date in descending order
+    assessmentArr.sort(function (a, b) {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      
+      return dateB - dateA;
+    });
+    
     loggedInUser.weight = assessmentArr[0].weight;
 
     const viewData = {
