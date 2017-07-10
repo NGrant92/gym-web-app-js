@@ -6,11 +6,15 @@
   </div>
 
   <div class = "twelve wide align right column padded">
-  <section class="ui raised segment">
-    {{> listassessments}}
-    {{> addassessments}}
-    {{> listgoals}}
-    {{> addgoal}}
-  </section>
+    <section class="ui raised segment">
+      <h2 class="ui dividing header">Assessments</h2>
+      {{> listassessments}}
+      {{> addassessments}}
+    </section>
+    <section class="ui raised segment">
+      <h2 class="ui dividing header">Goals</h2>
+      {{> listgoals}}
+      {{> addgoal}}
+    </section>
   </div>
 </div>

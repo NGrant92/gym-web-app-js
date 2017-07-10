@@ -3,8 +3,10 @@
 const userstore = require('../models/user-store');
 const goalStore = require('../models/goal-store');
 const picturestore = require('../models/picture-store');
+const assessStore = require('../models/assess-store');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
+const dateformat = require('dateformat');
 
 const accounts = {
 
@@ -41,6 +43,7 @@ const accounts = {
 
     user.trainer = false;
     user.id = newUserId;
+    user.startWeight = user.weight;
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
 
@@ -61,6 +64,18 @@ const accounts = {
     };
     logger.info('Creating a new Goal List', newGoalList);
     goalStore.addGoalList(newGoalList);
+
+    const newAssessList = {
+      userid: newUserId,
+      assessments: [{
+        id: uuid(),
+        date: dateformat(new Date(), 'dd-mm-yyyy'),
+        weight: user.weight,
+      },
+      ],
+    };
+    logger.info('Creating new Assessment List', newAssessList);
+    assessStore.addAssessmentList(newAssessList);
 
     response.redirect('/');
   },

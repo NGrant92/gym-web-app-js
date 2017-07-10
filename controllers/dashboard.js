@@ -2,6 +2,7 @@
 
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
+const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const pictureStore = require('../models/picture-store.js');
@@ -11,14 +12,18 @@ const dashboard = {
   index(request, response) {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
+    const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments.reverse();
+    loggedInUser.weight = assessmentArr[0].weight;
+
     const viewData = {
       title: 'Dashboard',
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
       profilepic: pictureStore.getPicture(loggedInUser.id).img,
-      assessments: assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments.reverse(),
+      assessments: assessmentArr,
     };
-    logger.info('about to render', viewData.assessments);
+
+    logger.info('about to render', viewData);
     response.render('dashboard', viewData);
   },
 
@@ -47,9 +52,8 @@ const dashboard = {
 
   addAssessment(request, response) {
 
+    const loggedInUser = accounts.getCurrentUser(request);
     const userId = request.params.id;
-
-    const dateformat = require('dateformat');
 
     const newAssess = {
       id: uuid(),
