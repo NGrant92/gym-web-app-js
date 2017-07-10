@@ -19,7 +19,7 @@
     ","
   ],
   "disallowMixedSpacesAndTabs": true,
-  "disallowTrailingWhitespace": true,
+  "disallowTrailingWhitespace": false,
   "requireTrailingComma": { "ignoreSingleLine": true },
   "requireSpaceAfterComma": true,
   "disallowYodaConditions": true,

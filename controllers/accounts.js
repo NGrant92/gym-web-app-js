@@ -89,7 +89,7 @@ const accounts = {
       logger.info(`logging in ${user.email}`);
       response.redirect('/dashboard');
     } else {
-      response.redirect('/login');
+      response.redirect('/login/');
     }
   },
 
