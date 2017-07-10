@@ -49,16 +49,18 @@ const dashboard = {
 
     const userId = request.params.id;
 
+    const dateformat = require('dateformat');
+
     const newAssess = {
       id: uuid(),
-      date: this.currentDate(),
+      date: dateformat(new Date(), 'dd-mm-yyyy'),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
       upperArm: request.body.upperArm,
       waist: request.body.waist,
       hips: request.body.hips,
-      comment: request.body.comment,
+      comment: '',
     };
 
     logger.debug('New Assessment: ', newAssess);

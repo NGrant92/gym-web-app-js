@@ -5,8 +5,8 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
-          "id": "assess00",
-          "date": "2017-05-11 22:58:37.244",
+          "id": "4e8206fa-6881-4506-bbbb-a5f14717f27b",
+          "date": "10-07-2017",
           "weight": "180",
           "chest": "99",
           "thigh": "88",
@@ -16,35 +16,15 @@
           "comment": "buy less duff"
         },
         {
-          "id": "assess01",
-          "date": "2017-05-18 22:58:37.244",
+          "id": "699f5826-1e52-4800-ac84-da56e0af23e4",
+          "date": "20-07-2017",
           "weight": "175",
-          "chest": "55",
-          "thigh": "44",
-          "upperArm": "33",
-          "waist": "22",
-          "hips": "11",
+          "chest": "90",
+          "thigh": "80",
+          "upperArm": "70",
+          "waist": "60",
+          "hips": "50",
           "comment": "buy more less duff"
-        },
-        {
-          "id": "c1c3877e-412d-470c-aa7a-68ce6d7635c8",
-          "date": "2017-07-10T12:02:51.420Z",
-          "weight": "11",
-          "chest": "11",
-          "thigh": "11",
-          "upperArm": "11",
-          "waist": "11",
-          "hips": "11"
-        },
-        {
-          "id": "02627f6b-9bfc-435f-baaa-ba0d51dc369d",
-          "date": "10 6 2017",
-          "weight": "22",
-          "chest": "22",
-          "thigh": "22",
-          "upperArm": "22",
-          "waist": "22",
-          "hips": "22"
         }
       ]
     },
@@ -54,7 +34,7 @@
       "assessments": [
         {
           "id": "assess02",
-          "date": "2017-05-11 22:58:37.244",
+          "date": "10-07-2017",
           "weight": "100",
           "chest": "99",
           "thigh": "88",
@@ -65,7 +45,7 @@
         },
         {
           "id": "assess03",
-          "date": "2017-05-11 22:58:37.244",
+          "date": "20-07-2017",
           "weight": "100",
           "chest": "55",
           "thigh": "44",
