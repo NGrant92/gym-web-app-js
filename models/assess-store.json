@@ -5,6 +5,7 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
+          "id": "assess00",
           "date": "2017-05-11 22:58:37.244",
           "weight": "180",
           "chest": "99",
@@ -15,6 +16,7 @@
           "comment": "buy less duff"
         },
         {
+          "id": "assess01",
           "date": "2017-05-18 22:58:37.244",
           "weight": "175",
           "chest": "55",
@@ -31,6 +33,7 @@
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "assessments": [
         {
+          "id": "assess02",
           "date": "2017-05-11 22:58:37.244",
           "weight": "100",
           "chest": "99",
@@ -41,6 +44,7 @@
           "comment": "many gains"
         },
         {
+          "id": "assess03",
           "date": "2017-05-11 22:58:37.244",
           "weight": "100",
           "chest": "55",

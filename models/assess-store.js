@@ -46,8 +46,9 @@ const goalStore = {
 
   removeAssessment(userId, assessId) {
     const assessmentArr = this.getUserAssessmentList(userId);
-    logger.debug(`goalList `, assessmentArr);
+    logger.debug(`assessment list `, assessmentArr);
     const assessments = assessmentArr[0].assessments;
+    logger.debug(`User assessments `, assessments);
     _.remove(assessments, { id: assessId });
     this.store.save();
   },

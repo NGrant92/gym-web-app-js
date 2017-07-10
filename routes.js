@@ -19,6 +19,8 @@ router.post('/authenticate', accounts.authenticate);
 router.get('/dashboard', dashboard.index);
 router.get('/dashboard/:id/deletegoal/:goalid', dashboard.deleteGoal);
 router.post('/dashboard/:id/addgoal', dashboard.addGoal);
+router.post('/dashboard/:id/addassessment', dashboard.addAssessment);
+router.get('/dashboard/:id/deleteassessment/:assessid', dashboard.deleteAssessment);
 
 router.get('/about', about.index);
 

@@ -26,7 +26,6 @@ const dashboard = {
 
     const userId = request.params.id;
 
-    //const goals = goalStore.getUserGoalList(userId);
     const newGoal = {
       id: uuid(),
       goal: request.body.goal,
@@ -46,10 +45,32 @@ const dashboard = {
     response.redirect('/dashboard/');
   },
 
-  deleteGoals(request, response) {
-    const goalsId = request.params.id;
-    logger.debug(`Deleting Playlist ${playlistId}`);
-    goalStore.removePlaylist(playlistId);
+  addAssessment(request, response) {
+
+    const userId = request.params.id;
+
+    const newAssess = {
+      id: uuid(),
+      date: '',
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperArm: request.body.upperArm,
+      waist: request.body.waist,
+      hips: request.body.hips,
+      comment: request.body.comment,
+    };
+
+    logger.debug('New Assessment: ', newAssess);
+    assessStore.addAssessment(userId, newAssess);
+    response.redirect('/dashboard/');
+  },
+
+  deleteAssessment(request, response) {
+    const userId = request.params.id;
+    const assessId = request.params.assessid;
+    logger.debug(`Deleting Assessment ${assessId} from Member ${userId}`);
+    assessStore.removeAssessment(userId, assessId);
     response.redirect('/dashboard/');
   },
 };
