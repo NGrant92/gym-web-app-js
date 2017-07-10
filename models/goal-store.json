@@ -1,7 +1,6 @@
 {
   "goalCollection": [
     {
-      "id": "a5bcfc0b-9e12-48ff-82ef-d0b39d240e75",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "goals": [
         {
@@ -13,11 +12,15 @@
           "id": "e0788422-92d9-4e34-b109-6132c7b44683",
           "goal": "get buff",
           "date": "01 January"
+        },
+        {
+          "id": "6a63f4a4-579e-4993-8020-ec8c2be3f532",
+          "goal": "more buff, less duff",
+          "date": "01 March"
         }
       ]
     },
     {
-      "id": "5a03bda4-8c11-4e03-b5c9-ace8277fc674",
       "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
       "goals": [
         {
@@ -26,62 +29,6 @@
           "date": "01 January"
         }
       ]
-    },
-    [
-      {
-        "id": "a5bcfc0b-9e12-48ff-82ef-d0b39d240e75",
-        "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-        "goals": [
-          {
-            "id": "d0788422-92d9-4e34-b109-6132c7b44683",
-            "goal": "buy duff",
-            "date": "01 January"
-          },
-          {
-            "id": "e0788422-92d9-4e34-b109-6132c7b44683",
-            "goal": "get buff",
-            "date": "01 January"
-          }
-        ]
-      },
-      [
-        {
-          "id": "54b25b10-63d6-45a6-85bf-190980ce45a9",
-          "goal": "qwergh",
-          "date": "1 1"
-        }
-      ]
-    ],
-    {
-      "id": "9ed3133b-875b-4b23-8c97-f3be31531813",
-      "userid": "9444bd02-3bc3-433d-aa88-c64fc5006ccb",
-      "goals": [
-        {
-          "id": "6d3c1f41-f11a-40d0-aff4-a3f37570d587",
-          "goal": "qwerty",
-          "date": "02 February"
-        }
-      ]
-    },
-    {
-      "id": "bf3a86c7-06aa-45f4-b109-27c391ec0292",
-      "userid": "e4628772-7412-4332-8038-fe4e99a23cf2",
-      "goals": []
-    },
-    {
-      "id": "7a5c58d5-bb59-4475-83be-0a895e419ebf",
-      "userid": "6fd0fecd-b900-4b71-9c5b-6c79a288c87c",
-      "goals": []
-    },
-    {
-      "id": "0b59a4e3-aed4-4a55-928c-06c1f2494956",
-      "userid": "67b40ba7-78a8-4bbb-aef6-f443fc0a2afc",
-      "goals": []
-    },
-    {
-      "id": "ed087222-d14a-4feb-8984-d0060d799f78",
-      "userid": "cffc95fa-307f-4767-ba83-9bd7e9d04ae5",
-      "goals": []
     }
   ]
 }
