@@ -43,7 +43,7 @@
       "assessments": [
         {
           "id": "assess02",
-          "date": "10-07-2017",
+          "date": "01-07-2017",
           "weight": "100",
           "chest": "99",
           "thigh": "88",
@@ -54,7 +54,7 @@
         },
         {
           "id": "assess03",
-          "date": "20-07-2017",
+          "date": "10-07-2017",
           "weight": "100",
           "chest": "55",
           "thigh": "44",

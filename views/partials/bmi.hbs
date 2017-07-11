@@ -2,7 +2,7 @@
   <div class="ui three statistics">
     <div class="statistic">
       <div class="value">
-        <i class="dashboard icon"></i>
+        <i class="{{user.idealWeight}} dashboard icon"></i>
       </div>
       <div class="label">
         Ideal Weight Indicator
@@ -10,7 +10,7 @@
     </div>
     <div class="statistic">
       <div class="value">
-        <i class="heartbeat icon"></i> 0.0
+        <i class="heartbeat icon"></i> {{user.bmi}}
       </div>
       <div class="label">
         BMI Value
@@ -21,7 +21,7 @@
         <i class="doctor icon"></i>
       </div>
       <div class="label">
-        BMI Category
+        {{user.bmiCategory}}
       </div>
     </div>
   </div>

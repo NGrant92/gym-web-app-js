@@ -2,6 +2,7 @@
 
 const _ = require('lodash');
 const JsonStore = require('./json-store');
+const analytics = require('../utils/analytics.js');
 
 const userStore = {
 

@@ -48,10 +48,10 @@ const accounts = {
     logger.info(`registering ${user.email}`);
 
     if (user.gender === 'Male') {
-      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499434484/arnold-flex_tgsq0c.png';
+      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg';
     }
     else {
-      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499434950/woman-flex_h0wqgi.jpg';
+      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
     }
 
     picturestore.addPicture(newUserId, profilePic);

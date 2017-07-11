@@ -93,6 +93,27 @@ const analytics = {
   },
   
   /**
+   * Returns a string with a colour to be used in the dashboard for ideal weight indicator
+   * @return String with a colour in it
+   */
+  idealWeightIndicator(user) {
+  
+    //calculates what the ideal body weight should be for the member
+    const idealWeight = this.isIdealBodyWeight(user.height, user.gender);
+  
+    //if member weight is within a certain range it will return a certain colour
+    if (idealWeight >= (user.weight - 2) && idealWeight <= (user.weight + 2)) {
+      return 'green';
+    }
+    else if (idealWeight >= (user.weight - 5) && idealWeight <= (user.weight + 5)) {
+      return 'orange';
+    }
+    else {
+      return 'red';
+    }
+  },
+  
+  /**
    * This method returns the member height converted from KGs to pounds.
    *
    * @return member weight converted from KGs to pounds. Number returned is truncated to 2 decimal places.
@@ -112,4 +133,4 @@ const analytics = {
   },
 };
 
-module.exports = goalStore;
+module.exports = analytics;

@@ -7,6 +7,7 @@ const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const pictureStore = require('../models/picture-store.js');
 const assessStore = require('../models/assess-store.js');
+const analytics = require('../utils/analytics.js');
 
 const dashboard = {
   index(request, response) {
@@ -22,8 +23,17 @@ const dashboard = {
       return dateB - dateA;
     });
     
+    //Updating the user's weight with their most recent assessment weight measurement
+    //It's done here so it'll update when an assessment is added OR deleted
     loggedInUser.weight = assessmentArr[0].weight;
+    
+    //Adding new keys into the logged in user and giving the apropriate values
+    //determined by the calcualtions done by analytics.js
+    loggedInUser.bmi = analytics.calculateBMI(loggedInUser.height, loggedInUser.weight);
+    loggedInUser.bmiCategory = analytics.determineBMICategory(loggedInUser.bmi);
+    loggedInUser.idealWeight = analytics.idealWeightIndicator(loggedInUser);
 
+    //populating the viewData variable with the necessary information to load the page
     const viewData = {
       title: 'Dashboard',
       goallist: goalStore.getUserGoalList(loggedInUser.id),
@@ -31,7 +41,7 @@ const dashboard = {
       profilepic: pictureStore.getPicture(loggedInUser.id).img,
       assessments: assessmentArr,
     };
-
+    
     logger.info('about to render', viewData);
     response.render('dashboard', viewData);
   },
