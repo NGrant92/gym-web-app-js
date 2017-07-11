@@ -53,11 +53,6 @@ const accounts = {
       user.img = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
     }
     
-    /**
-    picturestore.addPicture(newUserId, profilePic);
-    logger.info(`adding default profile pic`);
-     */
-    
     const newGoalList = {
       id: uuid(),
       userid: newUserId,
@@ -72,6 +67,11 @@ const accounts = {
         id: uuid(),
         date: dateformat(new Date(), 'dd-mm-yyyy'),
         weight: user.weight,
+        chest: 0,
+        thigh: 0,
+        upperArm: 0,
+        waist: 0,
+        hips: 0,
       },
       ],
     };
@@ -114,6 +114,13 @@ const accounts = {
 
     logger.info(`updating ${newUser.email}`);
     response.redirect('/dashboard');
+  },
+  
+  uploadPicture(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    userstore.addPicture(loggedInUser.id, request.files.picture, function () {
+      response.redirect('/settings/');
+    });
   },
 };
 

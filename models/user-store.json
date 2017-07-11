@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "firstName": "Homer",
-      "lastName": "Simpson",
+      "firstname": "Homer",
+      "lastname": "Simpson",
       "gender": "Male",
       "email": "homer@simpson.com",
       "password": "secret",
@@ -10,7 +10,7 @@
       "height": 2,
       "weight": "170",
       "startWeight": 200,
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499785954/d2xs9hkuzmgfzs9wgkva.jpg",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499792537/nn9btqjqytsunkotgd0p.jpg",
       "trainer": false,
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "bmi": "42.50",
@@ -18,8 +18,8 @@
       "idealWeight": "red"
     },
     {
-      "firstName": "Marge",
-      "lastName": "Simpson",
+      "firstname": "Marge",
+      "lastname": "Simpson",
       "gender": "Female",
       "email": "marge@simpson.com",
       "password": "secret",
@@ -32,8 +32,8 @@
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
     },
     {
-      "firstName": "Arnold",
-      "lastName": "Schwarz",
+      "firstname": "Arnold",
+      "lastname": "Schwarz",
       "gender": "Male",
       "email": "t1000@tmail.com",
       "password": "secret",

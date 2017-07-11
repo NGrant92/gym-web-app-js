@@ -4,6 +4,7 @@ const _ = require('lodash');
 const JsonStore = require('./json-store');
 const analytics = require('../utils/analytics.js');
 const cloudinary = require('cloudinary');
+const path = require('path');
 
 const userStore = {
 
@@ -30,12 +31,23 @@ const userStore = {
     const env = require('../.data/.env.json');
     cloudinary.config(env.cloudinary);
     
+    let currPic = this.getUserById(userId).img;
+    
     imageFile.mv('tempimage', err => {
       if (!err) {
         cloudinary.uploader.upload('tempimage', result => {
           console.log(result);
           const img = result.url;
-          
+  
+          const femaleFlex = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
+          const maleFlex = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg';
+          if (currPic !== femaleFlex && currPic !== maleFlex) {
+            const oldPic = path.parse(currPic);
+            cloudinary.v2.uploader.destroy([oldPic.name], function (result) {
+              console.log(result);
+            });
+          }
+  
           this.getUserById(userId).img = img;
           this.store.save();
           response();

@@ -16,13 +16,6 @@ const settings = {
     logger.info('about to render', loggedInUser);
     response.render('settings', viewData);
   },
-  
-  uploadPicture(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    userstore.addPicture(loggedInUser.id, request.files.picture, function () {
-      response.redirect('/settings/');
-    });
-  },
 };
 
 module.exports = settings;
