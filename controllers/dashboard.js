@@ -5,7 +5,6 @@ const uuid = require('uuid');
 const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
-const pictureStore = require('../models/picture-store.js');
 const assessStore = require('../models/assess-store.js');
 const analytics = require('../utils/analytics.js');
 
@@ -38,7 +37,6 @@ const dashboard = {
       title: 'Dashboard',
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
-      profilepic: pictureStore.getPicture(loggedInUser.id).img,
       assessments: assessmentArr,
     };
     
@@ -76,7 +74,7 @@ const dashboard = {
 
     const newAssess = {
       id: uuid(),
-      date: dateformat(new Date(), 'dd-mm-yyyy'),
+      date: dateformat(new Date(), 'dd-mm-yy'),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,

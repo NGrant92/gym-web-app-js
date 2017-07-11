@@ -8,10 +8,14 @@
       "password": "secret",
       "address": "Springfield",
       "height": 2,
-      "weight": 200,
+      "weight": "170",
       "startWeight": 200,
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499785954/d2xs9hkuzmgfzs9wgkva.jpg",
       "trainer": false,
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "bmi": "42.50",
+      "bmiCategory": "VERY SEVERELY OBESE",
+      "idealWeight": "red"
     },
     {
       "firstName": "Marge",
@@ -23,6 +27,7 @@
       "height": 2,
       "weight": 100,
       "startWeight": 100,
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg",
       "trainer": false,
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
     },
@@ -35,6 +40,7 @@
       "address": "The Future",
       "height": 2.5,
       "weight": 180,
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
       "trainer": true,
       "id": "t00"
     }

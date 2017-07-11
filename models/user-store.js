@@ -3,6 +3,7 @@
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 const analytics = require('../utils/analytics.js');
+const cloudinary = require('cloudinary');
 
 const userStore = {
 
@@ -23,6 +24,24 @@ const userStore = {
 
   getUserByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
+  },
+  
+  addPicture(userId, imageFile, response) {
+    const env = require('../.data/.env.json');
+    cloudinary.config(env.cloudinary);
+    
+    imageFile.mv('tempimage', err => {
+      if (!err) {
+        cloudinary.uploader.upload('tempimage', result => {
+          console.log(result);
+          const img = result.url;
+          
+          this.getUserById(userId).img = img;
+          this.store.save();
+          response();
+        });
+      }
+    });
   },
 };
 

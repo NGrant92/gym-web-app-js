@@ -2,7 +2,6 @@
 
 const userstore = require('../models/user-store');
 const goalStore = require('../models/goal-store');
-const picturestore = require('../models/picture-store');
 const assessStore = require('../models/assess-store');
 const logger = require('../utils/logger');
 const uuid = require('uuid');
@@ -48,15 +47,17 @@ const accounts = {
     logger.info(`registering ${user.email}`);
 
     if (user.gender === 'Male') {
-      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg';
+      user.img = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg';
     }
     else {
-      profilePic = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
+      user.img = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
     }
-
+    
+    /**
     picturestore.addPicture(newUserId, profilePic);
     logger.info(`adding default profile pic`);
-
+     */
+    
     const newGoalList = {
       id: uuid(),
       userid: newUserId,

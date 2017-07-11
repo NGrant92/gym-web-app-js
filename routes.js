@@ -26,5 +26,6 @@ router.get('/about', about.index);
 
 router.get('/settings', settings.index);
 router.post('/settings/update', accounts.setAccount);
+router.post('/settings/uploadpicture', settings.uploadPicture);
 
 module.exports = router;

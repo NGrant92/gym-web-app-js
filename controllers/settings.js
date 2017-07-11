@@ -3,7 +3,7 @@
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
 const logger = require('../utils/logger');
-const pictureStore = require('../models/picture-store.js');
+const userstore = require('../models/user-store.js');
 
 const settings = {
   index(request, response) {
@@ -12,10 +12,16 @@ const settings = {
     const viewData = {
       title: 'Profile Settings',
       user: loggedInUser,
-      profilepic: pictureStore.getPicture(loggedInUser.id).img,
     };
     logger.info('about to render', loggedInUser);
     response.render('settings', viewData);
+  },
+  
+  uploadPicture(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    userstore.addPicture(loggedInUser.id, request.files.picture, function () {
+      response.redirect('/settings/');
+    });
   },
 };
 

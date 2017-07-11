@@ -6,59 +6,74 @@
   </div>
 
   <div class = "twelve wide align right column padded">
-  <section class="ui raised segment">
+    <section class="ui raised segment">
 
-    <div class="ui two column">
+      <div class="ui two column">
         <h3 class="ui dividing header">Update Profile</h3>
 
         <form class="ui form" action="/settings/update" method="POST">
           <div class="field">
             <label>Name</label>
-            <div class="two fields">
-              <div class="field">
-                <input placeholder="First Name" type="text" name="firstName" value = "{{user.firstName}}">
-              </div>
-              <div class="field">
-                <input placeholder="First Name" type="text" name="lastName" value = "{{user.lastName}}">
+              <div class="two fields">
+                <div class="field">
+                  <input placeholder="First Name" type="text" name="firstName" value = "{{user.firstName}}">
+                </div>
+                <div class="field">
+                  <input placeholder="First Name" type="text" name="lastName" value = "{{user.lastName}}">
+                </div>
               </div>
             </div>
-          </div>
 
+            <div class="field">
+              <label>Email</label>
+              <input placeholder="Email" type="text" name="email" value = "{{user.email}}">
+            </div>
+
+            <div class="field">
+              <label>Password</label>
+              <input placeholder="Password" type="password" name="password" value = "{{user.password}}">
+            </div>
+
+            <div class="field">
+              <label>Address</label>
+              <input placeholder="Address" type="text" name="address" value = "{{user.address}}">
+            </div>
+
+            <label>Gender</label>
+              <select class="ui dropdown" name = "gender">
+              <option value="{{user.gender}}" hidden>{{user.gender}}</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <br>
+
+            <div class="field">
+              <label>Height</label>
+              <input placeholder="Height" type="text" name="height" value = "{{user.height}}">
+            </div>
+
+            <div class="field">
+              <label>Starting Weight</label>
+              <input placeholder="Starting Weight" type="text" name="weight" value = "{{user.weight}}">
+            </div>
+            <button class="ui blue submit button">Update</button>
+          </form>
+      </div>
+    </section>
+
+    <section class="ui raised segment">
+      <h3 class="ui dividing header">Picture Upload</h3>
+      <section class="ui form">
+        <form action="/settings/uploadpicture" method="post" enctype="multipart/form-data">
           <div class="field">
-            <label>Email</label>
-            <input placeholder="Email" type="text" name="email" value = "{{user.email}}">
+            <div class="field">
+              <label>First Name</label>
+              <input type="file" name="picture">  </input>
+            </div>
           </div>
-
-          <div class="field">
-            <label>Password</label>
-            <input placeholder="Password" type="password" name="password" value = "{{user.password}}">
-          </div>
-
-          <div class="field">
-            <label>Address</label>
-            <input placeholder="Address" type="text" name="address" value = "{{user.address}}">
-          </div>
-
-          <label>Gender</label>
-            <select class="ui dropdown" name = "gender">
-            <option value="{{user.gender}}" hidden>{{user.gender}}</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          <br>
-
-          <div class="field">
-            <label>Height</label>
-            <input placeholder="Height" type="text" name="height" value = "{{user.height}}">
-          </div>
-
-          <div class="field">
-            <label>Starting Weight</label>
-            <input placeholder="Starting Weight" type="text" name="weight" value = "{{user.weight}}">
-          </div>
-          <button class="ui blue submit button">Update</button>
+          <button class="ui blue submit button"> Upload </button>
         </form>
-    </div>
-  </section>
+      </section>
+    </section>
   </div>
 </div>
