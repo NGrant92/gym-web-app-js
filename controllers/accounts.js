@@ -88,7 +88,14 @@ const accounts = {
     if (password) {
       response.cookie('playlist', user.id);
       logger.info(`logging in ${user.email}`);
-      response.redirect('/dashboard');
+      
+      if (user.trainer === true) {
+        response.redirect('/trainerboard');
+      }
+      else {
+        response.redirect('/dashboard');
+      }
+      
     } else {
       response.redirect('/login/');
     }

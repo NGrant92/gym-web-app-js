@@ -18,9 +18,13 @@ const userStore = {
   addUser(user) {
     this.store.add(this.collection, user);
   },
-
+  
   getUserById(id) {
     return this.store.findOneBy(this.collection, { id: id });
+  },
+  
+  getAllMembers() {
+    return this.store.findBy(this.collection, { trainer: false });
   },
 
   getUserByEmail(email) {
@@ -42,8 +46,7 @@ const userStore = {
           const femaleFlex = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
           const maleFlex = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg';
           if (currPic !== femaleFlex && currPic !== maleFlex) {
-            const oldPic = path.parse(currPic);
-            cloudinary.v2.uploader.destroy([oldPic.name], function (result) {
+            cloudinary.v2.uploader.destroy([path.parse(currPic).name], function (result) {
               console.log(result);
             });
           }
