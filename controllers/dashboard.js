@@ -1,5 +1,4 @@
-'use strict';
-
+'use strict';// jscs:ignore validateLineBreaks
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
 const dateformat = require('dateformat');
@@ -13,19 +12,19 @@ const dashboard = {
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
     const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
-  
+
     //This sort function is used to sort the assessments by date in descending order
     assessmentArr.sort(function (a, b) {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
-      
+
       return dateB - dateA;
     });
-    
+
     //Updating the user's weight with their most recent assessment weight measurement
     //It's done here so it'll update when an assessment is added OR deleted
     loggedInUser.weight = assessmentArr[0].weight;
-    
+
     //Adding new keys into the logged in user and giving the apropriate values
     //determined by the calcualtions done by analytics.js
     loggedInUser.bmi = analytics.calculateBMI(loggedInUser.height, loggedInUser.weight);
@@ -39,7 +38,7 @@ const dashboard = {
       user: loggedInUser,
       assessments: assessmentArr,
     };
-    
+
     logger.info('about to render', viewData);
     response.render('dashboard', viewData);
   },
