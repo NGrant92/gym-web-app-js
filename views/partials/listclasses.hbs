@@ -1,0 +1,28 @@
+<table class = "ui celled table middle aligned segment">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thur</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th>Sun</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each assessments}}
+    <tr>
+      <td></td>
+      <td>{{date}}</td>
+      <td>{{weight}}</td>
+      <td>{{chest}}</td>
+      <td>{{thigh}}</td>
+      <td>{{upperArm}}</td>
+      <td>{{waist}}</td>
+      <td>{{hips}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
