@@ -6,10 +6,10 @@ const JsonStore = require('./json-store');
 
 const goalStore = {
 
-  store: new JsonStore('./models/goal-store.json', { goalCollection: [] }),
+  store: new JsonStore('./models/class-store.json', { classCollection: [] }),
   collection: 'goalCollection',
 
-  getAllGoalLists() {
+  getAllClasses() {
     return this.store.findAll(this.collection);
   },
 

@@ -1,44 +1,58 @@
 {
-  "goalCollection": [
+  "classCollection": [
     {
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "goals": [
+      "id": "z0788422-92d9-4e34-b109-6132c7b44683",
+      "name": "Yoga",
+      "duration": "30",
+      "capacity": "15",
+      "difficulty": "Beginners",
+      "weeks": "7",
+      "times": [
         {
-          "id": "d0788422-92d9-4e34-b109-6132c7b44683",
-          "goal": "buy duff",
-          "date": "01 January"
-        },
-        {
-          "id": "e0788422-92d9-4e34-b109-6132c7b44683",
-          "goal": "get buff",
-          "date": "01 January"
-        },
-        {
-          "id": "6a63f4a4-579e-4993-8020-ec8c2be3f532",
-          "goal": "more buff, less duff",
-          "date": "01 March"
+          "day": "Monday",
+          "time": "17:00"
         }
       ]
     },
     {
-      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-      "goals": [
+      "id": "y0788422-92d9-4e34-b109-6132c7b44683",
+      "name": "Yoga",
+      "duration": "60",
+      "capacity": "10",
+      "difficulty": "Advanced",
+      "weeks": "7",
+      "times": [
         {
-          "id": "73c80563-e682-43e2-88f5-bc636524633e",
-          "goal": "make homer get buff not duff",
-          "date": "01 January"
+          "day": "Monday",
+          "time": "06:00"
+        },
+        {
+          "day": "Wednesday",
+          "time": "06:00"
+        },
+        {
+          "day": "Friday",
+          "time": "06:00"
         }
       ]
     },
     {
-      "id": "484b9173-ba71-47b3-9512-d8fe6e2bd495",
-      "userid": "61c184e5-30fc-4d9f-b653-202cc0f8e970",
-      "goals": []
-    },
-    {
-      "id": "42fc4577-f6d2-4c80-b2cc-ce23a48ef7f0",
-      "userid": "2a8498da-1da6-401c-bb8c-14a246e765ae",
-      "goals": []
+      "id": "x0788422-92d9-4e34-b109-6132c7b44683",
+      "name": "Boxercise",
+      "duration": "30",
+      "capacity": "15",
+      "difficulty": "Intermediate",
+      "weeks": "7",
+      "times": [
+        {
+          "day": "Sunday",
+          "time": "12:00"
+        },
+        {
+          "day": "Wednesday",
+          "time": "18:00"
+        }
+      ]
     }
   ]
 }

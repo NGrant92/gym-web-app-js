@@ -5,6 +5,7 @@ const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const assessStore = require('../models/assess-store.js');
+const classStore = require('../models/class-store.js');
 const analytics = require('../utils/analytics.js');
 
 const dashboard = {
@@ -37,6 +38,7 @@ const dashboard = {
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
       assessments: assessmentArr,
+      classes: classStore,
     };
 
     logger.info('about to render', viewData);
