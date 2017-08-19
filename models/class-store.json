@@ -7,7 +7,7 @@
       "capacity": "15",
       "difficulty": "Beginners",
       "weeks": "7",
-      "img": "yoga-pose",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "times": [
         {
           "day": "Monday",
@@ -22,7 +22,7 @@
       "capacity": "10",
       "difficulty": "Advanced",
       "weeks": "7",
-      "img": "yoga-pose",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "times": [
         {
           "day": "Monday",
@@ -44,7 +44,7 @@
       "duration": "30",
       "capacity": "15",
       "difficulty": "Intermediate",
-      "img": "boxing",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
       "weeks": "7",
       "times": [
         {

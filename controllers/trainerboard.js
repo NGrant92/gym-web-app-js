@@ -8,6 +8,7 @@ const goalStore = require('../models/goal-store');
 const assessStore = require('../models/assess-store.js');
 const analytics = require('../utils/analytics.js');
 const userStore = require('../models/user-store');
+const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
 const trainerboard = {
   
