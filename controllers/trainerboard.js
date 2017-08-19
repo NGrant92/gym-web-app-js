@@ -8,10 +8,6 @@ const goalStore = require('../models/goal-store');
 const assessStore = require('../models/assess-store.js');
 const analytics = require('../utils/analytics.js');
 const userStore = require('../models/user-store');
-const Handlebars = require('handlebars');
-Handlebars.registerHelper('toLowerCase', function (str) {
-  return str.toLowerCase();
-});
 
 const trainerboard = {
   

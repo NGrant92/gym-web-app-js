@@ -7,6 +7,7 @@
       "capacity": "15",
       "difficulty": "Beginners",
       "weeks": "7",
+      "img": "yoga-pose",
       "times": [
         {
           "day": "Monday",
@@ -21,6 +22,7 @@
       "capacity": "10",
       "difficulty": "Advanced",
       "weeks": "7",
+      "img": "yoga-pose",
       "times": [
         {
           "day": "Monday",
@@ -42,6 +44,7 @@
       "duration": "30",
       "capacity": "15",
       "difficulty": "Intermediate",
+      "img": "boxing",
       "weeks": "7",
       "times": [
         {
