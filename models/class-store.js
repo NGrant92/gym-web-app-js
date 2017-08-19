@@ -4,10 +4,10 @@ const logger = require('../utils/logger');
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 
-const goalStore = {
+const classStore = {
 
   store: new JsonStore('./models/class-store.json', { classCollection: [] }),
-  collection: 'goalCollection',
+  collection: 'classCollection',
 
   getAllClasses() {
     return this.store.findAll(this.collection);
@@ -53,4 +53,4 @@ const goalStore = {
   },
 };
 
-module.exports = goalStore;
+module.exports = classStore;

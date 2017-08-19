@@ -1,18 +1,16 @@
 'use strict';
 
 const classStore = require('../models/class-store');
-const uuid = require('uuid');
 const logger = require('../utils/logger');
 
 const classes = {
   index(request, response) {
     logger.info('classes rendering');
-    const classes = classStore.getAllClasses(request);
     const viewData = {
       title: 'Classes',
-      user: classes,
+      classList: classStore.getAllClasses(),
     };
-    logger.info('about to render', classes);
+    logger.info('about to render', viewData.classList);
     response.render('classes', viewData);
   },
 };

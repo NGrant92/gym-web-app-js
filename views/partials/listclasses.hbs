@@ -1,28 +1,49 @@
-<table class = "ui celled table middle aligned segment">
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thur</th>
-      <th>Fri</th>
-      <th>Sat</th>
-      <th>Sun</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each assessments}}
-    <tr>
-      <td></td>
-      <td>{{date}}</td>
-      <td>{{weight}}</td>
-      <td>{{chest}}</td>
-      <td>{{thigh}}</td>
-      <td>{{upperArm}}</td>
-      <td>{{waist}}</td>
-      <td>{{hips}}</td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+{{#each classList}}
+  <div class="ui relaxed divided list stacked segment">
+  <div class="image">
+    img
+  </div>
+  <div class="content">
+    <a class="header">{{this.name}}</a>
+    <table class="ui celled striped table">
+      <thead>
+      <tr><th colspan="2">
+        Details
+      </th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td class="collapsing">
+          Duration
+        </td>
+        <td>{{this.duration}}</td>
+      </tr>
+      <tr>
+        <td>
+          Max Members
+        </td>
+        <td>{{this.capacity}}</td>
+      </tr>
+      <tr>
+        <td>
+          Difficulty
+        </td>
+        <td>{{this.difficulty}}</td>
+      </tr>
+      <tr>
+        <td>
+          Length
+        </td>
+        <td>{{this.weeks}} weeks</td>
+      </tr>
+      <tr>
+        <td>
+          Times
+        </td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+{{/each}}
