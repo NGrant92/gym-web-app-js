@@ -1,48 +1,80 @@
 {{#each classList}}
   <div class="ui equal width padded raised segment grid">
-    <div class = "four wide middle aligned image">
-      <img class="ui small spaced image" src="{{this.img}}">
+    <div class = "four wide column middle aligned grid">
+      <img class="ui fluid image" src="{{this.img}}">
     </div>
-    <div class = "twelve wide align right column padded">
-      <a class="header">{{this.name}}</a>
+    <div class = "six wide align right column padded">
+      <h2>{{this.difficulty}} {{this.name}}</h2>
       <table class="ui celled striped table">
         <thead>
-        <tr><th colspan="2">
+        <tr><th colspan="3">
           Details
-        </th>
-        </tr></thead>
+        </th></tr>
+        </thead>
         <tbody>
         <tr>
-          <td class="collapsing">
-            Duration
-          </td>
-          <td>{{this.duration}}</td>
-        </tr>
-        <tr>
           <td>
-            Max Members
-          </td>
-          <td>{{this.capacity}}</td>
-        </tr>
-        <tr>
-          <td>
-            Difficulty
+            <b>Difficulty</b>
           </td>
           <td>{{this.difficulty}}</td>
         </tr>
         <tr>
           <td>
-            Length
+            <b>Duration</b>
+          </td>
+          <td>{{this.duration}}mins</td>
+        </tr>
+        <tr>
+          <td class="collapsing">
+            <b>Availability</b>
+          </td>
+          <td>{{subtract this.capacity this.members}} spaces remaining</td>
+        </tr>
+        <tr>
+          <td>
+            <b>Length</b>
           </td>
           <td>{{this.weeks}} weeks</td>
         </tr>
         <tr>
           <td>
-            Times
+            <b>Times</b>
           </td>
           <td></td>
         </tr>
         </tbody>
+      </table>
+    </div>
+
+    <div class = "six wide align right column padded">
+      <h2>Enrollment</h2>
+
+      <table class="ui celled striped table">
+        <thead>
+        <tr><th colspan="2">
+          <br>
+        </th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <b>All Classes</b>
+          </td>
+          <td><button class="ui primary button">Enroll</button></td>
+        </tr>
+        <tr>
+          <td class="collapsing">
+            <b>Specific Class</b>
+          </td>
+          <td>
+            <div class="ui calendar" id="example1">
+              <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                <input type="text" placeholder="Date/Time">
+              </div>
+            </div>
+          </td>
+        </tr>
       </table>
     </div>
   </div>

@@ -3,6 +3,7 @@
 const classStore = require('../models/class-store');
 const pictureStore = require('../models/picture-store');
 const logger = require('../utils/logger');
+const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
 const classes = {
   index(request, response) {
