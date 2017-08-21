@@ -40,7 +40,12 @@
           <td>
             <b>Times</b>
           </td>
-          <td></td>
+          <td>
+            {{#each times}}
+              {{this.time}} {{this.day}}
+              <br>
+            {{/each}}
+          </td>
         </tr>
         </tbody>
       </table>
@@ -48,7 +53,6 @@
 
     <div class = "six wide align right column padded">
       <h2>Enrollment</h2>
-
       <table class="ui celled striped table">
         <thead>
         <tr><th colspan="2">
@@ -60,19 +64,19 @@
           <td>
             <b>All Classes</b>
           </td>
-          <td><button class="ui primary button">Enroll</button></td>
+          <td><button class="ui {{classColor this.capacity this.members}} button"> {{enrollClass this.capacity this.members}} </button></td>
         </tr>
         <tr>
           <td class="collapsing">
             <b>Specific Class</b>
           </td>
           <td>
-            <div class="ui calendar" id="example1">
-              <div class="ui input left icon">
-                <i class="calendar icon"></i>
-                <input type="text" placeholder="Date/Time">
-              </div>
-            </div>
+            <select class="ui fluid search dropdown" name="day">
+              <option value="">Select a Day</option>
+              {{#each times}}
+                <option value="">{{this.time}} {{this.day}}</option>
+              {{/each}}
+            </select>
           </td>
         </tr>
       </table>

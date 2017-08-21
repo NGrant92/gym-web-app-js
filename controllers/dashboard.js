@@ -10,8 +10,14 @@ const analytics = require('../utils/analytics.js');
 
 const dashboard = {
   index(request, response) {
+
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
+
+    if(loggedInUser.trainer === true){
+      response.redirect('/trainerboard');
+    }
+
     const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
 
     //This sort function is used to sort the assessments by date in descending order

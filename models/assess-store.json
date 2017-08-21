@@ -4,6 +4,17 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
+          "id": "891c77d4-ad18-4319-86a2-a97307f5a2b8",
+          "date": "10-07-17",
+          "weight": "170",
+          "chest": "97",
+          "thigh": "87",
+          "upperArm": "77",
+          "waist": "67",
+          "hips": "57",
+          "comment": ""
+        },
+        {
           "id": "699f5826-1e52-4800-ac84-da56e0af23e4",
           "date": "05-07-17",
           "weight": "175",
@@ -24,17 +35,6 @@
           "waist": "66",
           "hips": "55",
           "comment": "buy less duff"
-        },
-        {
-          "id": "891c77d4-ad18-4319-86a2-a97307f5a2b8",
-          "date": "10-07-17",
-          "weight": "170",
-          "chest": "97",
-          "thigh": "87",
-          "upperArm": "77",
-          "waist": "67",
-          "hips": "57",
-          "comment": ""
         }
       ]
     },
@@ -72,6 +72,36 @@
           "id": "aae37004-e77b-47c7-9ba2-dbee4429839f",
           "date": "11-07-2017",
           "weight": "100",
+          "chest": 0,
+          "thigh": 0,
+          "upperArm": 0,
+          "waist": 0,
+          "hips": 0
+        }
+      ]
+    },
+    {
+      "userid": "7955d028-6fce-40a3-8a7d-a2294b950678",
+      "assessments": [
+        {
+          "id": "cb1fa5a1-9ccf-4d07-9eed-4a6197e008c3",
+          "date": "21-08-2017",
+          "weight": "175",
+          "chest": 0,
+          "thigh": 0,
+          "upperArm": 0,
+          "waist": 0,
+          "hips": 0
+        }
+      ]
+    },
+    {
+      "userid": "49c08b88-5978-4fd4-9354-0b1188471bc1",
+      "assessments": [
+        {
+          "id": "ad57c486-c7e7-4235-82c6-a0c2ed7b9062",
+          "date": "21-08-2017",
+          "weight": "222",
           "chest": 0,
           "thigh": 0,
           "upperArm": 0,

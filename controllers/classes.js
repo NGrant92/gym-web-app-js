@@ -7,6 +7,7 @@ const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
 const classes = {
   index(request, response) {
+
     logger.info('classes rendering');
     const viewData = {
       title: 'Classes',
