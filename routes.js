@@ -28,7 +28,7 @@ router.get('/dashboard/:id/deleteassessment/:assessid', dashboard.deleteAssessme
 router.get('/about', about.index);
 
 router.get('/classes', classes.index);
-router.get('/classes/:id/fullEnroll', classes.fullEnroll);
+router.get('/classes/fullEnroll', classes.fullEnroll);
 
 router.get('/settings', settings.index);
 router.post('/settings/update', accounts.setAccount);
