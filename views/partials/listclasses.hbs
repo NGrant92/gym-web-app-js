@@ -65,12 +65,11 @@
             <b>All Classes</b>
           </td>
           <td>
-            <button class="ui blue button" id="enrollButton"> Enroll </button>
+            <button class="ui blue button" id="enrollButton{{this.id}}" formaction="/dashboard"> Enroll </button>
             <script type="text/javascript">
-              const totalSum = 0;
-              if(totalSum === 0){
-                document.getElementById("enrollButton").className = "ui red disabled button";
-                document.getElementById("enrollButton").textContent = "Full";
+              if(({{this.capacity}} - {{this.members}}) === 0){
+                document.getElementById("enrollButton{{this.id}}").className = "ui red disabled button";
+                document.getElementById("enrollButton{{this.id}}").textContent = "Full";
               }
             </script>
           </td>

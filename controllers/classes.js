@@ -17,6 +17,11 @@ const classes = {
     logger.info('about to render', viewData.classList);
     response.render('classes', viewData);
   },
+
+  fullEnroll(request, response){
+
+    response.redirect('/classes');
+  }
 };
 
 module.exports = classes;

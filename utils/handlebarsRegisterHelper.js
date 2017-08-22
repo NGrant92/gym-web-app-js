@@ -11,12 +11,10 @@ Handlebars.registerHelper('subtract', function (num1, num2) {
 });
 
 Handlebars.registerHelper('isFull', function (num1, num2) {
-  //let isFull = '';
-  let enrollButton = document.createElement('BUTTON');
+  let isFull = '';
   let numSum = 0;
 
   if (numSum === 0) {
-    //isFull = '<button class="ui red disabled button"> Full </button>';
     enrollButton.className = 'ui red disabled button';
     enrollButton.textContent = 'Full';
 
