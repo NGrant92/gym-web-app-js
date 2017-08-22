@@ -64,7 +64,16 @@
           <td>
             <b>All Classes</b>
           </td>
-          <td><button class="ui {{classColor this.capacity this.members}} button"> {{enrollClass this.capacity this.members}} </button></td>
+          <td>
+            <button class="ui blue button" id="enrollButton"> Enroll </button>
+            <script type="text/javascript">
+              const totalSum = 0;
+              if(totalSum === 0){
+                document.getElementById("enrollButton").className = "ui red disabled button";
+                document.getElementById("enrollButton").textContent = "Full";
+              }
+            </script>
+          </td>
         </tr>
         <tr>
           <td class="collapsing">

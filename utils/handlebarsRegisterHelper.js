@@ -10,14 +10,21 @@ Handlebars.registerHelper('subtract', function (num1, num2) {
   return num1 - num2;
 });
 
-Handlebars.registerHelper('enrollClass', function (num1, num2) {
-  let isFull = '';
-  let numSum = num1 - num2;
+Handlebars.registerHelper('isFull', function (num1, num2) {
+  //let isFull = '';
+  let enrollButton = document.createElement('BUTTON');
+  let numSum = 0;
 
   if (numSum === 0) {
-    isFull = 'Full';
+    //isFull = '<button class="ui red disabled button"> Full </button>';
+    enrollButton.className = 'ui red disabled button';
+    enrollButton.textContent = 'Full';
+
+    document.body.appendChild(enrollButton);
+
   } else {
-    isFull = 'Enroll';
+    enrollButton.className = 'ui red disabled button';
+    enrollButton.textContent = 'Enroll';
   }
 
   return isFull;
@@ -27,6 +34,12 @@ Handlebars.registerHelper('enrollClass', function (num1, num2) {
 Handlebars.registerHelper('classColor', function (num1, num2) {
   let color = 'blue';
   let numSum = num1 - num2;
+
+  if (numSum === 0) {
+    color = 'red';
+  } else {
+    color = 'blue';
+  }
 
   return color;
 });
