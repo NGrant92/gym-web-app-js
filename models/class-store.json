@@ -4,18 +4,18 @@
       "id": "z0788422-92d9-4e34-b109-6132c7b44683",
       "name": "Yoga",
       "duration": "30",
+      "maxMembers": "15",
       "members": "7",
-      "capacity": "15",
       "difficulty": "Beginners",
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
-      "times": [
+      "dayTime": [
         {
           "day": "Monday",
           "time": "17:00"
         }
       ],
-      "memberId": [
+      "memberList": [
         {
           "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
         },
@@ -28,12 +28,12 @@
       "id": "y0788422-92d9-4e34-b109-6132c7b44683",
       "name": "Yoga",
       "duration": "60",
+      "maxMembers": "10",
       "members": "7",
-      "capacity": "10",
       "difficulty": "Advanced",
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
-      "times": [
+      "dayTime": [
         {
           "day": "Monday",
           "time": "06:00"
@@ -46,18 +46,26 @@
           "day": "Friday",
           "time": "06:00"
         }
+      ],
+      "memberList": [
+        {
+          "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+        },
+        {
+          "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+        }
       ]
     },
     {
       "id": "x0788422-92d9-4e34-b109-6132c7b44683",
       "name": "Boxercise",
       "duration": "30",
+      "maxMembers": "15",
       "members": "7",
-      "capacity": "15",
       "difficulty": "Intermediate",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
       "weeks": "7",
-      "times": [
+      "dayTime": [
         {
           "day": "Sunday",
           "time": "12:00"
@@ -65,6 +73,14 @@
         {
           "day": "Wednesday",
           "time": "18:00"
+        }
+      ],
+      "memberList": [
+        {
+          "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+        },
+        {
+          "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
         }
       ]
     }

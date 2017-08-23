@@ -1,20 +1,19 @@
 'use strict';
 
 const logger = require('../utils/logger');
-const playlistStore = require('../models/goal-store');
+const goalStore = require('../models/goal-store');
 const uuid = require('uuid');
 
 const goals = {
 
   index(request, response) {
-    const playlistId = request.params.id;
-    logger.debug('Playlist id = ', playlistId);
+    const goalId = request.params.id;
+    logger.debug('Playlist id = ', goalId);
     const viewData = {
-      title: 'Playlist',
-      playlist: playlistStore.getPlaylist(playlistId),
-      duration: '0',
+      title: 'Goals',
+      goalList: goalStore.getGoalList(goalId),
     };
-    response.render('playlist', viewData);
+    response.render('goal', viewData);
   },
 
   deleteGoal(request, response) {
@@ -26,17 +25,16 @@ const goals = {
   },
 
   addGoal(request, response) {
-    const playlistId = request.params.id;
-    const playlist = playlistStore.getPlaylist(playlistId);
-    const newSong = {
+    const goalId = request.params.id;
+    const newGoal = {
       id: uuid(),
       title: request.body.title,
       artist: request.body.artist,
       duration: Number(request.body.duration),
     };
 
-    logger.debug('New Song = ', newSong);
-    playlistStore.addSong(playlistId, newSong);
+    logger.debug('New Goall: ', newGoal);
+    goalStore.addGoal(goalId, newGoal);
     response.redirect('/playlist/' + playlistId);
   },
 };

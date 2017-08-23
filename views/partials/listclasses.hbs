@@ -28,8 +28,12 @@
           <td class="collapsing">
             <b>Availability</b>
           </td>
-          <td>{{subtract this.capacity this.members}} spaces remaining</td>
+          <td id="spaces{{this.id}}">
+            <script>
+              document.getElementById("spaces{{this.id}}").textContent = ({{this.maxMembers}} - {{this.members}}) + ' spaces remaining';
+            </script>
         </tr>
+          </td>
         <tr>
           <td>
             <b>Length</b>
@@ -41,7 +45,7 @@
             <b>Times</b>
           </td>
           <td>
-            {{#each times}}
+            {{#each dayTime}}
               {{this.time}} {{this.day}}
               <br>
             {{/each}}
@@ -65,7 +69,7 @@
             <b>All Classes</b>
           </td>
           <td>
-            <button class="ui blue button" id="enrollButton{{this.id}}" onclick="window.location='/classes/fullEnroll'"> Enroll </button>
+            <button class="ui blue button" id="enrollButton{{this.id}}" onclick="window.location='/classes/{{this.id}}/fullEnroll'">Enroll</button>
             <script type="text/javascript">
               if(({{this.capacity}} - {{this.members}}) === 0){
                 document.getElementById("enrollButton{{this.id}}").className = "ui red disabled button";
@@ -81,7 +85,7 @@
           <td>
             <select class="ui fluid search dropdown" name="day">
               <option value="">Select a Day</option>
-              {{#each times}}
+              {{#each dayTime}}
                 <option value="">{{this.time}} {{this.day}}</option>
               {{/each}}
             </select>

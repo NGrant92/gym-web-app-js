@@ -47,7 +47,7 @@ const dashboard = {
       classes: classStore,
     };
 
-    logger.info('about to render', viewData);
+    logger.info('about to render', viewData.user);
     response.render('dashboard', viewData);
   },
 

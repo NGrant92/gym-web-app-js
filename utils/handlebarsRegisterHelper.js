@@ -10,36 +10,4 @@ Handlebars.registerHelper('subtract', function (num1, num2) {
   return num1 - num2;
 });
 
-Handlebars.registerHelper('isFull', function (num1, num2) {
-  let isFull = '';
-  let numSum = 0;
-
-  if (numSum === 0) {
-    enrollButton.className = 'ui red disabled button';
-    enrollButton.textContent = 'Full';
-
-    document.body.appendChild(enrollButton);
-
-  } else {
-    enrollButton.className = 'ui red disabled button';
-    enrollButton.textContent = 'Enroll';
-  }
-
-  return isFull;
-
-});
-
-Handlebars.registerHelper('classColor', function (num1, num2) {
-  let color = 'blue';
-  let numSum = num1 - num2;
-
-  if (numSum === 0) {
-    color = 'red';
-  } else {
-    color = 'blue';
-  }
-
-  return color;
-});
-
 module.exports = Handlebars;

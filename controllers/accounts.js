@@ -83,10 +83,9 @@ const accounts = {
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
-    const password = user.password === request.body.password;
 
-    if (password) {
-      response.cookie('playlist', user.id);
+    if (user && user.password === request.body.password) {
+      response.cookie('user', user.id);
       logger.info(`logging in ${user.email}`);
       
       if (user.trainer === true) {
@@ -102,7 +101,7 @@ const accounts = {
   },
 
   getCurrentUser(request) {
-    const userId = request.cookies.playlist;
+    const userId = request.cookies.user;
     return userstore.getUserById(userId);
   },
 

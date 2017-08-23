@@ -13,12 +13,12 @@ const classStore = {
     return this.store.findAll(this.collection);
   },
 
-  getGoalList(id) {
+  getClass(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
-  getUserGoalList(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
+  getClassList(id) {
+    return this.store.findBy(this.collection, { id: id });
   },
 
   addGoalList(goalList) {
