@@ -75,6 +75,9 @@
                 document.getElementById("enrollButton{{this.id}}").className = "ui red disabled button";
                 document.getElementById("enrollButton{{this.id}}").textContent = "Full";
               }
+              else if({{user.trainer}} === false){
+                document.getElementById("enrollButton{{this.id}}").className = "ui disabled button";
+              }
             </script>
           </td>
         </tr>

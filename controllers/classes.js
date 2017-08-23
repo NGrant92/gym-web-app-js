@@ -24,19 +24,16 @@ const classes = {
   },
 
   fullEnroll(request, response) {
+    let user = accounts.getCurrentUser(request);
+    let memberArr = classStore.getClassList(request.params.classid)[0].memberList;
 
-    let userId = accounts.getCurrentUser(request);
-    let classId = request.params.classid;
-    let memberArr = classStore.getClassList(classId)[0].memberList;
-
-
-    if (memberArr.indexOf(userId.id) >= 0 && userId.trainer) {
-      logger.info('Member already enrolled: ', memberArr);
+    if (memberArr.indexOf(user.id) >= 0 || user.trainer) {
+      logger.info('Member already enrolled or is a trainer: ', memberArr);
       response.redirect('/classes');
     }
     else {
-      memberArr.push(userId);
-      logger.info('Enrolling: ', userId);
+      memberArr.push(user.id);
+      logger.info('Enrolling: ', memberArr);
       response.redirect('/classes');
     }
   },

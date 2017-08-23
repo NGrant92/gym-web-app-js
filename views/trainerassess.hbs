@@ -1,0 +1,68 @@
+{{> menu id="dashboard"}}
+
+<div class="ui equal width padded grid">
+  <div class = "four wide column">
+    {{> profilecard}}
+  </div>
+
+  <div class = "twelve wide align right column padded">
+    <section class="ui raised segment">
+      <h2 class="ui dividing header">BMI</h2>
+      {{> bmi}}
+    </section>
+    <section class="ui raised segment">
+      {{#each assessments}}
+        <div class="ui releaxed divided items">
+          <div class="item">
+            <div class="content">
+              <div class="ui horizontal divider">
+                <i class="bar chart icon"></i>
+                Assessment #
+              </div>
+              <table class = "ui celled table middle aligned segment">
+                <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Weight</th>
+                  <th>Chest</th>
+                  <th>Thigh</th>
+                  <th>Upper Arm</th>
+                  <th>Waist</th>
+                  <th>Hips</th>
+                  <th>Trend</th>
+                  <th>Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>{{assessments.date}}</td>
+                  <td>{{assessments.weight}}</td>
+                  <td>{{assessments.chest}}</td>
+                  <td>{{assessments.thigh}}</td>
+                  <td>{{assessments.upperArm}}</td>
+                  <td>{{assessments.waist}}</td>
+                  <td>{{assessments.hips}}</td>
+                  <td><i class=""></i></td>
+                  <td>{{assessments.comment}}</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <form class="ui form" action="/trainerassess/setComment/{{member.id}}/{{assessment.id}}" method="POST">
+                <div class="field">
+                  <label>Add Comment</label>
+                  <input placeholder="Comment" type="text" name="comment">
+                </div>
+
+                <button class="ui left floated primary button">
+                  Add Comment
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      {{/each}}
+    </section>
+  </div>
+</div>
