@@ -1,11 +1,11 @@
 {
   "classCollection": [
     {
-      "id": "z0788422-92d9-4e34-b109-6132c7b44683",
+      "classid": "class00",
       "name": "Yoga",
       "duration": "30",
       "maxMembers": "15",
-      "members": "7",
+      "currMembers": "7",
       "difficulty": "Beginners",
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
@@ -16,20 +16,16 @@
         }
       ],
       "memberList": [
-        {
-          "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
-        },
-        {
-          "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-        }
+        "3ad52697-6d98-4d80-8273-084de55a86c0",
+        "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
       ]
     },
     {
-      "id": "y0788422-92d9-4e34-b109-6132c7b44683",
+      "classid": "class01",
       "name": "Yoga",
       "duration": "60",
       "maxMembers": "10",
-      "members": "7",
+      "currMembers": "7",
       "difficulty": "Advanced",
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
@@ -48,20 +44,16 @@
         }
       ],
       "memberList": [
-        {
-          "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
-        },
-        {
-          "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-        }
+        "3ad52697-6d98-4d80-8273-084de55a86c0",
+        "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
       ]
     },
     {
-      "id": "x0788422-92d9-4e34-b109-6132c7b44683",
+      "classid": "class02",
       "name": "Boxercise",
       "duration": "30",
       "maxMembers": "15",
-      "members": "7",
+      "currMembers": "7",
       "difficulty": "Intermediate",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
       "weeks": "7",
@@ -76,12 +68,8 @@
         }
       ],
       "memberList": [
-        {
-          "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
-        },
-        {
-          "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-        }
+          "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
       ]
     }
   ]

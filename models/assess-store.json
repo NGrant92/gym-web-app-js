@@ -4,17 +4,6 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
-          "id": "891c77d4-ad18-4319-86a2-a97307f5a2b8",
-          "date": "10-07-17",
-          "weight": "170",
-          "chest": "97",
-          "thigh": "87",
-          "upperArm": "77",
-          "waist": "67",
-          "hips": "57",
-          "comment": ""
-        },
-        {
           "id": "699f5826-1e52-4800-ac84-da56e0af23e4",
           "date": "05-07-17",
           "weight": "175",

@@ -19,27 +19,26 @@ const classes = {
       classList: classStore.getAllClasses(),
       imgs: pictureStore.getAlbum('qad52697-6d98-4d80-8273-084de55a86c0'),
     };
-    logger.info('about to render', viewData.classList);
+    logger.info('about to render', viewData.title);
     response.render('classes', viewData);
   },
 
   fullEnroll(request, response) {
 
-    let userId = accounts.getCurrentUser(request).id;
-    let classId = request.params.id;
-    let memberArr = classStore.getClassList(classId)[0];
-    let memberArr1 = classStore.getClassList(classId)[0].members;
-    let memberArr2 = classStore.getClassList(classId)[0].memberList;
-    let memberArr3 = classStore.getClassList(classId)[0].id;
-    if (userId) {
+    let userId = accounts.getCurrentUser(request);
+    let classId = request.params.classid;
+    let memberArr = classStore.getClassList(classId)[0].memberList;
 
-      logger.info('Enrolling: ', memberArr);
-      response.redirect('/dashboard');
-    }
-    else {
+
+    if (memberArr.indexOf(userId.id) >= 0 && userId.trainer) {
+      logger.info('Member already enrolled: ', memberArr);
       response.redirect('/classes');
     }
-
+    else {
+      memberArr.push(userId);
+      logger.info('Enrolling: ', userId);
+      response.redirect('/classes');
+    }
   },
 };
 

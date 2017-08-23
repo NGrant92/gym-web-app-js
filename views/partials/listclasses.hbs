@@ -28,9 +28,9 @@
           <td class="collapsing">
             <b>Availability</b>
           </td>
-          <td id="spaces{{this.id}}">
+          <td id="spaces{{this.classid}}">
             <script>
-              document.getElementById("spaces{{this.id}}").textContent = ({{this.maxMembers}} - {{this.members}}) + ' spaces remaining';
+              document.getElementById("spaces{{this.classid}}").textContent = ({{this.maxMembers}} - {{this.currMembers}}) + ' spaces remaining';
             </script>
         </tr>
           </td>
@@ -69,9 +69,9 @@
             <b>All Classes</b>
           </td>
           <td>
-            <button class="ui blue button" id="enrollButton{{this.id}}" onclick="window.location='/classes/{{this.id}}/fullEnroll'">Enroll</button>
+            <button class="ui blue button" id="enrollButton{{this.classid}}" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">Enroll</button>
             <script type="text/javascript">
-              if(({{this.capacity}} - {{this.members}}) === 0){
+              if(({{this.maxMembers}} - {{this.currMembers}}) === 0){
                 document.getElementById("enrollButton{{this.id}}").className = "ui red disabled button";
                 document.getElementById("enrollButton{{this.id}}").textContent = "Full";
               }
