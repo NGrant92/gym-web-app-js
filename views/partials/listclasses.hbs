@@ -3,7 +3,7 @@
     <div class = "four wide column middle aligned grid">
       <img class="ui fluid image" src="{{this.img}}">
     </div>
-    <div class = "four wide align right column padded">
+    <div class = "five wide align right column padded">
       <h2>{{this.difficulty}} {{this.name}}</h2>
       <table class="ui celled striped table">
         <thead>
@@ -30,7 +30,7 @@
           </td>
           <td id="spaces{{this.classid}}">
             <script>
-              document.getElementById("spaces{{this.classid}}").textContent = ({{this.maxMembers}} - {{this.dayTime.[0].memberList.length}}) + ' spaces remaining';
+              document.getElementById("spaces{{this.classid}}").textContent = ({{this.maxMembers}} - {{this.lessonList.[0].memberList.length}}) + ' spaces remaining';
             </script>
         </tr>
           </td>
@@ -41,12 +41,12 @@
           <td>{{this.weeks}} weeks</td>
         </tr>
         <tr>
-          <td>
+          <td class="collapsing">
             <b>Times</b>
           </td>
           <td>
-            {{#each dayTime}}
-              {{this.time}} {{this.day}}
+            {{#each days}}
+              {{this}}
               <br>
             {{/each}}
           </td>
@@ -55,7 +55,7 @@
       </table>
     </div>
 
-    <div class = "eight wide align right column padded">
+    <div class = "seven wide align right column padded">
       <h2>Enrollment</h2>
       <table class="ui celled striped table">
         <thead>
@@ -71,7 +71,7 @@
           <td>
             <button class="ui blue button" id="enrollButton{{this.classid}}" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">Enroll</button>
             <script type="text/javascript">
-              if({{this.maxMembers}} - {{this.dayTime.[0].memberList.length}} === 0 && !{{../user.trainer}}){
+              if({{this.maxMembers}} - {{this.lessonList.[0].memberList.length}} === 0 && !{{../user.trainer}}){
                 document.getElementById("enrollButton{{this.classid}}").className = "ui red disabled button";
                 document.getElementById("enrollButton{{this.classid}}").textContent = "Full";
               }
@@ -88,13 +88,12 @@
           <td>
             <select class="ui fluid search dropdown" name="day">
               <option value="">Select a Day</option>
-              {{#each dayTime}}
-                <option value="">{{this.time}} {{this.day}}</option>
+              {{#each lessonList}}
+                <option value="">{{this.date}}</option>
               {{/each}}
             </select>
-          </td>
-          <td>
-            <button class="ui primary button"> OK </button>
+            <br>
+            <button class="ui small primary button"> Sign Up </button>
           </td>
         </tr>
       </table>

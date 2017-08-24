@@ -7,14 +7,15 @@
       "maxMembers": "10",
       "currMembers": "7",
       "difficulty": "Beginners",
+      "days": [
+        "17:00 Monday"
+      ],
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
-      "dayTime": [
+      "lessonList": [
         {
           "lessonid": "lesson00",
-          "day": "Monday",
-          "time": "17:00",
-          "date": "05-07-17",
+          "date": "Monday, October 5th, 2017, 5:00pm",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -29,14 +30,17 @@
       "maxMembers": "10",
       "currMembers": "7",
       "difficulty": "Advanced",
+      "days": [
+        "06:00 Monday",
+        "06:00 Wednesday",
+        "06:00 Friday"
+      ],
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
-      "dayTime": [
+      "lessonList": [
         {
           "lessonid": "lesson01",
-          "day": "Monday",
-          "time": "06:00",
-          "date": "05-07-17",
+          "date": "Monday, October 5th, 2017, 6:00am",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -44,9 +48,7 @@
         },
         {
           "lessonid": "lesson02",
-          "day": "Wednesday",
-          "time": "06:00",
-          "date": "05-07-17",
+          "date": "Wednesday, October 7th, 2017, 6:00am",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -54,9 +56,7 @@
         },
         {
           "lessonid": "lesson00",
-          "day": "Friday",
-          "time": "06:00",
-          "date": "05-07-17",
+          "date": "Friday, October 9th, 2017, 6:00am",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -71,14 +71,17 @@
       "maxMembers": "15",
       "currMembers": "7",
       "difficulty": "Intermediate",
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
+      "days": [
+        "18:00 Wednesday",
+        "12:00 Friday"
+      ],
       "weeks": "7",
-      "dayTime": [
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
+
+      "lessonList": [
         {
           "lessonid": "lesson03",
-          "day": "Sunday",
-          "time": "12:00",
-          "date": "05-07-17",
+          "date": "Friday, October 4th, 2017, 12:00pm",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -86,9 +89,7 @@
         },
         {
           "lessonid": "lesson04",
-          "day": "Wednesday",
-          "time": "18:00",
-          "date": "05-07-17",
+          "date": "Wednesday, October 7th, 2017, 6:00pm",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
