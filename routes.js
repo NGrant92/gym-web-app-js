@@ -7,6 +7,7 @@ const accounts = require('./controllers/accounts.js');
 const dashboard = require('./controllers/dashboard.js');
 const about = require('./controllers/about.js');
 const trainerboard = require('./controllers/trainerboard.js');
+const trainerassess = require('./controllers/trainerassess.js');
 const settings = require('./controllers/settings.js');
 const classes = require('./controllers/classes.js');
 

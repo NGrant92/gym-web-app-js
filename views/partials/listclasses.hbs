@@ -3,7 +3,7 @@
     <div class = "four wide column middle aligned grid">
       <img class="ui fluid image" src="{{this.img}}">
     </div>
-    <div class = "six wide align right column padded">
+    <div class = "four wide align right column padded">
       <h2>{{this.difficulty}} {{this.name}}</h2>
       <table class="ui celled striped table">
         <thead>
@@ -30,7 +30,7 @@
           </td>
           <td id="spaces{{this.classid}}">
             <script>
-              document.getElementById("spaces{{this.classid}}").textContent = ({{this.maxMembers}} - {{this.currMembers}}) + ' spaces remaining';
+              document.getElementById("spaces{{this.classid}}").textContent = ({{this.maxMembers}} - {{this.dayTime.[0].memberList.length}}) + ' spaces remaining';
             </script>
         </tr>
           </td>
@@ -55,7 +55,7 @@
       </table>
     </div>
 
-    <div class = "six wide align right column padded">
+    <div class = "eight wide align right column padded">
       <h2>Enrollment</h2>
       <table class="ui celled striped table">
         <thead>
@@ -71,12 +71,12 @@
           <td>
             <button class="ui blue button" id="enrollButton{{this.classid}}" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">Enroll</button>
             <script type="text/javascript">
-              if(({{this.maxMembers}} - {{this.currMembers}}) === 0){
-                document.getElementById("enrollButton{{this.id}}").className = "ui red disabled button";
-                document.getElementById("enrollButton{{this.id}}").textContent = "Full";
+              if({{this.maxMembers}} - {{this.dayTime.[0].memberList.length}} === 0 && !{{../user.trainer}}){
+                document.getElementById("enrollButton{{this.classid}}").className = "ui red disabled button";
+                document.getElementById("enrollButton{{this.classid}}").textContent = "Full";
               }
-              else if({{user.trainer}} === false){
-                document.getElementById("enrollButton{{this.id}}").className = "ui disabled button";
+              else if({{../user.trainer}}){
+                document.getElementById("enrollButton{{this.classid}}").className = "ui disabled button";
               }
             </script>
           </td>

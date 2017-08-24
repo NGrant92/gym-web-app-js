@@ -15,6 +15,7 @@ const trainerboard = {
   index(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     let member = userStore.getUserById(request.param.id);
+
     //populating the viewData variable with the necessary information to load the page
     const viewData = {
       title: 'Dashboard',

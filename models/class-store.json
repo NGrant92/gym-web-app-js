@@ -4,20 +4,22 @@
       "classid": "class00",
       "name": "Yoga",
       "duration": "30",
-      "maxMembers": "15",
+      "maxMembers": "10",
       "currMembers": "7",
       "difficulty": "Beginners",
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "dayTime": [
         {
+          "lessonid": "lesson00",
           "day": "Monday",
-          "time": "17:00"
+          "time": "17:00",
+          "date": "05-07-17",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
         }
-      ],
-      "memberList": [
-        "3ad52697-6d98-4d80-8273-084de55a86c0",
-        "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
       ]
     },
     {
@@ -31,21 +33,35 @@
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "dayTime": [
         {
+          "lessonid": "lesson01",
           "day": "Monday",
-          "time": "06:00"
+          "time": "06:00",
+          "date": "05-07-17",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
         },
         {
+          "lessonid": "lesson02",
           "day": "Wednesday",
-          "time": "06:00"
+          "time": "06:00",
+          "date": "05-07-17",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
         },
         {
+          "lessonid": "lesson00",
           "day": "Friday",
-          "time": "06:00"
+          "time": "06:00",
+          "date": "05-07-17",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
         }
-      ],
-      "memberList": [
-        "3ad52697-6d98-4d80-8273-084de55a86c0",
-        "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
       ]
     },
     {
@@ -59,17 +75,25 @@
       "weeks": "7",
       "dayTime": [
         {
+          "lessonid": "lesson03",
           "day": "Sunday",
-          "time": "12:00"
+          "time": "12:00",
+          "date": "05-07-17",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
         },
         {
+          "lessonid": "lesson04",
           "day": "Wednesday",
-          "time": "18:00"
+          "time": "18:00",
+          "date": "05-07-17",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
         }
-      ],
-      "memberList": [
-          "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
       ]
     }
   ]
