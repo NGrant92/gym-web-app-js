@@ -17,8 +17,14 @@
           "lessonid": "lesson00",
           "date": "Monday, October 5th, 2017, 5:00pm",
           "memberList":[
-            "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            {
+              "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+              "enrolled": true
+            },
+            {
+              "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+              "enrolled": true
+            }
           ]
         }
       ]
