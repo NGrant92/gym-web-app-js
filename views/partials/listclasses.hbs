@@ -3,8 +3,15 @@
     <div class = "four wide column middle aligned grid">
       <img class="ui fluid image" src="{{this.img}}">
     </div>
-    <div class = "five wide align right column padded">
+    <div class = "six wide column grid">
       <h2>{{this.difficulty}} {{this.name}}</h2>
+      <div class="ui divider"></div>
+      <p>
+        {{this.bio}}
+      </p>
+    </div>
+    <div class = "six wide middle aligned column padded">
+      <br>
       <table class="ui celled striped table">
         <thead>
         <tr><th colspan="3">
@@ -24,16 +31,7 @@
           </td>
           <td>{{this.duration}}mins</td>
         </tr>
-        <tr>
-          <td class="collapsing">
-            <b>Availability</b>
-          </td>
-          <td id="spaces{{this.classid}}">
-            <script>
-              document.getElementById("spaces{{this.classid}}").textContent = ({{this.maxMembers}} - {{this.lessonList.[0].memberList.length}}) + ' spaces remaining';
-            </script>
-        </tr>
-          </td>
+        </td>
         <tr>
           <td>
             <b>Length</b>
@@ -54,49 +52,75 @@
         </tbody>
       </table>
     </div>
-
-    <div class = "seven wide align right column padded">
+    <div class = "sixteen wide column padded">
       <h2>Enrollment</h2>
-      <table class="ui celled striped table">
+      <table class="ui single line table">
         <thead>
-        <tr><th colspan="3">
-          <br>
-        </th></tr>
+        <tr>
+          <th class="seven wide">Dates</th>
+          <th class="six wide">Availability</th>
+          <th>Attend</th>
+        </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td>
-            <b>All Classes</b>
-          </td>
-          <td>
-            <button class="ui blue button" id="enrollButton{{this.classid}}" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">Enroll</button>
-            <script type="text/javascript">
-              if({{this.maxMembers}} - {{this.lessonList.[0].memberList.length}} === 0 && !{{../user.trainer}}){
-                document.getElementById("enrollButton{{this.classid}}").className = "ui red disabled button";
-                document.getElementById("enrollButton{{this.classid}}").textContent = "Full";
-              }
-              else if({{../user.trainer}}){
-                document.getElementById("enrollButton{{this.classid}}").className = "ui disabled button";
-              }
-            </script>
-          </td>
-        </tr>
-        <tr>
-          <td class="collapsing">
-            <b>Specific Class</b>
-          </td>
-          <td>
-            <select class="ui fluid search dropdown" name="day">
-              <option value="">Select a Day</option>
-              {{#each lessonList}}
-                <option value="">{{this.date}}</option>
-              {{/each}}
-            </select>
-            <br>
-            <button class="ui small primary button"> Sign Up </button>
-          </td>
-        </tr>
       </table>
+      <div class="ui fluid menu" style="overflow:auto;max-height:239px;">
+        <table class="ui single line table">
+          <tbody>
+          <tr>
+            <td class="seven wide">
+              All Classes
+            </td>
+            <td>
+            </td>
+            <td>
+              <button class="ui blue button" id="allClasses{{this.classid}}" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">Enroll</button>
+              <script type="text/javascript">
+                if({{../user.trainer}}){
+                  document.getElementById("allClasses{{this.classid}}").className = "ui disabled button";
+                }
+                else if({{checkAllMemLessons this.lessonList ../user.id}}){
+                  document.getElementById("allClasses{{this.classid}}").className = "ui red icon button";
+                  document.getElementById("allClasses{{this.classid}}").innerHTML = '<i class="delete icon"></i>';
+                }
+                else if({{checkAllLessons this}}){
+                  document.getElementById("allClasses{{this.classid}}").className = "ui red disabled button";
+                  document.getElementById("allClasses{{this.classid}}").textContent = "Full";
+                }
+              </script>
+            </td>
+          </tr>
+          {{#each lessonList}}
+            <tr>
+              <td>
+                {{this.date}}
+              </td>
+              <td  class="six wide" id="attendance{{this.lessonid}}">
+                <script>
+                  document.getElementById("attendance{{this.lessonid}}").textContent = ({{../maxMembers}} - {{this.memberList.length}}) + ' spaces remaining';
+                </script>
+              </td>
+              <td class="four wide">
+                <button class="ui blue button" id="lessonButton{{this.lessonid}}" onclick="window.location='/classes/{{../this.classid}}/fullEnroll'">Enroll</button>
+                <script type="text/javascript">
+
+                  if({{../../user.trainer}}){
+                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui disabled button";
+                  }
+                  else if({{checkLesson this.memberList ../../user.id}} >= 0){
+                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui red icon button";
+                    document.getElementById("lessonButton{{this.lessonid}}").innerHTML = '<i class="delete icon"></i>';
+                  }
+                  else if({{../maxMembers}} - {{this.memberList.length}} === 0){
+                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui red disabled button";
+                    document.getElementById("lessonButton{{this.lessonid}}").textContent = "Full";
+                  }
+                </script>
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <br>

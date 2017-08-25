@@ -5,7 +5,7 @@
       "name": "Yoga",
       "duration": "30",
       "maxMembers": "10",
-      "currMembers": "7",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula dictum mauris, vel fermentum nunc blandit non. Etiam consequat ligula ut metus lacinia, ac porta lectus venenatis. Integer pretium id ante aliquet eleifend.",
       "difficulty": "Beginners",
       "days": [
         "17:00 Monday"
@@ -15,16 +15,58 @@
       "lessonList": [
         {
           "lessonid": "lesson00",
-          "date": "Monday, October 5th, 2017, 5:00pm",
+          "date": "Thursday, October 5th, 2017, 5:00pm",
           "memberList":[
-            {
-              "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-              "enrolled": true
-            },
-            {
-              "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-              "enrolled": true
-            }
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
+        },
+        {
+          "lessonid": "lesson05",
+          "date": "Thursday, October 12th, 2017, 5:00pm",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
+        },
+        {
+          "lessonid": "lesson06",
+          "date": "Thursday, October 19th, 2017, 5:00pm",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
+        },
+        {
+          "lessonid": "lesson07",
+          "date": "Thursday, October 26th, 2017, 5:00pm",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
+        },
+        {
+          "lessonid": "lesson08",
+          "date": "Thursday, November 2nd, 2017, 5:00pm",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
+        },
+        {
+          "lessonid": "lesson09",
+          "date": "Thursday, November 9th, 2017, 5:00pm",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          ]
+        },
+        {
+          "lessonid": "lesson10",
+          "date": "Thursday, November 16th, 2017, 5:00pm",
+          "memberList":[
+            "3ad52697-6d98-4d80-8273-084de55a86c0",
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
         }
       ]
@@ -34,7 +76,7 @@
       "name": "Yoga",
       "duration": "60",
       "maxMembers": "10",
-      "currMembers": "7",
+      "bio": "Phasellus eu felis sit amet risus feugiat egestas nec quis metus. Pellentesque tempus luctus dui, ultricies tincidunt erat. Maecenas ut dignissim magna. Ut faucibus sagittis sem, venenatis consectetur purus suscipit et. Donec pulvinar felis sed libero tincidunt vestibulum. Integer aliquet nibh dignissim sapien fermentum, vel lacinia metus convallis.",
       "difficulty": "Advanced",
       "days": [
         "06:00 Monday",
@@ -61,7 +103,7 @@
           ]
         },
         {
-          "lessonid": "lesson00",
+          "lessonid": "lesson14",
           "date": "Friday, October 9th, 2017, 6:00am",
           "memberList":[
             "3ad52697-6d98-4d80-8273-084de55a86c0",
@@ -74,8 +116,8 @@
       "classid": "class02",
       "name": "Boxercise",
       "duration": "30",
-      "maxMembers": "15",
-      "currMembers": "7",
+      "maxMembers": "2",
+      "bio": "Aliquam dictum quam mi, non vestibulum turpis pharetra vitae. Nam eget dolor sem. Aliquam erat volutpat. Integer erat sem, lobortis tempus interdum a, semper quis lacus. Vivamus bibendum erat magna, ut ullamcorper ante malesuada elementum. Nullam non rhoncus risus. Nam non pulvinar tellus, quis tincidunt ligula. Nulla quis nunc magna. In vel velit rutrum, dictum lorem ac, molestie purus. Curabitur sed tincidunt elit. Pellentesque ut nisl felis. Phasellus nec elit risus. In lobortis nulla nec diam interdum, vel pulvinar dolor ornare.",
       "difficulty": "Intermediate",
       "days": [
         "18:00 Wednesday",
@@ -83,7 +125,6 @@
       ],
       "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
-
       "lessonList": [
         {
           "lessonid": "lesson03",
