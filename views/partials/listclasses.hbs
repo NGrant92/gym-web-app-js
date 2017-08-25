@@ -73,18 +73,18 @@
             <td>
             </td>
             <td>
-              <button class="ui blue button" id="allClasses{{this.classid}}" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">Enroll</button>
+              <button class="ui blue button" id="allClasses{{this.classid}}" style="float: left;" onclick="window.location='/classes/{{this.classid}}/fullEnroll'">All</button>
+              <button class="ui red icon button" id="noClasses{{this.classid}}" style="display: none; float: left;" onclick="window.location='/classes/{{this.classid}}/fullUnenroll'"><i class="delete icon"></i></button>
               <script type="text/javascript">
                 if({{../user.trainer}}){
                   document.getElementById("allClasses{{this.classid}}").className = "ui disabled button";
                 }
                 else if({{checkAllMemLessons this.lessonList ../user.id}}){
-                  document.getElementById("allClasses{{this.classid}}").className = "ui red icon button";
-                  document.getElementById("allClasses{{this.classid}}").innerHTML = '<i class="delete icon"></i>';
-                  document.getElementById("allClasses{{this.classid}}").onclick = "window.location = '/classes/{{this.classid}}/fullUnenroll'";
+                  document.getElementById("noClasses{{this.classid}}").style.display = "block";
+                  document.getElementById("allClasses{{this.classid}}").className = "ui disabled button";
                 }
                 else if({{checkAllLessons this}}){
-                  document.getElementById("allClasses{{this.classid}}").className = "ui red disabled button";
+                  document.getElementById("allClasses{{this.classid}}").className = "ui red disabled icon button";
                   document.getElementById("allClasses{{this.classid}}").textContent = "Full";
                 }
               </script>
@@ -101,18 +101,19 @@
                 </script>
               </td>
               <td class="four wide">
-                <button class="ui blue button" id="lessonButton{{this.lessonid}}" onclick="window.location='/classes/{{../this.classid}}/fullEnroll'">Enroll</button>
+                <button class="ui blue icon button" id="lessonButton{{this.lessonid}}" style="float: left;" onclick="window.location='/classes/{{../this.classid}}/enroll/{{this.lessonid}}'">Enroll</button>
+                <button class="ui red icon button" id="noLesson{{this.lessonid}}" style="display: none; float: left;" onclick="window.location='/classes/{{../this.classid}}/unenroll/{{this.lessonid}}'"><i class="delete icon"></i></button>
                 <script type="text/javascript">
 
                   if({{../../user.trainer}}){
                     document.getElementById("lessonButton{{this.lessonid}}").className = "ui disabled button";
                   }
                   else if({{checkLesson this.memberList ../../user.id}} >= 0){
-                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui red icon button";
-                    document.getElementById("lessonButton{{this.lessonid}}").innerHTML = '<i class="delete icon"></i>';
+                    document.getElementById("noLesson{{this.lessonid}}").style.display = "block";
+                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui disabled icon button";
                   }
                   else if({{../maxMembers}} - {{this.memberList.length}} === 0){
-                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui red disabled button";
+                    document.getElementById("lessonButton{{this.lessonid}}").className = "ui red disabled icon button";
                     document.getElementById("lessonButton{{this.lessonid}}").textContent = "Full";
                   }
                 </script>

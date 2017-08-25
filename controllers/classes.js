@@ -5,6 +5,7 @@ const classStore = require('../models/class-store');
 const pictureStore = require('../models/picture-store');
 const accounts = require('./accounts.js');
 const logger = require('../utils/logger');
+const _ = require('lodash');
 const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
 const classes = {
@@ -90,6 +91,33 @@ const classes = {
 
     response.redirect('/classes');
   },
+
+  unenroll(request, response) {
+    let userid = accounts.getCurrentUser(request).id;
+    let lessonList = classStore.getClassList(request.params.classid)[0].lessonList;
+    let memberList = _.filter(lessonList, { lessonid: request.params.lessonid })[0].memberList;
+    let memberIndex = memberList.indexOf(userid);
+
+    classStore.removeMember(memberIndex, memberList);
+    logger.info('Lodash: ', userid);
+    response.redirect('/classes');
+  },
+
+  enroll(request, response){
+    let userid = accounts.getCurrentUser(request).id;
+    let classArr = classStore.getClassList(request.params.classid)[0];
+    let memberList = _.filter(classArr.lessonList, { lessonid: request.params.lessonid })[0].memberList;
+
+    if (memberList.indexOf(userid) < 0){
+
+      logger.info('Member to be added to lesson: ', memberList);
+      memberList.push(userid);
+      classStore.store.save();
+      logger.info('Member added to lesson: ', memberList);
+    }
+
+    response.redirect('/classes');
+  }
 };
 
 module.exports = classes;

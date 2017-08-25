@@ -26,11 +26,11 @@ Handlebars.registerHelper('checkLesson', function (memberList, userid) {
 });
 
 Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
-  let isEnrolled = false;
+  let isEnrolled = true;
 
   for (let i = 0; i < lessonList.length; i++) {
-    if (lessonList[i].memberList.indexOf(userid) >= 0) {
-      isEnrolled = true;
+    if (lessonList[i].memberList.indexOf(userid) < 0) {
+      isEnrolled = false;
       break;
     }
   }
