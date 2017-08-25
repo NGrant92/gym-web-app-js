@@ -81,6 +81,17 @@
           "upperArm": 0,
           "waist": 0,
           "hips": 0
+        },
+        {
+          "id": "5969861a-cfe6-415d-bf97-f7e787ee2f25",
+          "date": "25-08-17",
+          "weight": "11",
+          "chest": "11",
+          "thigh": "11",
+          "upperArm": "11",
+          "waist": "11",
+          "hips": "11",
+          "comment": ""
         }
       ]
     }

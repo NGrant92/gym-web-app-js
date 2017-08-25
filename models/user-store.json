@@ -58,7 +58,7 @@
       "firstname": "Bart",
       "lastname": "Simpson",
       "gender": "Male",
-      "email": "bartz@simpson.com",
+      "email": "bart@simpson.com",
       "password": "secret",
       "address": "Springfield",
       "height": "1.70",

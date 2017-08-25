@@ -4,7 +4,7 @@ const logger = require('../utils/logger');
 const _ = require('lodash');
 const JsonStore = require('./json-store');
 
-const goalStore = {
+const assessStore = {
 
   store: new JsonStore('./models/assess-store.json', { assessmentCollection: [] }),
   collection: 'assessmentCollection',
@@ -27,8 +27,7 @@ const goalStore = {
   },
 
   removeAssessmentList(id) {
-    const assessment = this.getGoalList(id);
-    this.store.remove(this.collection, assessment);
+    this.store.remove(this.collection, this.getAssessmentList(id));
     this.store.save();
   },
 
@@ -54,4 +53,4 @@ const goalStore = {
   },
 };
 
-module.exports = goalStore;
+module.exports = assessStore;

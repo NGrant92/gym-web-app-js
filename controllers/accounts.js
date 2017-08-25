@@ -64,7 +64,7 @@ const accounts = {
       assessments: [
         {
           id: uuid(),
-          date: dateformat(new Date(), 'dd-mm-yyyy'),
+          date: dateformat(new Date(), 'dd-mm-yy'),
           weight: user.startWeight,
           chest: 0,
           thigh: 0,
