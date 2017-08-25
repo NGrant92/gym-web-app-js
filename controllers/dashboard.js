@@ -13,8 +13,9 @@ const dashboard = {
 
     logger.info('dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
+    const userbmi = [];
 
-    if(loggedInUser.trainer === true){
+    if (loggedInUser.trainer === true) {
       response.redirect('/trainerboard');
     }
 
@@ -28,21 +29,18 @@ const dashboard = {
       return dateB - dateA;
     });
 
-    //Updating the user's weight with their most recent assessment weight measurement
-    //It's done here so it'll update when an assessment is added OR deleted
-    loggedInUser.weight = assessmentArr[0].weight;
-
     //Adding new keys into the logged in user and giving the apropriate values
     //determined by the calcualtions done by analytics.js
-    loggedInUser.bmi = analytics.calculateBMI(loggedInUser.height, loggedInUser.weight);
-    loggedInUser.bmiCategory = analytics.determineBMICategory(loggedInUser.bmi);
-    loggedInUser.idealWeight = analytics.idealWeightIndicator(loggedInUser);
-
+    userbmi.latestweight = assessmentArr[0].weight;
+    userbmi.bmi = analytics.calculateBMI(loggedInUser.height, userbmi.latestweight);
+    userbmi.bmiCategory = analytics.determineBMICategory(userbmi.bmi);
+    userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
     //populating the viewData variable with the necessary information to load the page
     const viewData = {
       title: 'Dashboard',
       goallist: goalStore.getUserGoalList(loggedInUser.id),
       user: loggedInUser,
+      bmi: userbmi,
       assessments: assessmentArr,
       classes: classStore,
     };

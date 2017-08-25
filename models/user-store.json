@@ -9,13 +9,10 @@
       "password": "secret",
       "address": "Springfield",
       "height": 2,
-      "weight": "170",
+      "weight": "175",
       "startWeight": 200,
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499859614/hyno1rni4akvgwv0dyq2.jpg",
-      "trainer": false,
-      "bmi": "42.50",
-      "bmiCategory": "VERY SEVERELY OBESE",
-      "idealWeight": "red"
+      "trainer": false
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -26,7 +23,6 @@
       "password": "secret",
       "address": "Springfield",
       "height": 2,
-      "weight": 100,
       "startWeight": 100,
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg",
       "trainer": false
@@ -43,6 +39,33 @@
       "weight": 180,
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
       "trainer": true
+    },
+    {
+      "firstname": "Niall",
+      "lastname": "Grant",
+      "gender": "Male",
+      "email": "niall@simpson.com",
+      "password": "secret",
+      "address": "Ireland",
+      "height": "1.75",
+      "weight": "68",
+      "trainer": false,
+      "id": "b382ba18-46ea-49d9-b089-22cc69068809",
+      "startWeight": "68",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg"
+    },
+    {
+      "firstname": "Bart",
+      "lastname": "Simpson",
+      "gender": "Male",
+      "email": "bartz@simpson.com",
+      "password": "secret",
+      "address": "Springfield",
+      "height": "1.70",
+      "startWeight": "77",
+      "trainer": false,
+      "id": "316c6e7b-9706-4337-b198-13f9e92733d0",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg"
     }
   ]
 }

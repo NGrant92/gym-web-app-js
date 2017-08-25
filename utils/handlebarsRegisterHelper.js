@@ -26,7 +26,7 @@ Handlebars.registerHelper('checkLesson', function (memberList, userid) {
 });
 
 Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
-  let isEnrolled;
+  let isEnrolled = false;
 
   for (let i = 0; i < lessonList.length; i++) {
     if (lessonList[i].memberList.indexOf(userid) >= 0) {
@@ -34,8 +34,8 @@ Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
       break;
     }
   }
+
   return isEnrolled;
 });
-
 
 module.exports = Handlebars;

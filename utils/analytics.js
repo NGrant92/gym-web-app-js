@@ -96,16 +96,16 @@ const analytics = {
    * Returns a string with a colour to be used in the dashboard for ideal weight indicator
    * @return String with a colour in it
    */
-  idealWeightIndicator(user) {
+  idealWeightIndicator(height, weight, gender) {
   
     //calculates what the ideal body weight should be for the member
-    const idealWeight = this.isIdealBodyWeight(user.height, user.gender);
+    const idealWeight = this.isIdealBodyWeight(height, gender);
   
     //if member weight is within a certain range it will return a certain colour
-    if (idealWeight >= (user.weight - 2) && idealWeight <= (user.weight + 2)) {
+    if (idealWeight >= (weight - 2) && idealWeight <= (weight + 2)) {
       return 'green';
     }
-    else if (idealWeight >= (user.weight - 5) && idealWeight <= (user.weight + 5)) {
+    else if (idealWeight >= (weight - 5) && idealWeight <= (weight + 5)) {
       return 'orange';
     }
     else {

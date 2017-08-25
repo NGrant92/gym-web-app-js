@@ -38,11 +38,9 @@ const accounts = {
   register(request, response) {
     const user = request.body;
     const newUserId = uuid();
-    let profilePic = '';
 
     user.trainer = false;
     user.id = newUserId;
-    user.startWeight = user.weight;
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
 
@@ -52,7 +50,7 @@ const accounts = {
     else {
       user.img = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
     }
-    
+
     const newGoalList = {
       id: uuid(),
       userid: newUserId,
@@ -63,20 +61,25 @@ const accounts = {
 
     const newAssessList = {
       userid: newUserId,
-      assessments: [{
-        id: uuid(),
-        date: dateformat(new Date(), 'dd-mm-yyyy'),
-        weight: user.weight,
-        chest: 0,
-        thigh: 0,
-        upperArm: 0,
-        waist: 0,
-        hips: 0,
-      },
+      assessments: [
+        {
+          id: uuid(),
+          date: dateformat(new Date(), 'dd-mm-yyyy'),
+          weight: user.startWeight,
+          chest: 0,
+          thigh: 0,
+          upperArm: 0,
+          waist: 0,
+          hips: 0,
+        },
       ],
     };
     logger.info('Creating new Assessment List', newAssessList);
     assessStore.addAssessmentList(newAssessList);
+
+    userstore.store.save();
+    goalStore.store.save();
+    assessStore.store.save();
 
     response.redirect('/');
   },
@@ -87,14 +90,14 @@ const accounts = {
     if (user && user.password === request.body.password) {
       response.cookie('user', user.id);
       logger.info(`logging in ${user.email}`);
-      
+
       if (user.trainer === true) {
         response.redirect('/trainerboard');
       }
       else {
         response.redirect('/dashboard');
       }
-      
+
     } else {
       response.redirect('/login/');
     }
@@ -109,19 +112,19 @@ const accounts = {
     let user = accounts.getCurrentUser(request);
     const newUser = request.body;
 
-    user.firstName = newUser.firstName;
-    user.lastName = newUser.lastName;
+    user.firstname = newUser.firstname;
+    user.lastname = newUser.lastname;
     user.email = newUser.email;
     user.address = newUser.address;
     user.password = newUser.password;
     user.gender = newUser.gender;
     user.height = newUser.height;
-    user.weight = newUser.weight;
 
+    userstore.store.save();
     logger.info(`updating ${newUser.email}`);
     response.redirect('/dashboard');
   },
-  
+
   uploadPicture(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     userstore.addPicture(loggedInUser.id, request.files.picture, function () {
