@@ -81,6 +81,7 @@
                 else if({{checkAllMemLessons this.lessonList ../user.id}}){
                   document.getElementById("allClasses{{this.classid}}").className = "ui red icon button";
                   document.getElementById("allClasses{{this.classid}}").innerHTML = '<i class="delete icon"></i>';
+                  document.getElementById("allClasses{{this.classid}}").onclick = "window.location = '/classes/{{this.classid}}/fullUnenroll'";
                 }
                 else if({{checkAllLessons this}}){
                   document.getElementById("allClasses{{this.classid}}").className = "ui red disabled button";

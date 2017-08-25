@@ -5,7 +5,7 @@
       "name": "Yoga",
       "duration": "30",
       "maxMembers": "10",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula dictum mauris, vel fermentum nunc blandit non. Etiam consequat ligula ut metus lacinia, ac porta lectus venenatis. Integer pretium id ante aliquet eleifend.",
+      "bio": "There are two way you can start yoga. The best way is to join a beginners yoga course, also known as a foundation course and get the basics down. As you might expect a beginners yoga course is specifically designed for people new to yoga.  Our teachers explain the yoga terms and the etiquette of yoga classes and taking you slowly through the basic poses building up your confidence and strength so you can explore more of the yoga world  when you are finished. By the end of the beginners yoga course weeks you will know your elbow from your asana.",
       "difficulty": "Beginners",
       "days": [
         "17:00 Monday"
@@ -16,57 +16,64 @@
         {
           "lessonid": "lesson00",
           "date": "Thursday, October 5th, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         },
         {
           "lessonid": "lesson05",
           "date": "Thursday, October 12th, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         },
         {
           "lessonid": "lesson06",
           "date": "Thursday, October 19th, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         },
         {
           "lessonid": "lesson07",
           "date": "Thursday, October 26th, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         },
         {
           "lessonid": "lesson08",
           "date": "Thursday, November 2nd, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         },
         {
           "lessonid": "lesson09",
           "date": "Thursday, November 9th, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         },
         {
           "lessonid": "lesson10",
           "date": "Thursday, November 16th, 2017, 5:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
-            "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+            "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+            "316c6e7b-9706-4337-b198-13f9e92733d0"
           ]
         }
       ]
@@ -76,7 +83,7 @@
       "name": "Yoga",
       "duration": "60",
       "maxMembers": "10",
-      "bio": "Phasellus eu felis sit amet risus feugiat egestas nec quis metus. Pellentesque tempus luctus dui, ultricies tincidunt erat. Maecenas ut dignissim magna. Ut faucibus sagittis sem, venenatis consectetur purus suscipit et. Donec pulvinar felis sed libero tincidunt vestibulum. Integer aliquet nibh dignissim sapien fermentum, vel lacinia metus convallis.",
+      "bio": "A traditional class from Mysore in India where students self practice the ashtanga primary series under the guidance of a teacher who corrects alignment and gives adjustments to deepen postures. A wonderful chance to explore your practice whilst receiving hands on realignments.",
       "difficulty": "Advanced",
       "days": [
         "06:00 Monday",
@@ -89,7 +96,7 @@
         {
           "lessonid": "lesson01",
           "date": "Monday, October 5th, 2017, 6:00am",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
@@ -97,7 +104,7 @@
         {
           "lessonid": "lesson02",
           "date": "Wednesday, October 7th, 2017, 6:00am",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
@@ -105,7 +112,7 @@
         {
           "lessonid": "lesson14",
           "date": "Friday, October 9th, 2017, 6:00am",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
@@ -129,7 +136,7 @@
         {
           "lessonid": "lesson03",
           "date": "Friday, October 4th, 2017, 12:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
@@ -137,7 +144,7 @@
         {
           "lessonid": "lesson04",
           "date": "Wednesday, October 7th, 2017, 6:00pm",
-          "memberList":[
+          "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]

@@ -35,6 +35,7 @@ const dashboard = {
     userbmi.bmi = analytics.calculateBMI(loggedInUser.height, userbmi.latestweight);
     userbmi.bmiCategory = analytics.determineBMICategory(userbmi.bmi);
     userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
+
     //populating the viewData variable with the necessary information to load the page
     const viewData = {
       title: 'Dashboard',

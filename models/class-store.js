@@ -20,6 +20,14 @@ const classStore = {
   getClassList(classid) {
     return this.store.findBy(this.collection, { classid: classid });
   },
+
+  removeMember(memberIndex, memberList) {
+
+    logger.debug(`member list: `, memberList);
+    _.pullAt(memberList, memberIndex);
+    logger.debug(`new member list: `, memberList);
+    this.store.save();
+  },
 };
 
 module.exports = classStore;

@@ -39,6 +39,14 @@ const accounts = {
     const user = request.body;
     const newUserId = uuid();
 
+    //a for each loop to ensure an email only belongs to one account
+    for(let i = 0; i < userstore.length; i++){
+      if(userstore[i].email === user.email){
+        logger.info('Email already registered: ', user.email);
+        response.redirect('/');
+      }
+    }
+
     user.trainer = false;
     user.id = newUserId;
     userstore.addUser(user);
