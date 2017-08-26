@@ -11,7 +11,7 @@ const settings = {
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: 'Profile Settings',
-      user: loggedInUser,
+      member: loggedInUser,
     };
     logger.info('about to render', loggedInUser);
     response.render('settings', viewData);

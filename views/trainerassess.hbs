@@ -15,9 +15,11 @@
         <div class="ui releaxed divided items">
           <div class="item">
             <div class="content">
-              <div class="ui horizontal divider">
+              <div class="ui horizontal divider" id="assessNum{{date}}">
                 <i class="bar chart icon"></i>
-                Assessment #
+                <script>
+                  document.getElementById("assessNum{{date}}").textContent = "Assessment #" + ({{@index}} + 1);
+                </script>
               </div>
               <table class = "ui celled table middle aligned segment">
                 <thead>
@@ -29,21 +31,19 @@
                   <th>Upper Arm</th>
                   <th>Waist</th>
                   <th>Hips</th>
-                  <th>Trend</th>
                   <th>Comments</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>{{assessments.date}}</td>
-                  <td>{{assessments.weight}}</td>
-                  <td>{{assessments.chest}}</td>
-                  <td>{{assessments.thigh}}</td>
-                  <td>{{assessments.upperArm}}</td>
-                  <td>{{assessments.waist}}</td>
-                  <td>{{assessments.hips}}</td>
-                  <td><i class=""></i></td>
-                  <td>{{assessments.comment}}</td>
+                  <td>{{date}}</td>
+                  <td>{{weight}}kg</td>
+                  <td>{{chest}}mm</td>
+                  <td>{{thigh}}mm</td>
+                  <td>{{upperArm}}mm</td>
+                  <td>{{waist}}mm</td>
+                  <td>{{hips}}mm</td>
+                  <td>{{comment}}</td>
                 </tr>
                 </tbody>
               </table>
@@ -61,7 +61,6 @@
             </div>
           </div>
         </div>
-
       {{/each}}
     </section>
   </div>

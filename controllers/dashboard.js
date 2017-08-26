@@ -29,8 +29,7 @@ const dashboard = {
       return dateB - dateA;
     });
 
-    //Adding new keys into the logged in user and giving the apropriate values
-    //determined by the calcualtions done by analytics.js
+    //bmi information of the member, determined by the calcualtions done by analytics.js
     userbmi.latestweight = assessmentArr[0].weight;
     userbmi.bmi = analytics.calculateBMI(loggedInUser.height, userbmi.latestweight);
     userbmi.bmiCategory = analytics.determineBMICategory(userbmi.bmi);
@@ -40,7 +39,7 @@ const dashboard = {
     const viewData = {
       title: 'Dashboard',
       goallist: goalStore.getUserGoalList(loggedInUser.id),
-      user: loggedInUser,
+      member: loggedInUser,
       bmi: userbmi,
       assessments: assessmentArr,
       classes: classStore,

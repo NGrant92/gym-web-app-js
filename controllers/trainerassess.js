@@ -15,13 +15,31 @@ const trainerassess = {
   index(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     let member = userStore.getUserById(request.params.memberid);
+    const memberbmi = [];
+
+    const assessmentArr = assessStore.getUserAssessmentList(member.id)[0].assessments;
+
+    //This sort function is used to sort the assessments by date in descending order
+    assessmentArr.sort(function (a, b) {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      return dateB - dateA;
+    });
+
+    //bmi information of the member, determined by the calcualtions done by analytics.js
+    memberbmi.latestweight = assessmentArr[0].weight;
+    memberbmi.bmi = analytics.calculateBMI(member.height, memberbmi.latestweight);
+    memberbmi.bmiCategory = analytics.determineBMICategory(memberbmi.bmi);
+    memberbmi.idealWeight = analytics.idealWeightIndicator(member.height, memberbmi.latestweight, member.gender);
 
     //populating the viewData variable with the nwecessary information to load the page
     const viewData = {
       title: 'Assessments',
       user: loggedInUser,
       member: member,
-      assessments: assessStore.getUserAssessmentList(member.id)[0].assessments,
+      assessments: assessmentArr,
+      bmi: memberbmi,
     };
     
     logger.info('about to render', viewData);

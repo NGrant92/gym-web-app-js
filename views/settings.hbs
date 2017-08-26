@@ -16,32 +16,32 @@
             <label>Name</label>
               <div class="two fields">
                 <div class="field">
-                  <input placeholder="First Name" type="text" name="firstname" value = "{{user.firstname}}">
+                  <input placeholder="First Name" type="text" name="firstname" value = "{{member.firstname}}">
                 </div>
                 <div class="field">
-                  <input placeholder="First Name" type="text" name="lastname" value = "{{user.lastname}}">
+                  <input placeholder="First Name" type="text" name="lastname" value = "{{member.lastname}}">
                 </div>
               </div>
             </div>
 
             <div class="field">
               <label>Email</label>
-              <input placeholder="Email" type="text" name="email" value = "{{user.email}}">
+              <input placeholder="Email" type="text" name="email" value = "{{member.email}}">
             </div>
 
             <div class="field">
               <label>Password</label>
-              <input placeholder="Password" type="password" name="password" value = "{{user.password}}">
+              <input placeholder="Password" type="password" name="password" value = "{{member.password}}">
             </div>
 
             <div class="field">
               <label>Address</label>
-              <input placeholder="Address" type="text" name="address" value = "{{user.address}}">
+              <input placeholder="Address" type="text" name="address" value = "{{member.address}}">
             </div>
 
             <label>Gender</label>
               <select class="ui dropdown" name = "gender">
-              <option value="{{user.gender}}" hidden>{{user.gender}}</option>
+              <option value="{{member.gender}}" hidden>{{member.gender}}</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
@@ -49,12 +49,12 @@
 
             <div class="field">
               <label>Height</label>
-              <input placeholder="Height" type="text" name="height" value = "{{user.height}}">
+              <input placeholder="Height" type="text" name="height" value = "{{member.height}}">
             </div>
 
             <div class="field">
               <label>Starting Weight</label>
-              <input placeholder="Starting Weight" type="text" name="weight" value = "{{user.startWeight}}">
+              <input placeholder="Starting Weight" type="text" name="weight" value = "{{member.startWeight}}">
             </div>
             <button class="ui blue submit button">Update</button>
           </form>
