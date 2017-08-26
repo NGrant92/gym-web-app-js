@@ -88,7 +88,6 @@ const classes = {
         logger.info('Removing from : ', memberList);
       }
     }
-
     response.redirect('/classes');
   },
 
@@ -114,6 +113,7 @@ const classes = {
       memberList.push(userid);
       classStore.store.save();
       logger.info('Member added to lesson: ', memberList);
+      classStore.store.save();
     }
 
     response.redirect('/classes');

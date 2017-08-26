@@ -1,20 +1,33 @@
 {{> menu id="dashboard"}}
 
-<section class="ui raised segment">
+<section class="ui padded raised segment">
   <header class="ui header">
-    List of Members
+    Members List
   </header>
-  <div class="ui relaxed divided list stacked segment">
-    {{#each members}}
-    <div class="item">
-      <i class="large {{toLowerCase gender}} middle aligned icon"></i>
-      <div class="content">
-        <a href="/trainerassess/{{members.id}}">{{firstname}} {{lastname}} </a>
-        <a href="/trainerboard/deleteMember/{{members.id}}" class="ui mini red icon button"><i class = "trash outline icon"></i></a>
-        <div class="description">{{assessmentSize}} assessments</div>
-      </div>
+  <br>
+    <table class="ui padded very basic celled table">
+      <thead>
+      <tr>
+        <th class="fifteen wide" >Members</th>
+        <th>Remove?</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each members}}
+        <tr>
+          <td>
+            <div style="float: left;">
+              <i class="large {{toLowerCase gender}} icon"></i>
+            </div>
+            <a href="/trainerassess/{{members.id}}">{{firstname}} {{lastname}}</a>
+            <div class="description" style="color: grey;">{{assessmentSize}} assessments</div>
+          </td>
+          <td>
+            <a href="/trainerboard/deleteMember/{{members.id}}" class="ui mini red icon button" style="float: center;"><i class = "trash outline icon"></i></a>
+          </td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
 
-    </div>
-    {{/each}}
-  </div>
 </section>

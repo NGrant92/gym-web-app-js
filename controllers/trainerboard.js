@@ -18,7 +18,7 @@ const trainerboard = {
 
     let members = userStore.getAllMembers();
     
-    for(var singleKey in members){
+    for (var singleKey in members) {
       members[singleKey].assessmentSize = assessStore.getUserAssessmentList(members[singleKey].id).length;
     }
     
