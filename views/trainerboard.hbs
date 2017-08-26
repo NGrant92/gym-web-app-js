@@ -19,11 +19,16 @@
             <div style="float: left;">
               <i class="large {{toLowerCase gender}} icon"></i>
             </div>
-            <a href="/trainerassess/{{members.id}}">{{firstname}} {{lastname}}</a>
-            <div class="description" style="color: grey;">{{assessmentSize}} assessments</div>
+            <a href="/trainerassess/{{id}}">{{firstname}} {{lastname}}</a>
+            <div class="description" id="assessmentNum{{id}}" style="color: grey;">{{assessmentSize}} assessments</div>
+            <script type="text/javascript">
+              if({{this.assessmentSize}} === 1){
+                document.getElementById("assessmentNum{{id}}").textContent = "{{assessmentSize}} assessment";
+              }
+            </script>
           </td>
           <td>
-            <a href="/trainerboard/deleteMember/{{members.id}}" class="ui mini red icon button" style="float: center;"><i class = "trash outline icon"></i></a>
+            <a href="/trainerboard/deleteMember/{{members.id}}" class="ui red icon button"><i class = "trash outline icon"></i></a>
           </td>
         </tr>
       {{/each}}

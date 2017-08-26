@@ -10,22 +10,22 @@ const analytics = require('../utils/analytics.js');
 const userStore = require('../models/user-store');
 const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
-const trainerboard = {
+const trainerassess = {
   
   index(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
-    let member = userStore.getUserById(request.param.id);
+    let member = userStore.getUserById(request.params.memberid);
 
-    //populating the viewData variable with the necessary information to load the page
+    //populating the viewData variable with the nwecessary information to load the page
     const viewData = {
-      title: 'Dashboard',
+      title: 'Assessments',
       user: loggedInUser,
       member: member,
       assessments: assessStore.getUserAssessmentList(member.id)[0].assessments,
     };
     
     logger.info('about to render', viewData);
-    response.render('trainerboard', viewData);
+    response.render('trainerassess', viewData);
   },
 
   addGoal(request, response) {
@@ -82,4 +82,4 @@ const trainerboard = {
   },
 };
 
-module.exports = trainerboard;
+module.exports = trainerassess;

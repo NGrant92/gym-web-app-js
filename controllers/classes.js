@@ -111,7 +111,6 @@ const classes = {
 
       logger.info('Member to be added to lesson: ', memberList);
       memberList.push(userid);
-      classStore.store.save();
       logger.info('Member added to lesson: ', memberList);
       classStore.store.save();
     }

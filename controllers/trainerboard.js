@@ -17,16 +17,17 @@ const trainerboard = {
     const loggedInUser = accounts.getCurrentUser(request);
 
     let members = userStore.getAllMembers();
-    
+
+    //for each loop to get the number of assessments which will be displayed on trainer board
     for (var singleKey in members) {
-      members[singleKey].assessmentSize = assessStore.getUserAssessmentList(members[singleKey].id).length;
+      members[singleKey].assessmentSize = assessStore.getUserAssessmentList(members[singleKey].id)[0].assessments.length;
     }
     
     //populating the viewData variable with the necessary information to load the page
     const viewData = {
       title: 'Dashboard',
       user: loggedInUser,
-      members: userStore.getAllMembers(),
+      members: members,
     };
     
     logger.info('about to render', viewData);
