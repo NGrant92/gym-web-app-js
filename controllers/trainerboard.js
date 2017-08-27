@@ -13,24 +13,24 @@ const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 const trainerboard = {
   
   index(request, response) {
-    logger.info('dashboard rendering');
+    //logger.debug('beginning of dashboard rendering');
     const loggedInUser = accounts.getCurrentUser(request);
 
     let members = userStore.getAllMembers();
 
     //for each loop to get the number of assessments which will be displayed on trainer board
-    for (var singleKey in members) {
+    for (let singleKey in members) {
       members[singleKey].assessmentSize = assessStore.getUserAssessmentList(members[singleKey].id)[0].assessments.length;
     }
-    
+
     //populating the viewData variable with the necessary information to load the page
     const viewData = {
-      title: 'Dashboard',
+      title: 'Trainer Dashboard',
       user: loggedInUser,
       members: members,
     };
     
-    logger.info('about to render', viewData);
+    logger.info('about to render', viewData.title);
     response.render('trainerboard', viewData);
   },
 };

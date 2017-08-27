@@ -24,7 +24,7 @@ const accounts = {
   },
 
   logout(request, response) {
-    response.cookie('playlist', '');
+    response.cookie('user', '');
     response.redirect('/');
   },
 

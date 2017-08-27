@@ -2,6 +2,7 @@
 
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
+const _ = require('lodash');
 const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
@@ -42,7 +43,7 @@ const trainerassess = {
       bmi: memberbmi,
     };
     
-    logger.info('about to render', viewData);
+    logger.info('about to render', viewData.title);
     response.render('trainerassess', viewData);
   },
 
@@ -69,34 +70,18 @@ const trainerassess = {
     response.redirect('/dashboard/');
   },
 
-  addAssessment(request, response) {
-
-    const loggedInUser = accounts.getCurrentUser(request);
-    const userId = request.params.id;
-
-    const newAssess = {
-      id: uuid(),
-      date: dateformat(new Date(), 'dd-mm-yy'),
-      weight: request.body.weight,
-      chest: request.body.chest,
-      thigh: request.body.thigh,
-      upperArm: request.body.upperArm,
-      waist: request.body.waist,
-      hips: request.body.hips,
-      comment: '',
-    };
-
-    logger.debug('New Assessment: ', newAssess);
-    assessStore.addAssessment(userId, newAssess);
-    response.redirect('/dashboard/');
-  },
-
-  deleteAssessment(request, response) {
-    const userId = request.params.id;
+  setComment(request, response) {
+    const memberId = request.params.memberid;
     const assessId = request.params.assessid;
-    logger.debug(`Deleting Assessment ${assessId} from Member ${userId}`);
-    assessStore.removeAssessment(userId, assessId);
-    response.redirect('/dashboard/');
+
+    const assessmentList = assessStore.getUserAssessmentList(memberId)[0].assessments;
+    const assessment = assessmentList[_.findIndex(assessmentList, { id: assessId })];
+
+    assessment.comment = request.body.comment;
+    assessStore.store.save();
+    logger.debug(`Adding comment to Assessment:`, request.body.comment);
+
+    response.redirect(`/trainerassess/${memberId}`);
   },
 };
 

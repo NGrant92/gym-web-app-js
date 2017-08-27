@@ -18,7 +18,7 @@
               <div class="ui horizontal divider" id="assessNum{{date}}">
                 <i class="bar chart icon"></i>
                 <script>
-                  document.getElementById("assessNum{{date}}").textContent = "Assessment #" + ({{@index}} + 1);
+                  document.getElementById("assessNum{{date}}").innerHTML= '<i class="bar chart icon"></i>' + ' Assessment #' + ({{@index}} + 1);
                 </script>
               </div>
               <table class = "ui celled table middle aligned segment">
@@ -48,7 +48,7 @@
                 </tbody>
               </table>
 
-              <form class="ui form" action="/trainerassess/setComment/{{member.id}}/{{assessment.id}}" method="POST">
+              <form class="ui form" action="/trainerassess/setcomment/{{../member.id}}/{{id}}" method="POST">
                 <div class="field">
                   <label>Add Comment</label>
                   <input placeholder="Comment" type="text" name="comment">

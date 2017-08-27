@@ -88,6 +88,7 @@ const classes = {
         logger.info('Removing from : ', memberList);
       }
     }
+
     response.redirect('/classes');
   },
 
@@ -98,16 +99,16 @@ const classes = {
     let memberIndex = memberList.indexOf(userid);
 
     classStore.removeMember(memberIndex, memberList);
-    logger.info('Lodash: ', userid);
+    logger.info('Lodash: ', memberList);
     response.redirect('/classes');
   },
 
-  enroll(request, response){
+  enroll(request, response) {
     let userid = accounts.getCurrentUser(request).id;
     let classArr = classStore.getClassList(request.params.classid)[0];
     let memberList = _.filter(classArr.lessonList, { lessonid: request.params.lessonid })[0].memberList;
 
-    if (memberList.indexOf(userid) < 0){
+    if (memberList.indexOf(userid) < 0) {
 
       logger.info('Member to be added to lesson: ', memberList);
       memberList.push(userid);
@@ -116,7 +117,7 @@ const classes = {
     }
 
     response.redirect('/classes');
-  }
+  },
 };
 
 module.exports = classes;

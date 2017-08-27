@@ -15,38 +15,43 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const userbmi = [];
 
+    //if the user is a trainer then it'll redirect to the trainer dashboard
     if (loggedInUser.trainer === true) {
+      logger.info('user is a trainer');
       response.redirect('/trainerboard');
     }
+    //'else' is required to prevent a "Cannot read property 'assessments' of undefined" error message
+    else{
+      logger.info('user is a member');
+      const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
 
-    const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
+      //This sort function is used to sort the assessments by date in descending order
+      assessmentArr.sort(function (a, b) {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
 
-    //This sort function is used to sort the assessments by date in descending order
-    assessmentArr.sort(function (a, b) {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
+        return dateB - dateA;
+      });
 
-      return dateB - dateA;
-    });
+      //bmi information of the member, determined by the calcualtions done by analytics.js
+      userbmi.latestweight = assessmentArr[0].weight;
+      userbmi.bmi = analytics.calculateBMI(loggedInUser.height, userbmi.latestweight);
+      userbmi.bmiCategory = analytics.determineBMICategory(userbmi.bmi);
+      userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
 
-    //bmi information of the member, determined by the calcualtions done by analytics.js
-    userbmi.latestweight = assessmentArr[0].weight;
-    userbmi.bmi = analytics.calculateBMI(loggedInUser.height, userbmi.latestweight);
-    userbmi.bmiCategory = analytics.determineBMICategory(userbmi.bmi);
-    userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
+      //populating the viewData variable with the necessary information to load the page
+      const viewData = {
+        title: 'Dashboard',
+        goallist: goalStore.getUserGoalList(loggedInUser.id),
+        member: loggedInUser,
+        bmi: userbmi,
+        assessments: assessmentArr,
+        classes: classStore,
+      };
 
-    //populating the viewData variable with the necessary information to load the page
-    const viewData = {
-      title: 'Dashboard',
-      goallist: goalStore.getUserGoalList(loggedInUser.id),
-      member: loggedInUser,
-      bmi: userbmi,
-      assessments: assessmentArr,
-      classes: classStore,
-    };
-
-    logger.info('about to render', viewData.title);
-    response.render('dashboard', viewData);
+      logger.info('about to render', viewData.title);
+      response.render('dashboard', viewData);
+    }
   },
 
   addGoal(request, response) {

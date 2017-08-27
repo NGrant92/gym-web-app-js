@@ -21,6 +21,7 @@ router.post('/authenticate', accounts.authenticate);
 router.get('/trainerboard', trainerboard.index);
 
 router.get('/trainerassess/:memberid', trainerassess.index);
+router.post('/trainerassess/setcomment/:memberid/:assessid', trainerassess.setComment);
 
 router.get('/dashboard', dashboard.index);
 router.get('/dashboard/:id/deletegoal/:goalid', dashboard.deleteGoal);
