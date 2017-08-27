@@ -1,0 +1,69 @@
+<div class="ui two column">
+  <form class="ui form" action="/settings/update" method="POST">
+    <br>
+    <h4 class="ui dividing header">Basic Information</h4>
+    <div class="three fields">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Class Name</label>
+        <input placeholder="Class Name" type="text" name="classname">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; Difficulty</label>
+        <select class="ui fluid search dropdown" name="difficulty">
+          <option value="" hidden>Difficulty</option>
+          <option value="Beginners">Beginners</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Max Members</label>
+        <input placeholder="Max Members" type="text" name="maxmembers">
+      </div>
+    </div>
+    <h4 class="ui dividing header">Duration</h4>
+    <div class="three fields">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Hours</label>
+        <input placeholder="Hours" type="text" name="hours">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Mins</label>
+        <input placeholder="Mins" type="text" name="mins">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; No. of Weeks</label>
+        <input placeholder="No. of Weeks" type="text" name="weeks">
+      </div>
+    </div>
+
+    <h4 class="ui dividing header">Time and Days</h4>
+    <div class="three fields">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Hour</label>
+        <input placeholder="Hours" type="text" name="timehour">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Min</label>
+        <input placeholder="Mins" type="text" name="timemin">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Days</label>
+        <input placeholder="No. of Weeks" type="text" name="days">
+      </div>
+    </div>
+
+    <h4 class="ui dividing header">Details</h4>
+    <div class="two fields">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Bio</label>
+        <input placeholder="Brief Description Here..." type="text" name="bio">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Images</label>
+        <input placeholder="Pick an image..." type="text" name="mins">
+      </div>
+    </div>
+    <button class="ui blue submit button">Submit</button>
+  </form>
+</div>
