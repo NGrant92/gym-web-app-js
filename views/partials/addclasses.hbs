@@ -41,15 +41,24 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Hour</label>
-        <input placeholder="Hours" type="text" name="timehour">
+        <input placeholder="Hour" type="text" name="timehour">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Min</label>
-        <input placeholder="Mins" type="text" name="timemin">
+        <input placeholder="Min" type="text" name="timemin">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Days</label>
-        <input placeholder="No. of Weeks" type="text" name="days">
+        <select name="days" multiple="" class="ui fluid dropdown">
+          <option value="">Days</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
       </div>
     </div>
 
@@ -57,13 +66,29 @@
     <div class="two fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Bio</label>
-        <input placeholder="Brief Description Here..." type="text" name="bio">
+        <textarea rows="3" placeholder="Description here..."></textarea>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Images</label>
-        <input placeholder="Pick an image..." type="text" name="mins">
+        <div class="ui fluid simple selection dropdown" style="height:75px;">
+          <input type="hidden" name="image">
+          <i class="dropdown icon"></i>
+          <div class="default text">Pick an image...</div>
+          <div class="menu" style="overflow:auto;max-height:239px;">
+            {{#each stockAlbum}}
+              <div class="item" data-value="{{this.picture}}">
+                <img class="ui massive image" src="{{this.picture}}">
+                {{this.title}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        <script>
+          $('.dropdown').dropdown();
+        </script>
       </div>
     </div>
+    <br>
     <button class="ui blue submit button">Submit</button>
   </form>
 </div>

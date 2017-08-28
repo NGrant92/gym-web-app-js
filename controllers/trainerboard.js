@@ -6,7 +6,7 @@ const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const assessStore = require('../models/assess-store.js');
-const analytics = require('../utils/analytics.js');
+const pictureStore = require('../models/picture-store.js');
 const userStore = require('../models/user-store');
 const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
@@ -28,9 +28,10 @@ const trainerboard = {
       title: 'Trainer Dashboard',
       user: loggedInUser,
       members: members,
+      stockAlbum: pictureStore.getStockAlbum().album,
     };
     
-    logger.info('about to render', viewData.title);
+    logger.info('about to render', viewData.stockAlbum);
     response.render('trainerboard', viewData);
   },
 };
