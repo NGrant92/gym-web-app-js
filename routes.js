@@ -37,6 +37,8 @@ router.get('/classes/:classid/fullUnenroll', classes.fullUnenroll);
 router.get('/classes/:classid/unenroll/:lessonid', classes.unenroll);
 router.get('/classes/:classid/enroll/:lessonid', classes.enroll);
 
+router.post('/classes/addClass', classes.addClass);
+
 router.get('/settings', settings.index);
 router.post('/settings/update', accounts.setAccount);
 router.post('/settings/uploadpicture', accounts.uploadPicture);

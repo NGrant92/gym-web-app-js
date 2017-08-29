@@ -5,6 +5,7 @@ const classStore = require('../models/class-store');
 const pictureStore = require('../models/picture-store');
 const accounts = require('./accounts.js');
 const logger = require('../utils/logger');
+const uuid = require('uuid');
 const _ = require('lodash');
 const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
@@ -117,6 +118,49 @@ const classes = {
     }
 
     response.redirect('/classes');
+  },
+
+  /**
+   * A method that will process and sort information from the form a trainer has used to create a new class
+   * @param request
+   * @param response
+   */
+  addClass(request, response) {
+
+    const days = request.body.days;
+    const classDays = '';
+
+    //new class array that will be added to the class store
+    const newClass = {
+      classid: uuid(),
+      name: request.body.className,
+      duation: '',
+      maxMembers: request.body.maxMembers,
+      bio: request.body.bio,
+      difficulty: request.body.difficulty,
+      days: [],
+      weeks: request.body.weeks,
+      img: request.body.image,
+      lessonList: [],
+    };
+
+    //appending the duration value with the correct unit
+    //if it's less than an hour then durHour information will not be added
+    if (request.body.durHours >= 1) {
+      newClass.duration = request.body.durHours + 'hr ';
+    }
+
+    //appending duration value with minutes. If 0 mins then it wont be added
+    if (request.body.durMins > 0) {
+      newClass.duration += request.body.durMins + 'mins';
+    }
+
+    for (let singleKey in days) {
+      newClass.days.push();
+    }
+
+    logger.info('Days Field ', request.body.days);
+    response.redirect('/trainerboard/');
   },
 };
 

@@ -31,7 +31,7 @@ const trainerboard = {
       stockAlbum: pictureStore.getStockAlbum().album,
     };
     
-    logger.info('about to render', viewData.stockAlbum);
+    logger.info('about to render', viewData.title);
     response.render('trainerboard', viewData);
   },
 };

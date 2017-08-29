@@ -9,6 +9,8 @@ const classStore = {
   store: new JsonStore('./models/class-store.json', { classCollection: [] }),
   collection: 'classCollection',
 
+
+
   getAllClasses() {
     return this.store.findAll(this.collection);
   },
@@ -19,6 +21,11 @@ const classStore = {
 
   getClassList(classid) {
     return this.store.findBy(this.collection, { classid: classid });
+  },
+
+  addClass(newClass) {
+    this.store.add(this.collection, newClass);
+    this.store.save();
   },
 
   removeMember(memberIndex, memberList) {
