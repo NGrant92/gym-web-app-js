@@ -4,64 +4,64 @@
       "userid": "stock00",
       "album": [
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
           "title": "Yoga"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136232/woman-dumbbell_h4xhzy.png",
-          "title": "woman-dumbbell"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136232/woman-dumbbell_h4xhzy.png",
+          "title": "Woman with Dumbbell"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136227/weightlift-man_uabsji.png",
-          "title": "weightlift-man"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136227/weightlift-man_uabsji.png",
+          "title": "Weightlift (Man)"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136233/weightlift-gorilla_y6ocet.png",
-          "title": "weightlift-gorilla"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136233/weightlift-gorilla_y6ocet.png",
+          "title": "Weightlift (Gorilla)"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136230/swim_hcroof.png",
-          "title": "swim"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136230/swim_hcroof.png",
+          "title": "Swimmer"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136225/running_eueor6.png",
-          "title": "running"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136225/running_eueor6.png",
+          "title": "Running (M & F)"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136226/man-woman-dumbbells_byutpl.png",
-          "title": "man-woman-dumbbells"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136226/man-woman-dumbbells_byutpl.png",
+          "title": "Man and Woman with Dumbbells"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136222/kettlebell_wo07ug.png",
-          "title": "kettlebell"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136222/kettlebell_wo07ug.png",
+          "title": "Kettlebell Squats"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136231/high-kick_ngtwbw.png",
-          "title": "high-kick"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136231/high-kick_ngtwbw.png",
+          "title": "High Kick"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/dumbbell_gfagdj.png",
-          "title": "dumbbell"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/dumbbell_gfagdj.png",
+          "title": "Dumbbell"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136215/circuit-training_kozqeb.png",
-          "title": "circuit-training"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136215/circuit-training_kozqeb.png",
+          "title": "Circuit Training"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing-m_bkhlv0.png",
-          "title": "boxing-m"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing-m_bkhlv0.png",
+          "title": "Boxer (M)"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing-f_tx8l9t.png",
-          "title": "boxing-f"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing-f_tx8l9t.png",
+          "title": "Boxer (F)"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
-          "title": "boxing"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
+          "title": "Boxing Exercise"
         },
         {
-          "picture": "http://res.cloudinary.com/ngrant/image/upload/v1503136211/bike_jib6cl.png",
-          "title": "bike"
+          "image": "http://res.cloudinary.com/ngrant/image/upload/v1503136211/bike_jib6cl.png",
+          "title": "Cyclist"
         }
       ]
     }
