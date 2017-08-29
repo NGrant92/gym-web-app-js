@@ -5,7 +5,7 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Class Name</label>
-        <input placeholder="Class Name" type="text" name="className">
+        <input placeholder="Class Name" name="className">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; Difficulty</label>
@@ -18,24 +18,24 @@
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Max Members</label>
-        <input placeholder="Max Members" type="number" step="1.00" maxlength="2" name="maxMembers">
+        <input placeholder="Max Members" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
       </div>
     </div>
     <h4 class="ui dividing header">Duration</h4>
     <div class="fields">
       <div class="field">
-        <label>&nbsp; &nbsp; &nbsp; Hour</label>
-        <input placeholder="Hours" type="number" step="1.00" max="23" maxlength="2" name="durHours">
+        <label>&nbsp; &nbsp; &nbsp; Hours</label>
+        <input placeholder="Hours" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Mins</label>
-        <input placeholder="Mins" type="number" step="0.15" max="59" maxlength="2" name="durMins">
+        <input placeholder="Mins" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Start Date</label>
         <div class="two fields">
           <div class="field">
-            <select name="dateStartDay" multiple="" class="ui two wide dropdown">
+            <select name="dateStartDay" class="ui two wide dropdown">
               <option value="">Day</option>
               <option value="01">01</option>
               <option value="02">02</option>
@@ -71,7 +71,7 @@
             </select>
           </div>
           <div class="field">
-            <select name="dateStartMonth" multiple="" class="ui dropdown">
+            <select name="dateStartMonth" class="ui dropdown">
               <option value="">Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
@@ -93,7 +93,7 @@
         <label>&nbsp; &nbsp; &nbsp; End Date</label>
         <div class="two fields">
           <div class="field">
-            <select name="dateEndDay" multiple="" class="ui two wide dropdown">
+            <select name="dateEndDay" class="ui two wide dropdown">
               <option value="">Day</option>
               <option value="01">01</option>
               <option value="02">02</option>
@@ -129,7 +129,7 @@
             </select>
           </div>
           <div class="field">
-            <select name="dateEndMonth" multiple="" class="ui dropdown">
+            <select name="dateEndMonth" class="ui dropdown">
               <option value="">Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
