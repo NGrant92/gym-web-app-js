@@ -3,14 +3,14 @@
     {
       "classid": "class00",
       "name": "Yoga",
-      "duration": "30",
+      "duration": "30mins",
+      "timespan": "5th October - 16th October",
       "maxMembers": "10",
       "bio": "There are two way you can start yoga. The best way is to join a beginners yoga course, also known as a foundation course and get the basics down. As you might expect a beginners yoga course is specifically designed for people new to yoga.  Our teachers explain the yoga terms and the etiquette of yoga classes and taking you slowly through the basic poses building up your confidence and strength so you can explore more of the yoga world  when you are finished. By the end of the beginners yoga course weeks you will know your elbow from your asana.",
       "difficulty": "Beginners",
       "days": [
-        "17:00 Monday"
+        "17:00 - 17:30 Monday"
       ],
-      "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "lessonList": [
         {
@@ -26,7 +26,6 @@
           "lessonid": "lesson05",
           "date": "Thursday, October 12th, 2017, 5:00pm",
           "memberList": [
-            "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
         },
@@ -80,16 +79,16 @@
     {
       "classid": "class01",
       "name": "Yoga",
-      "duration": "60",
+      "duration": "1hr",
+      "timespan": "5th October - 9th October",
       "maxMembers": "10",
       "bio": "A traditional class from Mysore in India where students self practice the ashtanga primary series under the guidance of a teacher who corrects alignment and gives adjustments to deepen postures. A wonderful chance to explore your practice whilst receiving hands on realignments.",
       "difficulty": "Advanced",
       "days": [
-        "06:00 Monday",
-        "06:00 Wednesday",
-        "06:00 Friday"
+        "06:00 - 07:00 Monday",
+        "06:00 - 07:00 Wednesday",
+        "06:00 - 07:00 Friday"
       ],
-      "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "lessonList": [
         {
@@ -121,15 +120,15 @@
     {
       "classid": "class02",
       "name": "Boxercise",
-      "duration": "30",
+      "duration": "30mins",
+      "timespan": "4th October - 7th October",
       "maxMembers": "2",
       "bio": "Boxercise is a cardiovascular workout with classes lasting one hour. It is based on the training used for boxing so it includes cardio exercises, skipping, boxing drills including footwork and abdominal workouts – all focusing on fitness and toning.",
       "difficulty": "Intermediate",
       "days": [
-        "18:00 Wednesday",
-        "12:00 Friday"
+        "18:00 - 18:30 Wednesday",
+        "18:00 - 18:30 Friday"
       ],
-      "weeks": "7",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
       "lessonList": [
         {
@@ -146,6 +145,85 @@
           "memberList": [
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
             "316c6e7b-9706-4337-b198-13f9e92733d0"
+          ]
+        }
+      ]
+    },
+    {
+      "classid": "80303f21-5a9c-4ffe-8215-0cf688a3cc71",
+      "name": "Test Class",
+      "duration": "1hr15mins",
+      "timespan": "1st September - 1st October",
+      "maxMembers": "10",
+      "bio": "Lorem ipsum dolor sit amet, no has prima brute fabulas. Id omnis soluta instructior ius, eu agam platonem eum. Ea vel choro nonumy tacimates, nec et zril labore inimicus. Vel cu altera labitur. Vis no equidem convenire maiestatis, est meis falli detraxit in, at per nihil dicant.",
+      "difficulty": "Beginners",
+      "days": [
+        "17:00 - 18:00 Monday",
+        "17:00 - 18:00 Tuesday"
+      ],
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136232/woman-dumbbell_h4xhzy.png",
+      "lessonList": [
+        {
+          "lessonid": "07526385-b843-44ea-ba34-b1151d2d5ded",
+          "date": "Tuesday, August 29th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "a7d48ed5-1c09-48dc-b64d-4961476c2648",
+          "date": "Monday, September 4th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "0c2da1d3-557d-4f9e-a6d3-aa8ad7192ca0",
+          "date": "Tuesday, September 5th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "1035bbc3-4846-4650-8e53-744072852865",
+          "date": "Monday, September 11th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "ce2e31f9-adde-4a2c-b6d4-b668a87548eb",
+          "date": "Tuesday, September 12th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "cd90cb57-7e37-4cb0-800c-ceae17a88ea6",
+          "date": "Monday, September 18th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "380e3c62-14dc-4554-bdb8-cd52eb067fc1",
+          "date": "Tuesday, September 19th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "3a5406a0-abb4-4c66-b1de-ba59596a116d",
+          "date": "Monday, September 25th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
+          ]
+        },
+        {
+          "lessonid": "8a6a9edd-10ee-443b-b2e1-8e083980d640",
+          "date": "Tuesday, September 26th",
+          "memberList": [
+            "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         }
       ]

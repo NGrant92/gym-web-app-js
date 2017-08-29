@@ -130,14 +130,15 @@ const classes = {
 
     //putting the days the trainer selected into an array to be used later
     const lessonDays = request.body.days.toString().split(',');
-    const startDate = new Date(request.body.dateStartDay + '-' + request.body.dateStartMonth + '-' + new Date().getFullYear());
-    const endDate = new Date(request.body.dateEndDay + '-' + request.body.dateEndMonth + '-' + new Date().getFullYear());
+    let startDate = new Date(request.body.dateStartMonth + '-' + request.body.dateStartDay + '-' + new Date().getFullYear());
+    let endDate = new Date(request.body.dateEndMonth + '-' + request.body.dateEndDay + '-' + new Date().getFullYear());
 
     //new class array that will be added to the class store
     const newClass = {
       classid: uuid(),
       name: request.body.className,
-      duartion: '',
+      duration: '',
+      timespan: '',
       maxMembers: request.body.maxMembers,
       bio: request.body.bio,
       difficulty: request.body.difficulty,
@@ -149,7 +150,7 @@ const classes = {
     //appending the duration value with the correct unit
     //if it's less than an hour then durHour information will not be added
     if (request.body.durHours >= 1) {
-      newClass.duration = request.body.durHours + 'hr ';
+      newClass.duration = request.body.durHours + 'hr';
     }
 
     //appending duration value with minutes. If 0 mins then it wont be added
@@ -157,40 +158,48 @@ const classes = {
       newClass.duration = newClass.duration + request.body.durMins + 'mins';
     }
 
-    logger.debug('lessondays loop:', lessonDays);
+    logger.info('newClass.duration is populated: ', newClass.duration);
 
     //creating a "00:00 - 00:00 dddd" format and pushing it to 'days[]'
     for (let singleKey in lessonDays) {
       newClass.days.push(request.body.timeStart + ' - ' + request.body.timeEnd + ' ' + lessonDays[singleKey]);
     }
 
+    logger.info('newClass.days[] is populated: ', newClass.days);
+
     //timespan will be used to display information on the classes.hbs page
     newClass.timespan = dateformat(startDate, 'dS mmmm') + ' - ' + dateformat(endDate, 'dS mmmm');
-
+    logger.info('newClass.timespan is populated: ', newClass.timespan);
 
     //today's date to be used to help create objects to populate the lessonList
-    let lessonDate = dateformat(new Date(), 'dd-mm-yyyy');
+    let lessonDate = new Date();
     logger.debug('new lesson date ', lessonDate);
-    logger.debug('end date ', endDate);
-    
+    logger.debug('Start date ', startDate);
+    logger.debug('End date ', endDate);
+
+    logger.debug('lesson date loop: ', lessonDays.indexOf('Tuesday'));
+
     //a while loop to create an object for each individual lesson
     while (lessonDate <= endDate) {
-      if (days.indexOf(dateformat(lessonDate, 'mmmm') > 0)) {
-        let newLesson = [];
+      if (lessonDays.indexOf(dateformat(lessonDate, 'dddd')) >= 0) {
 
-        newLesson.id = uuid;
-        newLesson.date = dateformat(lessonDate, 'dddd, mmmm dS');
-        newLesson.members = [];
+        let newLesson = {
 
-        lessonList.push(newLesson);
+          lessonid: uuid(),
+          date: dateformat(lessonDate, 'dddd, mmmm dS'),
+          memberList: [],
+        };
+
+        newClass.lessonList.push(newLesson);
         logger.info('Added new lesson: ', newLesson);
       }
 
       lessonDate.setDate(lessonDate.getDate() + 1);
-      logger.debug('lesonDate++ ', lessonDate);
+      logger.debug('lessonDate++ ', lessonDate);
     }
 
-    logger.info('New Class ^ ', newClass);
+    logger.info('New Class:', newClass);
+    classStore.addClass(newClass);
     response.redirect('/trainerboard/');
   },
 };

@@ -5,12 +5,12 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Class Name</label>
-        <input placeholder="Class Name" name="className">
+        <input placeholder="Class Name" value="Test Class" name="className">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; Difficulty</label>
         <select class="ui fluid search dropdown" name="difficulty">
-          <option value="" hidden>Difficulty</option>
+          <option value="Beginners" hidden>Difficulty</option>
           <option value="Beginners">Beginners</option>
           <option value="Intermediate">Intermediate</option>
           <option value="Advanced">Advanced</option>
@@ -18,7 +18,7 @@
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Max Members</label>
-        <input placeholder="Max Members" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
+        <input placeholder="Max Members" value="10" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
       </div>
     </div>
 
@@ -26,11 +26,11 @@
     <div class="fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Hours</label>
-        <input placeholder="Hours" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
+        <input placeholder="Hours" value="1" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Mins</label>
-        <input placeholder="Mins" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
+        <input placeholder="Mins" value="15" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Start Date</label>
@@ -163,7 +163,7 @@
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Days</label>
         <select name="days" multiple="" class="ui fluid dropdown">
-          <option value="">Days</option>
+          <option value="Monday,Tuesday">Days</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>
