@@ -25,15 +25,15 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Hours</label>
-        <input placeholder="Hours" type="text" name="hours">
+        <input placeholder="Hours" type="number" step="1.00" max="23" maxlength="2" name="hours">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Mins</label>
-        <input placeholder="Mins" type="text" name="mins">
+        <input placeholder="Mins" type="number" step="1.00" max="59" maxlength="2" name="mins">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; No. of Weeks</label>
-        <input placeholder="No. of Weeks" type="text" name="weeks">
+        <input placeholder="No. of Weeks" type="number" step="1.00" max="52" maxlength="2" name="weeks">
       </div>
     </div>
 
@@ -41,11 +41,11 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Hour</label>
-        <input placeholder="Hour" type="text" name="timehour">
+        <input placeholder="Hour" type="number" step="1.00" max="23" maxlength="2" name="timehour">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Min</label>
-        <input placeholder="Min" type="text" name="timemin">
+        <input placeholder="Min" type="number" step="1.00" max="59" maxlength="2" name="timemin">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Days</label>
@@ -65,8 +65,8 @@
     <h4 class="ui dividing header">Details</h4>
     <div class="two fields">
       <div class="sixteen wide field">
-        <label>&nbsp; &nbsp; &nbsp; Bio</label>
-        <textarea rows="3" placeholder="Description here..."></textarea>
+        <label>&nbsp; &nbsp; &nbsp; Bio (100 words max)</label>
+        <textarea rows="3" maxlength="600" placeholder="Description here..."></textarea>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Images</label>
