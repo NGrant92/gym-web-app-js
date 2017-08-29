@@ -128,9 +128,10 @@ const classes = {
    */
   addClass(request, response) {
 
-    const lessonDays = [request.body.days];
+    //putting the days the trainer selected into an array to be used later
+    const lessonDays = request.body.days.toString().split(',');
     const startDate = new Date(request.body.dateStartDay + '-' + request.body.dateStartMonth + '-' + new Date().getFullYear());
-    const endDate = new Date(request.body.dateEndDay + '-' + request.body.dateEndMonth + '-' + new Date().getYear());
+    const endDate = new Date(request.body.dateEndDay + '-' + request.body.dateEndMonth + '-' + new Date().getFullYear());
 
     //new class array that will be added to the class store
     const newClass = {
@@ -156,7 +157,8 @@ const classes = {
       newClass.duration = newClass.duration + request.body.durMins + 'mins';
     }
 
-    logger.debug('lessondays loop:', lessonDays)
+    logger.debug('lessondays loop:', lessonDays);
+
     //creating a "00:00 - 00:00 dddd" format and pushing it to 'days[]'
     for (let singleKey in lessonDays) {
       newClass.days.push(request.body.timeStart + ' - ' + request.body.timeEnd + ' ' + lessonDays[singleKey]);
@@ -166,9 +168,12 @@ const classes = {
     newClass.timespan = dateformat(startDate, 'dS mmmm') + ' - ' + dateformat(endDate, 'dS mmmm');
 
 
+    //today's date to be used to help create objects to populate the lessonList
     let lessonDate = dateformat(new Date(), 'dd-mm-yyyy');
     logger.debug('new lesson date ', lessonDate);
-
+    logger.debug('end date ', endDate);
+    
+    //a while loop to create an object for each individual lesson
     while (lessonDate <= endDate) {
       if (days.indexOf(dateformat(lessonDate, 'mmmm') > 0)) {
         let newLesson = [];
