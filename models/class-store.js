@@ -28,6 +28,12 @@ const classStore = {
     this.store.save();
   },
 
+  removeClass(classid) {
+    logger.debug(`member list: `, this.getClassList(classid)[0]);
+    this.store.remove(this.collection, this.getClassList(classid)[0]);
+    this.store.save();
+  },
+
   removeMember(memberIndex, memberList) {
 
     logger.debug(`member list: `, memberList);

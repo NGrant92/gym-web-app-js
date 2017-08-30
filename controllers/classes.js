@@ -115,6 +115,7 @@ const classes = {
       logger.info('Member to be added to lesson: ', memberList);
       memberList.push(userid);
       logger.info('Member added to lesson: ', memberList);
+      logger.info('Member added to lesson: ', memberList);
       classStore.store.save();
     }
 
@@ -202,6 +203,13 @@ const classes = {
     classStore.addClass(newClass);
     response.redirect('/trainerboard/');
   },
+
+  remClass(request, response){
+    const classid = request.params.classid;
+    logger.info('Removing Class: ', classid);
+    classStore.removeClass(classid);
+    response.redirect('/classes');
+  }
 };
 
 module.exports = classes;

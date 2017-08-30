@@ -5,12 +5,12 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Class Name</label>
-        <input placeholder="Class Name" value="Test Class" name="className">
+        <input placeholder="Class Name" name="className">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; Difficulty</label>
         <select class="ui fluid search dropdown" name="difficulty">
-          <option value="Beginners" hidden>Difficulty</option>
+          <option value="" hidden>Difficulty</option>
           <option value="Beginners">Beginners</option>
           <option value="Intermediate">Intermediate</option>
           <option value="Advanced">Advanced</option>
@@ -18,7 +18,7 @@
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Max Members</label>
-        <input placeholder="Max Members" value="10" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
+        <input placeholder="Max Members" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
       </div>
     </div>
 
@@ -26,18 +26,18 @@
     <div class="fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Hours</label>
-        <input placeholder="Hours" value="1" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
+        <input placeholder="Hours" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Mins</label>
-        <input placeholder="Mins" value="15" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
+        <input placeholder="Mins" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Start Date</label>
         <div class="two fields">
           <div class="field">
             <select name="dateStartDay" class="ui two wide dropdown">
-              <option value="01">Day</option>
+              <option value="">Day</option>
               <option value="01">01</option>
               <option value="02">02</option>
               <option value="03">03</option>
@@ -73,7 +73,7 @@
           </div>
           <div class="field">
             <select name="dateStartMonth" class="ui dropdown">
-              <option value="09">Month</option>
+              <option value="">Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
               <option value="03">March</option>
@@ -95,7 +95,7 @@
         <div class="two fields">
           <div class="field">
             <select name="dateEndDay" class="ui two wide dropdown">
-              <option value="01">Day</option>
+              <option value="">Day</option>
               <option value="01">01</option>
               <option value="02">02</option>
               <option value="03">03</option>
@@ -131,7 +131,7 @@
           </div>
           <div class="field">
             <select name="dateEndMonth" class="ui dropdown">
-              <option value="10">Month</option>
+              <option value="">Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
               <option value="03">March</option>
@@ -154,16 +154,16 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Start Time</label>
-        <input placeholder="Start Time" type="time" value="17:00" name="timeStart">
+        <input placeholder="Start Time" type="time" name="timeStart">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; End Time</label>
-        <input placeholder="End Time" type="time" value="18:00" name="timeEnd">
+        <input placeholder="End Time" type="time" name="timeEnd">
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Days</label>
         <select name="days" multiple="" class="ui fluid dropdown">
-          <option value="Monday,Tuesday">Days</option>
+          <option value="">Days</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>

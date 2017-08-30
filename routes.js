@@ -36,6 +36,7 @@ router.get('/classes/:classid/fullEnroll', classes.fullEnroll);
 router.get('/classes/:classid/fullUnenroll', classes.fullUnenroll);
 router.get('/classes/:classid/unenroll/:lessonid', classes.unenroll);
 router.get('/classes/:classid/enroll/:lessonid', classes.enroll);
+router.get('/classes/remClass/:classid', classes.remClass);
 
 router.post('/classes/addClass', classes.addClass);
 
