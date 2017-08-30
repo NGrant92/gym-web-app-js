@@ -9,8 +9,6 @@ const classStore = {
   store: new JsonStore('./models/class-store.json', { classCollection: [] }),
   collection: 'classCollection',
 
-
-
   getAllClasses() {
     return this.store.findAll(this.collection);
   },
