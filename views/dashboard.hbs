@@ -10,11 +10,23 @@
       <h2 class="ui dividing header">BMI</h2>
       {{> bmi}}
     </section>
-    <section class="ui raised segment">
+    <section class="ui segment" id="assessmentTabs">
       <h2 class="ui dividing header">Assessments</h2>
-      {{> listassessments}}
-      {{> addassessments}}
+      <div class="ui pointing secondary demo menu">
+        <a class="item" data-tab="first">List</a>
+        <a class="item" data-tab="second">Add</a>
+        <a class="active item" data-tab="third">Book</a>
+      </div>
+
+      <div class="ui tab" data-tab="first">{{> listassessments}}</div>
+      <div class="ui tab" data-tab="second" style="padding: 10px;">{{> addassessments}}</div>
+      <div class="ui active tab" data-tab="third" style="padding: 10px;">{{>bookassessment}}</div>
     </section>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.demo.menu .item').tab({history:false});
+      });
+    </script>
     <section class="ui raised segment">
       <h2 class="ui dividing header">Goals</h2>
       {{> listgoals}}
