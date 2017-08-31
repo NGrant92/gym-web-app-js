@@ -111,15 +111,24 @@ const dashboard = {
   },
 
   bookAssessment(request, response) {
-    const memberid = request.params.id;
-    const trainerid = request.body.bookedTrainer;
-    const memberAssess = assessStore.getUserAssessmentList(memberid)[0];
-    const date = new Date(request.body.bookDate + ' ' + request.body.bookTime);
+    const member = userStore.getUserById(request.params.id);
+    const trainer = userStore.getUserById(request.body.bookedTrainer);
+    const bookDate = new Date(request.body.bookDate + ' ' + request.body.bookTime);
 
+    const newTrainerBooking = {
+      date: bookDate,
+      memberid: member.id
+    };
+    trainer.bookings.push(newTrainerBooking);
 
+    const newMemberBooking = {
+      date: bookDate,
+      trainerid: trainer.id
+    };
+    member.bookings.push(newMemberBooking);
 
-
-    logger.info(`Assessment Booked. Reloading to dashboard`, request.viewData);
+    userStore.store.save();
+    logger.info(`Assessment Booked. Reloading to dashboard`, member.bookings);
     dashboard.index(request, response);
   },
 };

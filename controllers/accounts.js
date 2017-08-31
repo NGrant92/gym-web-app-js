@@ -40,8 +40,8 @@ const accounts = {
     const newUserId = uuid();
 
     //a for each loop to ensure an email only belongs to one account
-    for(let i = 0; i < userstore.length; i++){
-      if(userstore[i].email === user.email){
+    for (let i = 0; i < userstore.length; i++) {
+      if (userstore[i].email === user.email) {
         logger.info('Email already registered: ', user.email);
         response.redirect('/');
       }
@@ -101,8 +101,7 @@ const accounts = {
 
       if (user.trainer === true) {
         response.redirect('/trainerboard');
-      }
-      else {
+      } else {
         response.redirect('/dashboard');
       }
 
