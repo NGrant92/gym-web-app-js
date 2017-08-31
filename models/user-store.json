@@ -12,7 +12,13 @@
       "weight": "175",
       "startWeight": 200,
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499859614/hyno1rni4akvgwv0dyq2.jpg",
-      "trainer": false
+      "trainer": false,
+      "bookings":[
+        {
+          "date": "Thu Aug 31 2017 17:00:00 GMT+0100 (IST)",
+          "trainerid": "t00"
+        }
+      ]
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -25,7 +31,13 @@
       "height": 2,
       "startWeight": 100,
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg",
-      "trainer": false
+      "trainer": false,
+      "bookings":[
+        {
+          "date": "Sun Sep 03 2017 17:00:00 GMT+0100 (IST)",
+          "trainerid": "t01"
+        }
+      ]
     },
     {
       "id": "t00",
@@ -38,7 +50,32 @@
       "height": 2.5,
       "weight": 180,
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
-      "trainer": true
+      "trainer": true,
+      "bookings":[
+        {
+          "date": "Thu Aug 31 2017 17:00:00 GMT+0100 (IST)",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0"
+        }
+      ]
+    },
+    {
+      "id": "t01",
+      "firstname": "Terry",
+      "lastname": "Crews",
+      "gender": "Male",
+      "email": "t2000@tmail.com",
+      "password": "secret",
+      "address": "The Gym",
+      "height": 2.5,
+      "weight": 180,
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
+      "trainer": true,
+      "bookings":[
+        {
+          "date": "Sun Sep 03 2017 17:00:00 GMT+0100 (IST)",
+          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+        }
+      ]
     },
     {
       "firstname": "Niall",
@@ -52,7 +89,8 @@
       "trainer": false,
       "id": "b382ba18-46ea-49d9-b089-22cc69068809",
       "startWeight": "68",
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg"
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
+      "bookings":[]
     },
     {
       "firstname": "Bart",
@@ -65,7 +103,8 @@
       "startWeight": "77",
       "trainer": false,
       "id": "316c6e7b-9706-4337-b198-13f9e92733d0",
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503767824/gteyxykqycd8zu2jwtiy.png"
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503767824/gteyxykqycd8zu2jwtiy.png",
+      "bookings":[]
     }
   ]
 }

@@ -2,6 +2,8 @@
 
 const dateformat = require('dateformat');
 const Handlebars = require('handlebars');
+const logger = require('../utils/logger');
+const _ = require('lodash');
 
 Handlebars.registerHelper('toLowerCase', function (str) {
   return str.toLowerCase();
@@ -36,6 +38,12 @@ Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
   }
 
   return isEnrolled;
+});
+
+Handlebars.registerHelper('json', function (trainerList) {
+
+  logger.debug('returning JSON.stringify(trainerList)');
+  return  JSON.stringify(trainerList);
 });
 
 module.exports = Handlebars;

@@ -204,12 +204,12 @@ const classes = {
     response.redirect('/trainerboard/');
   },
 
-  remClass(request, response){
+  remClass(request, response) {
     const classid = request.params.classid;
     logger.info('Removing Class: ', classid);
     classStore.removeClass(classid);
     response.redirect('/classes');
-  }
+  },
 };
 
 module.exports = classes;

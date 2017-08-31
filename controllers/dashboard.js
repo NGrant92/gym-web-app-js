@@ -114,6 +114,9 @@ const dashboard = {
     const memberid = request.params.id;
     const trainerid = request.body.bookedTrainer;
     const memberAssess = assessStore.getUserAssessmentList(memberid)[0];
+    const date = new Date(request.body.bookDate + ' ' + request.body.bookTime);
+
+
 
 
     logger.info(`Assessment Booked. Reloading to dashboard`, request.viewData);
