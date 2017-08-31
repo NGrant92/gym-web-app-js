@@ -4,6 +4,7 @@ const uuid = require('uuid');
 const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
+const userStore = require('../models/user-store');
 const assessStore = require('../models/assess-store.js');
 const classStore = require('../models/class-store.js');
 const analytics = require('../utils/analytics.js');
@@ -20,8 +21,9 @@ const dashboard = {
       logger.info('user is a trainer');
       response.redirect('/trainerboard');
     }
+
     //'else' is required to prevent a "Cannot read property 'assessments' of undefined" error message
-    else{
+    else {
       logger.info('user is a member');
       const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
 
@@ -47,6 +49,7 @@ const dashboard = {
         bmi: userbmi,
         assessments: assessmentArr,
         classes: classStore,
+        trainerList: userStore.getAllTrainers(),
       };
 
       logger.info('about to render', viewData.title);
@@ -105,6 +108,16 @@ const dashboard = {
     logger.debug(`Deleting Assessment ${assessId} from Member ${userId}`);
     assessStore.removeAssessment(userId, assessId);
     response.redirect('/dashboard/');
+  },
+
+  bookAssessment(request, response) {
+    const memberid = request.params.id;
+    const trainerid = request.body.bookedTrainer;
+    const memberAssess = assessStore.getUserAssessmentList(memberid)[0];
+
+
+    logger.info(`Assessment Booked. Reloading to dashboard`, request.viewData);
+    dashboard.index(request, response);
   },
 };
 

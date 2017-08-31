@@ -1,8 +1,8 @@
 <form class="ui form" action="/dashboard/{{member.id}}/bookassessment" method="POST">
   <div class="four fields">
-    <div class="field">
+    <div class="field" name="bookingForm">
       <label>&nbsp; &nbsp; &nbsp;Day</label>
-      <select name="bookDate" class="ui two wide dropdown">
+      <select name="bookDate" class="ui fluid dropdown">
         <option value="" hidden>Day</option>
         <option value="01">01</option>
         <option value="02">02</option>
@@ -39,7 +39,7 @@
     </div>
     <div class="field">
       <label>&nbsp; &nbsp; &nbsp;Month</label>
-      <select name="bookMonth" class="ui dropdown">
+      <select name="bookMonth" class="ui fluid dropdown">
         <option value="" hidden>Month</option>
         <option value="01">January</option>
         <option value="02">February</option>
@@ -56,15 +56,47 @@
       </select>
     </div>
     <div class="field">
-      <label>&nbsp; &nbsp; &nbsp; Time</label>
+      <label>&nbsp; &nbsp; &nbsp; Time (am/pm)</label>
       <input placeholder="Time" type="time" name="time">
     </div>
     <div class="field">
-    <label>&nbsp; &nbsp; &nbsp; Trainer</label>
-      <select name="bookTrainer" class="ui dropdown">
+      <label>&nbsp; &nbsp; &nbsp; Trainer</label>
+      <select name="bookedTrainer" class="ui fluid dropdown">
         <option value="" hidden>Pick a trainer</option>
+        {{#each trainerList}}
+          <option value="{{id}}">{{firstname}} {{lastname}}</option>
+        {{/each}}
       </select>
-  </div>
+    </div>
   </div>
   <button class="ui blue submit button">Submit</button>
+  <div class="ui error message"></div>
+  <script>
+    $('.dropdown').dropdown();
+
+    $.fn.form.settings.rules.isBooked = function() {
+
+
+      if(document.getElementsByName("bookDate")[0].value > 0){
+        return true;
+      }
+      else{
+        return false;
+      }
+    };
+
+    $('.ui.form').form({
+      fields: {
+        bookingForm: {
+          identifier  : 'bookDate',
+          rules: [
+            {
+              type   : 'isBooked',
+              prompt : 'Please enter a value'
+            }
+          ]
+        }
+      }
+    });
+  </script>
 </form>

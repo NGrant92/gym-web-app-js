@@ -5,11 +5,11 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Class Name</label>
-        <input placeholder="Class Name" name="className">
+        <input placeholder="Class Name" name="className" required>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; Difficulty</label>
-        <select class="ui fluid search dropdown" name="difficulty">
+        <select class="ui fluid search dropdown" name="difficulty" required>
           <option value="" hidden>Difficulty</option>
           <option value="Beginners">Beginners</option>
           <option value="Intermediate">Intermediate</option>
@@ -18,7 +18,7 @@
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Max Members</label>
-        <input placeholder="Max Members" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
+        <input placeholder="Max Members" type="number" step="1.00" maxlength="2" min="00" name="maxMembers" required>
       </div>
     </div>
 
@@ -26,17 +26,17 @@
     <div class="fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Hours</label>
-        <input placeholder="Hours" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
+        <input placeholder="Hours" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours" required>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Mins</label>
-        <input placeholder="Mins" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
+        <input placeholder="Mins" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins" required>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Start Date</label>
         <div class="two fields">
           <div class="field">
-            <select name="dateStartDay" class="ui two wide dropdown">
+            <select name="dateStartDay" class="ui two wide dropdown" required>
               <option value="" hidden>Day</option>
               <option value="01">01</option>
               <option value="02">02</option>
@@ -72,7 +72,7 @@
             </select>
           </div>
           <div class="field">
-            <select name="dateStartMonth" class="ui dropdown">
+            <select name="dateStartMonth" class="ui dropdown" required>
               <option value="" hidden>Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
@@ -94,7 +94,7 @@
         <label>&nbsp; &nbsp; &nbsp; End Date</label>
         <div class="two fields">
           <div class="field">
-            <select name="dateEndDay" class="ui two wide dropdown">
+            <select name="dateEndDay" class="ui two wide dropdown" required>
               <option value="" hidden>Day</option>
               <option value="01">01</option>
               <option value="02">02</option>
@@ -130,7 +130,7 @@
             </select>
           </div>
           <div class="field">
-            <select name="dateEndMonth" class="ui dropdown">
+            <select name="dateEndMonth" class="ui dropdown" required>
               <option value="" hidden>Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
@@ -154,15 +154,15 @@
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Start Time</label>
-        <input placeholder="Start Time" type="time" name="timeStart">
+        <input placeholder="Start Time" type="time" name="timeStart" required>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; End Time</label>
-        <input placeholder="End Time" type="time" name="timeEnd">
+        <input placeholder="End Time" type="time" name="timeEnd" required>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Days</label>
-        <select name="days" multiple="" class="ui fluid dropdown">
+        <select name="days" multiple="" class="ui fluid dropdown" required>
           <option value="">Days</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
@@ -179,11 +179,11 @@
     <div class="two fields">
       <div class="sixteen wide field">
         <label>&nbsp; &nbsp; &nbsp; Bio (100 words max)</label>
-        <textarea name="bio" rows="3" maxlength="600" placeholder="Description here..."></textarea>
+        <textarea name="bio" rows="3" maxlength="600" placeholder="Description here..." required></textarea>
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Images</label>
-        <div class="ui fluid simple selection dropdown" style="height:75px;">
+        <div class="ui fluid simple selection dropdown" style="height:75px;" required>
           <input type="hidden" name="image">
           <i class="dropdown icon"></i>
           <div class="default text">Pick an image...</div>

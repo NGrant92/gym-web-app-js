@@ -23,9 +23,13 @@ const userStore = {
   getUserById(id) {
     return this.store.findOneBy(this.collection, { id: id });
   },
-  
+
   getAllMembers() {
     return this.store.findBy(this.collection, { trainer: false });
+  },
+
+  getAllTrainers() {
+    return this.store.findBy(this.collection, { trainer: true });
   },
 
   getUserByEmail(email) {
