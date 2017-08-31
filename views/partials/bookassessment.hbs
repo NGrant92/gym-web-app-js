@@ -23,22 +23,34 @@
   <script>
     $('.dropdown').dropdown();
 
-    $.fn.form.settings.rules.isBooked = function() {
+    $.fn.form.settings.rules.isMemberBooked = function() {
 
       const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
+      const memberBookings = [{{{json member.bookings}}}];
+      console.log(memberBookings[0]);
+
+      for(let i = 0; i < memberBookings[0].length; i++){
+        let checkDate = new Date(memberBookings[0][i].date);
+        if(checkDate.toString() === bookedDate.toString()){
+          console.log(bookedDate);
+          return false;
+        }
+      }
+      return true;
+    };
+
+    $.fn.form.settings.rules.isTrainerBooked = function() {
+
+      const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
       const trainerid = document.getElementsByName("bookedTrainer")[0].value;
-      let trainerList = [{{{json trainerList}}}];
+      const trainerList = [{{{json trainerList}}}];
+      const memberBookings = [{{{json member.bookings}}}];
 
       for(let i = 0; i < trainerList[0].length; i++){
-        console.log(trainerList[0][i].id === trainerid);
         if(trainerList[0][i].id === trainerid){
-          console.log(trainerList[0][i].bookings);
           for(let k= 0; k < trainerList[0][i].bookings.length; k++){
-            console.log(trainerList[0][i].bookings[k].date);
-            console.log(bookedDate);
-            if(trainerList[0][i].bookings[k].date === bookedDate.toString()){
-              notBooked = false;
-              console.log(bookedDate);
+            let checkDate = new Date(trainerList[0][i].bookings[k].date);
+            if(checkDate.toString() === bookedDate.toString()){
               return false;
             }
           }
@@ -53,8 +65,12 @@
           identifier  : 'bookDate',
           rules: [
             {
-              type   : 'isBooked',
+              type   : 'isTrainerBooked',
               prompt : 'Trainer is not available at that time.'
+            },
+            {
+              type   : 'isMemberBooked',
+              prompt : 'You are already booked for that time.'
             }
           ]
         },
@@ -62,7 +78,11 @@
           identifier: 'bookTime',
           rules: [
             {
-              type: 'isBooked',
+              type: 'isTrainerBooked',
+              prompt : 'Please select another day/time'
+            },
+            {
+              type: 'isMemberBooked',
               prompt : 'Please select another day/time'
             }
           ]
