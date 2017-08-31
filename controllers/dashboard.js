@@ -127,7 +127,7 @@ const dashboard = {
     };
     member.bookings.push(newMemberBooking);
 
-    //userStore.store.save();
+    userStore.store.save();
     logger.info(`Assessment Booked. Reloading to dashboard`, member.bookings);
     dashboard.index(request, response);
   },
