@@ -1,116 +1,112 @@
-<form class="ui twelve wide form" action="/dashboard/{{user.id}}/bookassessment" method="POST">
-  <div class="three fields">
-    <div class="field">
-      <label>&nbsp; &nbsp; &nbsp;Date</label>
-      <input placeholder="Date" type="date" name="bookDate">
+<section class="ui raised segment">
+  <form class="ui twelve wide form" action="/editbooking/{{user.id}}/{{booking.date}}/setbooking" method="POST">
+    <h3 class="ui dividing header">Update Appointment Trainer</h3>
+    <div class="three fields">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp;Date</label>
+        <input placeholder="Date" type="date" value="{{shortDate booking.date}}" name="bookDate">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Time</label>
+        <input placeholder="Time" type="time" value="{{getTime booking.date}}" name="bookTime" step="3600" min="09:00" max="17:00">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Members</label>
+        <select name="bookedMember" class="ui disabled fluid dropdown">
+          <option value="{{booking.memberid}}">{{booking.memberName}}</option>
+        </select>
+      </div>
     </div>
-    <div class="field">
-      <label>&nbsp; &nbsp; &nbsp; Time</label>
-      <input placeholder="Time" type="time" name="bookTime" step="3600" min="09:00" max="17:00">
-    </div>
-    <div class="field">
-      <label>&nbsp; &nbsp; &nbsp; Members</label>
-      <select name="bookedMember" class="ui fluid dropdown">
-        <option value="" hidden>Pick a member</option>
-        {{#each members}}
-          <option value="{{id}}">{{firstname}} {{lastname}}</option>
-        {{/each}}
-      </select>
-    </div>
-  </div>
-  <button class="ui blue submit button">Submit</button>
-  <div class="ui error message"></div>
-  <script>
-    $('.dropdown').dropdown();
+    <button class="ui blue submit button">Submit</button>
+    <div class="ui error message"></div>
+    <script>
+      $('.dropdown').dropdown();
 
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementsByName("bookDate")[0].setAttribute('min', today);
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementsByName("bookDate")[0].setAttribute('min', today);
 
-    if({{user.bookings.length}} > 0){
-      document.getElementById("bookingTable").style.display = "table";
-    }
+      $.fn.form.settings.rules.isTrainerBooked = function() {
 
-    $.fn.form.settings.rules.isTrainerBooked = function() {
+        const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
+        const trainerBookings = [{{{json user.bookings}}}];
+        console.log(trainerBookings[0]);
 
-      const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
-      const trainerBookings = [{{{json user.bookings}}}];
-      console.log(trainerBookings[0]);
-
-      for(let i = 0; i < trainerBookings[0].length; i++){
-        let checkDate = new Date(trainerBookings[0][i].date);
-        if(checkDate.toString() === bookedDate.toString()){
-          console.log(bookedDate);
-          return false;
+        for(let i = 0; i < trainerBookings[0].length; i++){
+          let checkDate = new Date(trainerBookings[0][i].date);
+          if(checkDate.toString() === bookedDate.toString()){
+            console.log(bookedDate);
+            return false;
+          }
         }
-      }
-      return true;
-    };
+        return true;
+      };
 
-    $.fn.form.settings.rules.isMemberBooked = function() {
+      $.fn.form.settings.rules.isMemberBooked = function() {
 
-      const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
-      const memberid = document.getElementsByName("bookedMember")[0].value;
-      const memberList = [{{{json members}}}];
+        const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
+        const memberid = document.getElementsByName("bookedMember")[0].value;
+        const memberList = [{{{json userList}}}];
 
-      for(let i = 0; i < memberList[0].length; i++){
-        if(memberList[0][i].id === memberid){
-          for(let k= 0; k < memberList[0][i].bookings.length; k++){
-            let checkDate = new Date(memberList[0][i].bookings[k].date);
-            if(checkDate.toString() === bookedDate.toString()){
-              return false;
+        for(let i = 0; i < memberList[0].length; i++){
+          if(memberList[0][i].id === memberid){
+            for(let k= 0; k < memberList[0][i].bookings.length; k++){
+              let checkDate = new Date(memberList[0][i].bookings[k].date);
+              if(checkDate.toString() === bookedDate.toString()){
+                return false;
+              }
             }
           }
         }
-      }
-      return true;
-    };
+        return true;
+      };
 
-    $('.ui.form').form({
-      fields: {
-        bookDate: {
-          identifier  : 'bookDate',
-          rules: [
-            {
-              type   : 'isMemberBooked',
-              prompt : 'Member is not available at that time.'
-            },
-            {
-              type   : 'isTrainerBooked',
-              prompt : 'You are already booked for that time.'
-            },
-            {
-              type   : 'empty',
-              prompt : 'Please select a Date'
-            }
-          ]
-        },
-        bookTime: {
-          identifier: 'bookTime',
-          rules: [
-            {
-              type   : 'isMemberBooked',
-              prompt : 'Please select another day/time'
-            },
-            {
-              type   : 'isTrainerBooked',
-              prompt : 'Please select another day/time'
-            },
-            {
-              type   : 'empty',
-              prompt : 'Please select a Time'
-            }
-          ]
-        },
-        bookedMember: {
-          identifier  : 'bookedMember',
-          rules: [
-            {
-              type   : 'empty',
-              prompt : 'Please select a Member'
-            }
-          ]
+      $('.ui.form').form({
+        fields: {
+          bookDate: {
+            identifier  : 'bookDate',
+            rules: [
+              {
+                type   : 'isMemberBooked',
+                prompt : 'Member is not available at that time.'
+              },
+              {
+                type   : 'isTrainerBooked',
+                prompt : 'You are already booked for that time.'
+              },
+              {
+                type   : 'empty',
+                prompt : 'Please select a Date'
+              }
+            ]
+          },
+          bookTime: {
+            identifier: 'bookTime',
+            rules: [
+              {
+                type   : 'isMemberBooked',
+                prompt : 'Please select another day/time'
+              },
+              {
+                type   : 'isTrainerBooked',
+                prompt : 'Please select another day/time'
+              },
+              {
+                type   : 'empty',
+                prompt : 'Please select a Time'
+              }
+            ]
+          },
+          bookedMember: {
+            identifier  : 'bookedMember',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please select a Member'
+              }
+            ]
+          }
         }
-      }
-    });
-  </script>
-</form>
+      });
+    </script>
+  </form>
+</section>

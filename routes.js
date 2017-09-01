@@ -31,7 +31,7 @@ router.get('/dashboard/:id/deleteassessment/:assessid', dashboard.deleteAssessme
 router.post('/dashboard/:id/bookassessment', dashboard.bookAssessment);
 router.get('/dashboard/:date/booking', dashboard.bookingIndex);
 router.post('/editbooking/:id/:date/setbooking', dashboard.setBooking);
-router.post('/dashboard/:date/rembooking', dashboard.remBooking);
+router.get('/dashboard/:date/:bookedid/rembooking', dashboard.remBooking);
 
 router.get('/about', about.index);
 

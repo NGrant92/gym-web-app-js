@@ -1,7 +1,6 @@
 <section class="ui raised segment">
-
-  <form class="ui twelve wide form" action="/editbooking/{{member.id}}/{{booking.date}}/setbooking" method="POST">
-    <h3 class="ui dividing header">Update Appointment Member</h3>
+  <form class="ui twelve wide form" action="/editbooking/{{user.id}}/{{booking.date}}/setbooking" method="POST">
+    <h3 class="ui dividing header">Update Appointment</h3>
     <div class="three fields">
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp;Date</label>
@@ -13,11 +12,8 @@
       </div>
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Trainer</label>
-        <select name="bookedTrainer" class="ui fluid dropdown">
-          <option value="{{booking.trainerid}}" hidden>{{booking.trainerName}}</option>
-          {{#each trainerList}}
-            <option value="{{id}}">{{firstname}} {{lastname}}</option>
-          {{/each}}
+        <select name="bookedTrainer" class="ui disabled dropdown">
+          <option value="{{booking.trainerid}}">{{booking.trainerName}}</option>
         </select>
       </div>
     </div>
@@ -32,7 +28,7 @@
       $.fn.form.settings.rules.isMemberBooked = function() {
 
         const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
-        const memberBookings = [{{{json member.bookings}}}];
+        const memberBookings = [{{{json user.bookings}}}];
         console.log(memberBookings[0]);
 
         for(let i = 0; i < memberBookings[0].length; i++){
@@ -49,7 +45,7 @@
 
         const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
         const trainerid = document.getElementsByName("bookedTrainer")[0].value;
-        const trainerList = [{{{json trainerList}}}];
+        const trainerList = [{{{json userList}}}];
 
         for(let i = 0; i < trainerList[0].length; i++){
           if(trainerList[0][i].id === trainerid){

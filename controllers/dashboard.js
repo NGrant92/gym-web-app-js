@@ -1,3 +1,4 @@
+// jscs:disable disallowKeywordsOnNewLine
 'use strict';// jscs:ignore validateLineBreaks
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
@@ -146,22 +147,48 @@ const dashboard = {
   },
 
   remBooking(request, response) {
+    const user = accounts.getCurrentUser(request);
+    const bookedUser = userStore.getUserById(request.params.bookedid);
+    const bookingDate = request.params.date;
 
+    for(let i = 0; i < user.bookings.length; i++){
+      if(user.bookings[i].date === bookingDate){
+        logger.info('Removing booking from user: ', user.bookings[i]);
+        _.pullAt(user.bookings, i);
+      }
+    }
+
+    for(let k = 0; k < bookedUser.bookings.length; k++){
+      if(bookedUser.bookings[k].date === bookingDate){
+        logger.info('Removing booking from bookedUser: ', bookedUser.bookings[k]);
+        _.pullAt(bookedUser.bookings, k);
+      }
+    }
+
+    userStore.store.save();
+    logger.info('Booking removes from users');
     response.redirect('/dashboard/');
   },
 
   bookingIndex(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
-    const editBooking = _.find(loggedInUser.bookings, { date: request.params.date });
+    let userArr = [];
+
+    if (loggedInUser.trainer) {
+      userArr =  userStore.getAllMembers();
+    }
+    else {
+      userArr = userStore.getAllTrainers();
+    }
 
     const viewData = {
       title: 'Edit Booking',
-      member: loggedInUser,
-      booking: editBooking,
-      trainerList: userStore.getAllTrainers(),
+      user: loggedInUser,
+      booking: _.find(loggedInUser.bookings, { date: request.params.date }),
+      userList: userArr,
     };
 
-    logger.info('viewData: ', viewData);
+    logger.info('viewData: ', viewData.booking);
     response.render('editbooking', viewData);
   },
 
@@ -169,6 +196,7 @@ const dashboard = {
     let member = [];
     let trainer = [];
     const newBookDate = new Date(request.body.bookDate + ' ' + request.body.bookTime);
+
 
     if (userStore.getUserById(request.params.id).trainer === true) {
       trainer = userStore.getUserById(request.params.id);
@@ -180,6 +208,7 @@ const dashboard = {
     }
     const memberBooking = _.find(member.bookings, { date: request.params.date });
     const trainerBooking = _.find(trainer.bookings, { date: request.params.date });
+
 
     memberBooking.date = newBookDate;
     memberBooking.trainerid = trainer.id;

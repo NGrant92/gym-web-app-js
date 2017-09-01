@@ -15,12 +15,7 @@
       "trainer": false,
       "bookings": [
         {
-          "date": "2017-09-02T15:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        },
-        {
-          "date": "Fri Sep 01 2017 17:00:00 GMT+0100 (IST)",
+          "date": "2017-09-07T15:00:00.000Z",
           "trainerid": "t00",
           "trainerName": "Arnold Schwarz"
         },
@@ -82,7 +77,7 @@
       "trainer": true,
       "bookings": [
         {
-          "date": "2017-09-02T15:00:00.000Z",
+          "date": "2017-09-07T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
         },

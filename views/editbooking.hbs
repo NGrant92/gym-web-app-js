@@ -1,7 +1,7 @@
 {{> menu id="settings"}}
 
-{{#if member}}
-  {{> membereditbook}}
-{{else}}
+{{#if user.trainer}}
   {{> trainereditbook}}
+{{else}}
+  {{> membereditbook}}
 {{/if}}
