@@ -1,6 +1,7 @@
 'use strict';// jscs:ignore validateLineBreaks
 const accounts = require('./accounts.js');
 const uuid = require('uuid');
+const _ = require('lodash');
 const dateformat = require('dateformat');
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
@@ -118,8 +119,7 @@ const dashboard = {
     if (userStore.getUserById(request.params.id).trainer === true) {
       member = userStore.getUserById(request.body.bookedMember);
       trainer = userStore.getUserById(request.params.id);
-    }
-    else if (userStore.getUserById(request.params.id).trainer === false) {
+    } else if (userStore.getUserById(request.params.id).trainer === false) {
       member = userStore.getUserById(request.params.id);
       trainer = userStore.getUserById(request.body.bookedTrainer);
     }
@@ -140,10 +140,33 @@ const dashboard = {
 
     userStore.store.save();
 
-    logger.info(`MEMBER`, member);
-    logger.info(`TRAINER`, trainer);
     logger.info(`Assessment Booked. Reloading to dashboard`, member.bookings);
     dashboard.index(request, response);
+  },
+
+  remBooking(request, response) {
+
+    response.redirect('/dashboard/');
+  },
+
+  bookingIndex(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    const editBooking = _.find(loggedInUser.bookings, { date: request.params.date });
+
+    const viewData = {
+      title: 'Edit Booking',
+      member: loggedInUser,
+      booking: editBooking,
+      trainerList: userStore.getAllTrainers(),
+    };
+
+    logger.info('viewData: ', viewData);
+    response.render('editbooking', viewData);
+  },
+
+  setBooking(request, response) {
+
+    response.redirect('/dashboard/');
   },
 };
 

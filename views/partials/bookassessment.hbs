@@ -4,6 +4,8 @@
     <tr>
       <th>Booked Appointments</th>
       <th>Booked with</th>
+      <th class="collapsing">Edit</th>
+      <th class="collapsing">Remove</th>
     </tr>
     </thead>
     <tbody>
@@ -11,10 +13,14 @@
       <tr>
         <td>{{longDate date}}</td>
         <td>{{trainerName}}</td>
+        <td><a href="/dashboard/{{date}}/booking" class="ui blue icon button"><i class="write icon"></i></a>
+        <td><a href="/dashboard/{{date}}/remBooking" class="ui red icon button"><i class="trash icon"></i></a>
+        </td>
       </tr>
     {{/each}}
     </tbody>
   </table>
+  <h4 class="ui dividing header">Book an appointment</h4>
   <div class="three fields">
     <div class="field">
       <label>&nbsp; &nbsp; &nbsp;Date</label>

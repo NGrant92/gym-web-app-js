@@ -1,0 +1,118 @@
+{{> menu id="settings"}}
+
+<section class="ui raised segment">
+
+  <form class="ui twelve wide form" action="/editbooking/{{member.id}}/setbooking" method="POST">
+    <h3 class="ui dividing header">Update Appointment</h3>
+    <div class="three fields">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp;Date</label>
+        <input placeholder="Date" type="date" value="{{shortDate booking.date}}" name="bookDate">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Time</label>
+        <input placeholder="Time" type="time" value="{{getTime booking.date}}" name="bookTime" step="3600" min="09:00" max="17:00">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Trainer</label>
+        <select name="bookedTrainer" class="ui fluid dropdown">
+          <option value="{{booking.trainerid}}" hidden>{{booking.trainerName}}"</option>
+          {{#each trainerList}}
+            <option value="{{id}}">{{firstname}} {{lastname}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <button class="ui blue submit button">Update</button>
+    <div class="ui error message"></div>
+    <script>
+      $('.dropdown').dropdown();
+
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementsByName("bookDate")[0].setAttribute('min', today);
+
+      $.fn.form.settings.rules.isMemberBooked = function() {
+
+        const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
+        const memberBookings = [{{{json member.bookings}}}];
+        console.log(memberBookings[0]);
+
+        for(let i = 0; i < memberBookings[0].length; i++){
+          let checkDate = new Date(memberBookings[0][i].date);
+          if(checkDate.toString() === bookedDate.toString()){
+            console.log(bookedDate);
+            return false;
+          }
+        }
+        return true;
+      };
+
+      $.fn.form.settings.rules.isTrainerBooked = function() {
+
+        const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
+        const trainerid = document.getElementsByName("bookedTrainer")[0].value;
+        const trainerList = [{{{json trainerList}}}];
+
+        for(let i = 0; i < trainerList[0].length; i++){
+          if(trainerList[0][i].id === trainerid){
+            for(let k= 0; k < trainerList[0][i].bookings.length; k++){
+              let checkDate = new Date(trainerList[0][i].bookings[k].date);
+              if(checkDate.toString() === bookedDate.toString()){
+                return false;
+              }
+            }
+          }
+        }
+        return true;
+      };
+
+      $('.ui.form').form({
+        fields: {
+          bookDate: {
+            identifier  : 'bookDate',
+            rules: [
+              {
+                type   : 'isTrainerBooked',
+                prompt : 'Trainer is not available at that time.'
+              },
+              {
+                type   : 'isMemberBooked',
+                prompt : 'You are already booked for that time.'
+              },
+              {
+                type   : 'empty',
+                prompt : 'Please select a Date'
+              }
+            ]
+          },
+          bookTime: {
+            identifier: 'bookTime',
+            rules: [
+              {
+                type: 'isTrainerBooked',
+                prompt : 'Please select another day/time'
+              },
+              {
+                type: 'isMemberBooked',
+                prompt : 'Please select another day/time'
+              },
+              {
+                type   : 'empty',
+                prompt : 'Please select a Time'
+              }
+            ]
+          },
+          bookedTrainer: {
+            identifier  : 'bookedTrainer',
+            rules: [
+              {
+                type   : 'empty',
+                prompt : 'Please select a Trainer'
+              }
+            ]
+          }
+        }
+      });
+    </script>
+  </form>
+</section>

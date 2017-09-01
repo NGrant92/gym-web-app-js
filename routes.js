@@ -29,6 +29,9 @@ router.post('/dashboard/:id/addgoal', dashboard.addGoal);
 router.post('/dashboard/:id/addassessment', dashboard.addAssessment);
 router.get('/dashboard/:id/deleteassessment/:assessid', dashboard.deleteAssessment);
 router.post('/dashboard/:id/bookassessment', dashboard.bookAssessment);
+router.get('/dashboard/:date/booking', dashboard.bookingIndex);
+router.post('/editbooking/:date/editbooking', dashboard.setBooking);
+router.post('/dashboard/:date/rembooking', dashboard.remBooking);
 
 router.get('/about', about.index);
 

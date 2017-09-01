@@ -48,8 +48,20 @@ Handlebars.registerHelper('json', function (trainerList) {
 
 Handlebars.registerHelper('longDate', function (date) {
 
-  logger.debug('returning JSON.stringify(trainerList)');
+  logger.debug('returning longDate');
   return  dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
+});
+
+Handlebars.registerHelper('shortDate', function (date) {
+
+  logger.debug('returning shortDate', dateformat(date, 'yyyy-mm-dd'));
+  return  dateformat(date, 'yyyy-mm-dd');
+});
+
+Handlebars.registerHelper('getTime', function (date) {
+
+  logger.debug('returning time', dateformat(date, 'HH:MM'));
+  return  dateformat(date, 'HH:MM');
 });
 
 module.exports = Handlebars;
