@@ -111,9 +111,18 @@ const dashboard = {
   },
 
   bookAssessment(request, response) {
-    const member = userStore.getUserById(request.params.id);
-    const trainer = userStore.getUserById(request.body.bookedTrainer);
+    let trainer = [];
+    let member = [];
     const bookDate = new Date(request.body.bookDate + ' ' + request.body.bookTime);
+
+    if (userStore.getUserById(request.params.id).trainer === true) {
+      member = userStore.getUserById(request.body.bookedMember);
+      trainer = userStore.getUserById(request.params.id);
+    }
+    else if (userStore.getUserById(request.params.id).trainer === false) {
+      member = userStore.getUserById(request.params.id);
+      trainer = userStore.getUserById(request.body.bookedTrainer);
+    }
 
     const newTrainerBooking = {
       date: bookDate,
@@ -130,6 +139,9 @@ const dashboard = {
     member.bookings.push(newMemberBooking);
 
     userStore.store.save();
+
+    logger.info(`MEMBER`, member);
+    logger.info(`TRAINER`, trainer);
     logger.info(`Assessment Booked. Reloading to dashboard`, member.bookings);
     dashboard.index(request, response);
   },

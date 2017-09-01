@@ -1,54 +1,23 @@
 {{> menu id="dashboard"}}
 
-<section class="ui padded raised segment">
-  <header class="ui dividing header">
-    Members List
-  </header>
-  <br>
-  <table class="ui padded very basic celled table">
-    <thead>
-    <tr>
-      <th class="fifteen wide" >Members</th>
-      <th>Remove?</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each members}}
-      <tr>
-        <td>
-          <div style="float: left;">
-            <i class="large {{toLowerCase gender}} icon"></i>
-          </div>
-          <a href="/trainerassess/{{id}}">{{firstname}} {{lastname}}</a>
-          <div class="description" id="assessmentNum{{id}}" style="color: grey;">{{assessmentSize}} assessments</div>
-          <script type="text/javascript">
-            if({{this.assessmentSize}} === 1){
-              document.getElementById("assessmentNum{{id}}").textContent = "{{assessmentSize}} assessment";
-            }
-          </script>
-        </td>
-        <td>
-          <a href="/trainerboard/deleteMember/{{members.id}}" class="ui red icon button"><i class = "trash outline icon"></i></a>
-        </td>
-      </tr>
-    {{/each}}
-    </tbody>
-  </table>
-</section>
+<section class="ui padded segment" id="assessmentTabs">
+  <h2 class="ui dividing header">{{user.firstname}} {{user.lastname}}'s Dashboard</h2>
+  <div class="ui pointing secondary demo menu">
+    <a class="active item" data-tab="first">Members List</a>
+    <a class="item" data-tab="second">Add Class</a>
+    <a class="item" data-tab="third">Assessment Bookings</a>
+  </div>
 
-<section class="ui padded raised segment">
-  <h3 class="ui dividing header">Add a new class</h3>
-  {{> addclasses}}
+  <div class="ui active tab" data-tab="first">{{> listMembers}}</div>
+  <div class="ui tab" data-tab="second" style="padding: 10px;">{{> addclasses}}</div>
+  <div class="ui tab" data-tab="third" style="padding: 10px;">{{> trainerbookassess}}</div>
+</section>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.demo.menu .item').tab({history:false});
+  });
+</script>
 </section>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <section></section>

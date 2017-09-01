@@ -1,4 +1,4 @@
-<form class="ui twelve wide form" action="/dashboard/{{member.id}}/bookassessment" method="POST">
+<form class="ui twelve wide form" action="/dashboard/{{user.id}}/bookassessment" method="POST">
   <table class = "ui celled table" id="bookingTable" style="display: none;">
     <thead>
     <tr>
@@ -7,10 +7,10 @@
     </tr>
     </thead>
     <tbody>
-    {{#each member.bookings}}
+    {{#each user.bookings}}
       <tr>
         <td>{{longDate date}}</td>
-        <td>{{trainerName}}</td>
+        <td>{{memberName}}</td>
       </tr>
     {{/each}}
     </tbody>
@@ -25,10 +25,10 @@
       <input placeholder="Time" type="time" name="bookTime">
     </div>
     <div class="field">
-      <label>&nbsp; &nbsp; &nbsp; Trainer</label>
-      <select name="bookedTrainer" class="ui fluid dropdown">
-        <option value="" hidden>Pick a trainer</option>
-        {{#each trainerList}}
+      <label>&nbsp; &nbsp; &nbsp; Members</label>
+      <select name="bookedMember" class="ui fluid dropdown">
+        <option value="" hidden>Pick a member</option>
+        {{#each members}}
           <option value="{{id}}">{{firstname}} {{lastname}}</option>
         {{/each}}
       </select>
@@ -39,18 +39,18 @@
   <script>
     $('.dropdown').dropdown();
 
-    if({{member.bookings.length}} > 0){
+    if({{user.bookings.length}} > 0){
       document.getElementById("bookingTable").style.display = "table";
     }
 
-    $.fn.form.settings.rules.isMemberBooked = function() {
+    $.fn.form.settings.rules.isTrainerBooked = function() {
 
       const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
-      const memberBookings = [{{{json member.bookings}}}];
-      console.log(memberBookings[0]);
+      const trainerBookings = [{{{json user.bookings}}}];
+      console.log(trainerBookings[0]);
 
-      for(let i = 0; i < memberBookings[0].length; i++){
-        let checkDate = new Date(memberBookings[0][i].date);
+      for(let i = 0; i < trainerBookings[0].length; i++){
+        let checkDate = new Date(trainerBookings[0][i].date);
         if(checkDate.toString() === bookedDate.toString()){
           console.log(bookedDate);
           return false;
@@ -59,16 +59,16 @@
       return true;
     };
 
-    $.fn.form.settings.rules.isTrainerBooked = function() {
+    $.fn.form.settings.rules.isMemberBooked = function() {
 
       const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
-      const trainerid = document.getElementsByName("bookedTrainer")[0].value;
-      const trainerList = [{{{json trainerList}}}];
+      const memberid = document.getElementsByName("bookedMember")[0].value;
+      const memberList = [{{{json members}}}];
 
-      for(let i = 0; i < trainerList[0].length; i++){
-        if(trainerList[0][i].id === trainerid){
-          for(let k= 0; k < trainerList[0][i].bookings.length; k++){
-            let checkDate = new Date(trainerList[0][i].bookings[k].date);
+      for(let i = 0; i < memberList[0].length; i++){
+        if(memberList[0][i].id === memberid){
+          for(let k= 0; k < memberList[0][i].bookings.length; k++){
+            let checkDate = new Date(memberList[0][i].bookings[k].date);
             if(checkDate.toString() === bookedDate.toString()){
               return false;
             }
@@ -84,11 +84,11 @@
           identifier  : 'bookDate',
           rules: [
             {
-              type   : 'isTrainerBooked',
-              prompt : 'Trainer is not available at that time.'
+              type   : 'isMemberBooked',
+              prompt : 'Member is not available at that time.'
             },
             {
-              type   : 'isMemberBooked',
+              type   : 'isTrainerBooked',
               prompt : 'You are already booked for that time.'
             }
           ]
@@ -97,11 +97,11 @@
           identifier: 'bookTime',
           rules: [
             {
-              type: 'isTrainerBooked',
+              type   : 'isMemberBooked',
               prompt : 'Please select another day/time'
             },
             {
-              type: 'isMemberBooked',
+              type   : 'isTrainerBooked',
               prompt : 'Please select another day/time'
             }
           ]

@@ -1,0 +1,30 @@
+<br>
+<table class="ui padded very basic celled table">
+  <thead>
+  <tr>
+    <th class="fifteen wide" >Members</th>
+    <th>Remove?</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each members}}
+    <tr>
+      <td>
+        <div style="float: left;">
+          <i class="large {{toLowerCase gender}} icon"></i>
+        </div>
+        <a href="/trainerassess/{{id}}">{{firstname}} {{lastname}}</a>
+        <div class="description" id="assessmentNum{{id}}" style="color: grey;">{{assessmentSize}} assessments</div>
+        <script type="text/javascript">
+          if({{this.assessmentSize}} === 1){
+            document.getElementById("assessmentNum{{id}}").textContent = "{{assessmentSize}} assessment";
+          }
+        </script>
+      </td>
+      <td>
+        <a href="/trainerboard/deleteMember/{{members.id}}" class="ui red icon button"><i class = "trash outline icon"></i></a>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
