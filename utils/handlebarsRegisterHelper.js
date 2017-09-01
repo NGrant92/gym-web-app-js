@@ -42,26 +42,28 @@ Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
 
 Handlebars.registerHelper('json', function (arrayList) {
 
-  logger.debug('returning JSON.stringify(arrayList)');
+  //logger.info('returning JSON.stringify(arrayList)');
   return  JSON.stringify(arrayList);
 });
 
 Handlebars.registerHelper('longDate', function (date) {
 
-  logger.debug('returning longDate');
+  logger.info('returning longDate');
   return  dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
 });
 
-Handlebars.registerHelper('shortDate', function (date) {
+Handlebars.registerHelper('shortDate', function (bookingdate) {
 
-  logger.debug('returning shortDate', dateformat(date, 'yyyy-mm-dd'));
-  return  dateformat(date, 'yyyy-mm-dd');
+  logger.info('intial date: ', bookingdate);
+  logger.info('returning shortDate', dateformat(bookingdate, 'yyyy-mm-dd'));
+  return  dateformat(bookingdate, 'yyyy-mm-dd');
 });
 
-Handlebars.registerHelper('getTime', function (date) {
+Handlebars.registerHelper('getTime', function (bookingdate) {
 
-  logger.debug('returning time', dateformat(date, 'HH:MM'));
-  return  dateformat(date, 'HH:MM');
+  logger.info('intial date: ', bookingdate);
+  logger.info('returning time', dateformat(bookingdate, 'HH:MM'));
+  return  dateformat(bookingdate, 'HH:MM');
 });
 
 module.exports = Handlebars;

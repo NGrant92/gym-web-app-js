@@ -1,5 +1,5 @@
 <section class="ui raised segment">
-  <form class="ui twelve wide form" action="/editbooking/{{user.id}}/{{booking.date}}/setbooking" method="POST">
+  <form class="ui twelve wide form" action="/editbooking/{{user.id}}/{{booking.bookid}}/setbooking" method="POST">
     <h3 class="ui dividing header">Update Appointment</h3>
     <div class="three fields">
       <div class="field">
@@ -27,7 +27,8 @@
 
       $.fn.form.settings.rules.isMemberBooked = function() {
 
-        const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value);
+        const bookedDate = new Date( document.getElementsByName("bookDate")[0].value + ' ' + document.getElementsByName("bookTime")[0].value + 'Z');
+        console.log(bookedDate);
         const memberBookings = [{{{json user.bookings}}}];
         console.log(memberBookings[0]);
 

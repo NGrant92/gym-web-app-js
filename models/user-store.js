@@ -19,6 +19,11 @@ const userStore = {
     this.store.add(this.collection, user);
     this.store.save();
   },
+
+  addBooking(user, booking) {
+    user.bookings.push(booking);
+    this.store.save();
+  },
   
   getUserById(id) {
     return this.store.findOneBy(this.collection, { id: id });
