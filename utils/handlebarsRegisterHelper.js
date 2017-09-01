@@ -46,4 +46,10 @@ Handlebars.registerHelper('json', function (trainerList) {
   return  JSON.stringify(trainerList);
 });
 
+Handlebars.registerHelper('longDate', function (date) {
+
+  logger.debug('returning JSON.stringify(trainerList)');
+  return  dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
+});
+
 module.exports = Handlebars;

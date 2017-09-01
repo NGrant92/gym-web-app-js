@@ -16,11 +16,18 @@
       "bookings": [
         {
           "date": "Thu Aug 31 2017 17:00:00 GMT+0100 (IST)",
-          "trainerid": "t00"
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
         },
         {
           "date": "Fri Sep 01 2017 17:00:00 GMT+0100 (IST)",
-          "trainerid": "t00"
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        },
+        {
+          "date": "2017-09-05T16:00:00.000Z",
+          "trainerid": "t01",
+          "trainerName": "Terry Crews"
         }
       ]
     },
@@ -39,11 +46,18 @@
       "bookings": [
         {
           "date": "Sun Sep 03 2017 17:00:00 GMT+0100 (IST)",
-          "trainerid": "t01"
+          "trainerid": "t01",
+          "trainerName": "Terry Crews"
         },
         {
           "date": "2017-09-01T16:00:00.000Z",
-          "trainerid": "t00"
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        },
+        {
+          "date": "2017-09-04T16:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
         }
       ]
     },
@@ -62,11 +76,17 @@
       "bookings": [
         {
           "date": "Thu Aug 31 2017 17:00:00 GMT+0100 (IST)",
-          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0"
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "trainerName": "Homer Simpson"
         },
         {
           "date": "2017-09-01T16:00:00.000Z",
-          "memberid": "316c6e7b-9706-4337-b198-13f9e92733d0"
+          "memberid": "316c6e7b-9706-4337-b198-13f9e92733d0",
+          "trainerName": "Bart Simpson"
+        },
+        {
+          "date": "2017-09-04T16:00:00.000Z",
+          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
         }
       ]
     },
@@ -85,7 +105,13 @@
       "bookings": [
         {
           "date": "Sun Sep 03 2017 17:00:00 GMT+0100 (IST)",
-          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+          "trainerName": "Marge Simpson"
+        },
+        {
+          "date": "2017-09-05T16:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
         }
       ]
     },
@@ -119,7 +145,8 @@
       "bookings": [
         {
           "date": "2017-09-01T16:00:00.000Z",
-          "trainerid": "t00"
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
         }
       ]
     }

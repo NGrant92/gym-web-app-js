@@ -117,13 +117,15 @@ const dashboard = {
 
     const newTrainerBooking = {
       date: bookDate,
-      memberid: member.id
+      memberid: member.id,
+      memberName: member.firstname + ' ' + member.lastname,
     };
     trainer.bookings.push(newTrainerBooking);
 
     const newMemberBooking = {
       date: bookDate,
-      trainerid: trainer.id
+      trainerid: trainer.id,
+      trainerName: trainer.firstname + ' ' + trainer.lastname,
     };
     member.bookings.push(newMemberBooking);
 

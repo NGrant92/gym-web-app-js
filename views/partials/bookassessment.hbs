@@ -1,4 +1,20 @@
 <form class="ui form" action="/dashboard/{{member.id}}/bookassessment" method="POST">
+  <table class = "ui celled table" id="bookingTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Booked Appointments</th>
+        <th>Trainer</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each member.bookings}}
+        <tr>
+          <td>{{longDate date}}</td>
+          <td>{{trainerName}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
   <div class="three fields" name="bookingForm">
     <div class="field">
       <label>&nbsp; &nbsp; &nbsp;Date</label>
@@ -22,6 +38,10 @@
   <div class="ui error message"></div>
   <script>
     $('.dropdown').dropdown();
+
+    if({{member.bookings.length}} > 0){
+      document.getElementById("bookingTable").style.display = "block";
+    }
 
     $.fn.form.settings.rules.isMemberBooked = function() {
 
