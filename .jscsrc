@@ -23,7 +23,7 @@
   "requireTrailingComma": { "ignoreSingleLine": true },
   "requireSpaceAfterComma": true,
   "disallowYodaConditions": true,
-  "disallowKeywords": [ "with" ],
+  //"disallowKeywords": [ "with" ],
   //"disallowKeywordsOnNewLine": ["else"],
   "disallowMultipleLineBreaks": true,
   "disallowMultipleLineStrings": true,

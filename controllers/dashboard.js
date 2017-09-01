@@ -115,6 +115,7 @@ const dashboard = {
     let trainer = [];
     let member = [];
     const bookDate = new Date(request.body.bookDate + ' ' + request.body.bookTime);
+    logger.info(`bookDate`, bookDate);
 
     if (userStore.getUserById(request.params.id).trainer === true) {
       member = userStore.getUserById(request.body.bookedMember);
@@ -138,7 +139,7 @@ const dashboard = {
     };
     member.bookings.push(newMemberBooking);
 
-    userStore.store.save();
+    //userStore.store.save();
 
     logger.info(`Assessment Booked. Reloading to dashboard`, member.bookings);
     dashboard.index(request, response);
@@ -165,6 +166,30 @@ const dashboard = {
   },
 
   setBooking(request, response) {
+    let member = [];
+    let trainer = [];
+    const newBookDate = new Date(request.body.bookDate + ' ' + request.body.bookTime);
+
+    if (userStore.getUserById(request.params.id).trainer === true) {
+      trainer = userStore.getUserById(request.params.id);
+      member = userStore.getUserById(request.body.bookedMember);
+    }
+    else if (userStore.getUserById(request.params.id).trainer === false) {
+      member = userStore.getUserById(request.params.id);
+      trainer = userStore.getUserById(request.body.bookedTrainer);
+    }
+    const memberBooking = _.find(member.bookings, { date: request.params.date });
+    const trainerBooking = _.find(trainer.bookings, { date: request.params.date });
+
+    memberBooking.date = newBookDate;
+    memberBooking.trainerid = trainer.id;
+    memberBooking.trainerName = trainer.firstname + ' ' + trainer.lastname;
+
+    trainerBooking.date = newBookDate;
+    trainerBooking.memberid = member.id;
+    trainerBooking.memberName = member.firstname + ' ' + member.lastname;
+
+    userStore.store.save();
 
     response.redirect('/dashboard/');
   },

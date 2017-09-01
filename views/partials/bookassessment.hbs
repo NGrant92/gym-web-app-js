@@ -58,6 +58,8 @@
       const memberBookings = [{{{json member.bookings}}}];
       console.log(memberBookings[0]);
 
+      //looping through member.bookings[] to see if the inputted date matches a stored booking
+      //if true it'll return false and prompt user with an error message
       for(let i = 0; i < memberBookings[0].length; i++){
         let checkDate = new Date(memberBookings[0][i].date);
         if(checkDate.toString() === bookedDate.toString()){

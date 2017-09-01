@@ -2,7 +2,7 @@
 
 <section class="ui raised segment">
 
-  <form class="ui twelve wide form" action="/editbooking/{{member.id}}/setbooking" method="POST">
+  <form class="ui twelve wide form" action="/editbooking/{{member.id}}/{{booking.date}}/setbooking" method="POST">
     <h3 class="ui dividing header">Update Appointment</h3>
     <div class="three fields">
       <div class="field">
@@ -16,7 +16,7 @@
       <div class="field">
         <label>&nbsp; &nbsp; &nbsp; Trainer</label>
         <select name="bookedTrainer" class="ui fluid dropdown">
-          <option value="{{booking.trainerid}}" hidden>{{booking.trainerName}}"</option>
+          <option value="{{booking.trainerid}}" hidden>{{booking.trainerName}}</option>
           {{#each trainerList}}
             <option value="{{id}}">{{firstname}} {{lastname}}</option>
           {{/each}}

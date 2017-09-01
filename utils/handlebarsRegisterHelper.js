@@ -40,10 +40,10 @@ Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
   return isEnrolled;
 });
 
-Handlebars.registerHelper('json', function (trainerList) {
+Handlebars.registerHelper('json', function (arrayList) {
 
-  logger.debug('returning JSON.stringify(trainerList)');
-  return  JSON.stringify(trainerList);
+  logger.debug('returning JSON.stringify(arrayList)');
+  return  JSON.stringify(arrayList);
 });
 
 Handlebars.registerHelper('longDate', function (date) {
