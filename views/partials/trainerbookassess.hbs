@@ -22,7 +22,7 @@
     </div>
     <div class="field">
       <label>&nbsp; &nbsp; &nbsp; Time</label>
-      <input placeholder="Time" type="time" name="bookTime">
+      <input placeholder="Time" type="time" name="bookTime" step="3600" min="09:00" max="17:00">
     </div>
     <div class="field">
       <label>&nbsp; &nbsp; &nbsp; Members</label>
@@ -38,6 +38,9 @@
   <div class="ui error message"></div>
   <script>
     $('.dropdown').dropdown();
+
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("bookDate")[0].setAttribute('min', today);
 
     if({{user.bookings.length}} > 0){
       document.getElementById("bookingTable").style.display = "table";
@@ -90,6 +93,10 @@
             {
               type   : 'isTrainerBooked',
               prompt : 'You are already booked for that time.'
+            },
+            {
+              type   : 'empty',
+              prompt : 'Please select a Date'
             }
           ]
         },
@@ -103,6 +110,19 @@
             {
               type   : 'isTrainerBooked',
               prompt : 'Please select another day/time'
+            },
+            {
+              type   : 'empty',
+              prompt : 'Please select a Time'
+            }
+          ]
+        },
+        bookedMember: {
+          identifier  : 'bookedMember',
+          rules: [
+            {
+              type   : 'empty',
+              prompt : 'Please select a Member'
             }
           ]
         }
