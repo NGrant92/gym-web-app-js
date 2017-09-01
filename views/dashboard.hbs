@@ -13,14 +13,14 @@
     <section class="ui segment" id="assessmentTabs">
       <h2 class="ui dividing header">Assessments</h2>
       <div class="ui pointing secondary demo menu">
-        <a class="item" data-tab="first">List</a>
+        <a class="active item" data-tab="first">List</a>
         <a class="item" data-tab="second">Add</a>
-        <a class="active item" data-tab="third">Book</a>
+        <a class=" item" data-tab="third">Book</a>
       </div>
 
-      <div class="ui tab" data-tab="first">{{> listassessments}}</div>
+      <div class="ui active tab" data-tab="first">{{> listassessments}}</div>
       <div class="ui tab" data-tab="second" style="padding: 10px;">{{> addassessments}}</div>
-      <div class="ui active tab" data-tab="third" style="padding: 10px;">{{>bookassessment}}</div>
+      <div class="ui tab" data-tab="third" style="padding: 10px;">{{>bookassessment}}</div>
     </section>
     <script type="text/javascript">
       $(document).ready(function(){
