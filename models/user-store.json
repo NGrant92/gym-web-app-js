@@ -44,9 +44,15 @@
       "bookings": [
         {
           "bookid": "book01",
-          "date": "Sun Sep 03 2017 17:00:00 GMT+0100 (IST)",
+          "date": "2017-09-03T16:00:00.000Z",
           "trainerid": "t01",
           "trainerName": "Terry Crews"
+        },
+        {
+          "bookid": "24c940dc-f36b-4392-a988-ed447c7d769d",
+          "date": "2017-09-10T16:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
         }
       ],
       "assessmentSize": 2
@@ -69,6 +75,18 @@
           "date": "2017-09-08T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
+        },
+        {
+          "bookid": "afc6dd40-356c-474c-a616-09eaebcf989c",
+          "date": "2017-09-10T16:00:00.000Z",
+          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+          "memberName": "Marge Simpson"
+        },
+        {
+          "bookid": "f9f14686-9e8b-41cf-abb4-a4b11480b4d4",
+          "date": "2017-09-09T16:00:00.000Z",
+          "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
+          "memberName": "Niall Grant"
         }
       ]
     },
@@ -87,7 +105,7 @@
       "bookings": [
         {
           "bookid": "book03",
-          "date": "Sun Sep 03 2017 17:00:00 GMT+0100 (IST)",
+          "date": "2017-09-10T15:00:00.000Z",
           "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
           "trainerName": "Marge Simpson"
         },
@@ -112,7 +130,14 @@
       "id": "b382ba18-46ea-49d9-b089-22cc69068809",
       "startWeight": "68",
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
-      "bookings": [],
+      "bookings": [
+        {
+          "bookid": "473878b6-8b06-4e06-84f6-c4af4d8fd899",
+          "date": "2017-09-09T16:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        }
+      ],
       "assessmentSize": 1
     },
     {

@@ -9,6 +9,7 @@ const assessStore = require('../models/assess-store.js');
 const pictureStore = require('../models/picture-store.js');
 const userStore = require('../models/user-store');
 const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
+const dateSort = require('../utils/dateSort.js');
 
 const trainerboard = {
   
@@ -22,6 +23,8 @@ const trainerboard = {
     for (let singleKey in members) {
       members[singleKey].assessmentSize = assessStore.getUserAssessmentList(members[singleKey].id)[0].assessments.length;
     }
+
+    loggedInUser.bookings = dateSort.sortByOldest(loggedInUser.bookings);
 
     //populating the viewData variable with the necessary information to load the page
     const viewData = {

@@ -22,7 +22,6 @@ It includes basic express setup, templating, routing and session support.
             -delete specific classes
 
     -Goals:
-        -Trainer create for Member
         -Stores:
             Future assessment
             Status indicator[Open, achieved, missed, pending]

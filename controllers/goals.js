@@ -3,12 +3,14 @@
 const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const uuid = require('uuid');
+const accounts = require('./accounts.js');
 
 const goals = {
 
   addGoal(request, response) {
 
-    const userId = request.params.id;
+    const memberId = request.params.id;
+    const loggedInUser = accounts.getCurrentUser(request);
 
     const newGoal = {
       goalid: uuid(),
@@ -17,18 +19,33 @@ const goals = {
     };
 
     logger.debug('New Goal = ', newGoal);
-    goalStore.addGoal(userId, newGoal);
+    goalStore.addGoal(memberId, newGoal);
     goalStore.store.save();
-    response.redirect('/dashboard/');
+
+    if(loggedInUser.trainer){
+      response.redirect(`/trainerassess/${memberId}`);
+    }
+    else{
+      response.redirect('/dashboard/');
+    }
   },
 
   deleteGoal(request, response) {
-    const userId = request.params.id;
+    const memberId = request.params.id;
     const goalId = request.params.goalid;
-    logger.debug(`Deleting Song ${goalId} from Member ${userId}`);
-    goalStore.removeGoal(userId, goalId);
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    logger.debug(`Deleting Song ${goalId} from Member ${memberId}`);
+
+    goalStore.removeGoal(memberId, goalId);
     goalStore.store.save();
-    response.redirect('/dashboard/');
+
+    if(loggedInUser.trainer){
+      response.redirect(`/trainerassess/${memberId}`);
+    }
+    else{
+      response.redirect('/dashboard/');
+    }
   },
 };
 

@@ -35,9 +35,9 @@ const dashboard = {
       userbmi.bmiCategory = analytics.determineBMICategory(userbmi.bmi);
       userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
 
-      //populating the viewData variable with the necessary information to load the page
-      logger.info('goalStore: ', goalStore.getUserGoalList(loggedInUser.id)[0].goals);
+      loggedInUser.bookings = dateSort.sortByOldest(loggedInUser.bookings);
 
+      //populating the viewData variable with the necessary information to load the page
       const viewData = {
         title: 'Dashboard',
         goallist: dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals),

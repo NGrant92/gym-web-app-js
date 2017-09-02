@@ -32,35 +32,13 @@ const trainerassess = {
       title: 'Assessments',
       user: loggedInUser,
       member: member,
+      goallist: dateSort.sortByOldest(goalStore.getUserGoalList(member.id)[0].goals),
       assessments: assessmentArr,
       bmi: memberbmi,
     };
     
     logger.info('about to render', viewData.title);
     response.render('trainerassess', viewData);
-  },
-
-  addGoal(request, response) {
-
-    const userId = request.params.id;
-
-    const newGoal = {
-      id: uuid(),
-      goal: request.body.goal,
-      date: request.body.date + ' ' + request.body.month,
-    };
-
-    logger.debug('New Goal = ', newGoal);
-    goalStore.addGoal(userId, newGoal);
-    response.redirect('/dashboard/');
-  },
-
-  deleteGoal(request, response) {
-    const userId = request.params.id;
-    const goalId = request.params.goalid;
-    logger.debug(`Deleting Song ${goalId} from Member ${userId}`);
-    goalStore.removeGoal(userId, goalId);
-    response.redirect('/dashboard/');
   },
 
   setComment(request, response) {

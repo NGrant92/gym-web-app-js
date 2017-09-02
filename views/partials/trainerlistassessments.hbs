@@ -1,0 +1,51 @@
+{{#each assessments}}
+  <div class="ui releaxed divided items">
+    <div class="item">
+      <div class="content">
+        <div class="ui horizontal divider" id="assessNum{{date}}">
+          <i class="bar chart icon"></i>
+          <script>
+            document.getElementById("assessNum{{date}}").innerHTML= '<i class="bar chart icon"></i>' + ' Assessment #' + ({{@index}} + 1);
+          </script>
+        </div>
+        <table class = "ui celled table middle aligned segment">
+          <thead>
+          <tr>
+            <th>Date</th>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Thigh</th>
+            <th class="collapsing">Upper Arm</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Comments</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="collapsing">{{shortDateDayFirst date}}</td>
+            <td>{{weight}}kg</td>
+            <td>{{chest}}mm</td>
+            <td>{{thigh}}mm</td>
+            <td>{{upperArm}}mm</td>
+            <td>{{waist}}mm</td>
+            <td>{{hips}}mm</td>
+            <td>{{comment}}</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <form class="ui form" action="/trainerassess/setcomment/{{../member.id}}/{{id}}" method="POST">
+          <div class="field">
+            <label>Add Comment</label>
+            <input placeholder="Comment" type="text" name="comment">
+          </div>
+
+          <button class="ui left floated primary button">
+            Add Comment
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+{{/each}}
