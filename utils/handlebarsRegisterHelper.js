@@ -52,18 +52,24 @@ Handlebars.registerHelper('longDate', function (date) {
   return  dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
 });
 
-Handlebars.registerHelper('shortDate', function (bookingdate) {
+Handlebars.registerHelper('longDateNoTime', function (date) {
 
-  logger.info('intial date: ', bookingdate);
-  logger.info('returning shortDate', dateformat(bookingdate, 'yyyy-mm-dd'));
-  return  dateformat(bookingdate, 'yyyy-mm-dd');
+  logger.info('returning longDateNoTime');
+  return  dateformat(date, 'dddd mmmm dS, yyyy');
 });
 
-Handlebars.registerHelper('getTime', function (bookingdate) {
+Handlebars.registerHelper('shortDate', function (date) {
 
-  logger.info('intial date: ', bookingdate);
-  logger.info('returning time', dateformat(bookingdate, 'HH:MM'));
-  return  dateformat(bookingdate, 'HH:MM');
+  logger.info('intial date: ', date);
+  logger.info('returning shortDate', dateformat(date, 'yyyy-mm-dd'));
+  return  dateformat(date, 'yyyy-mm-dd');
+});
+
+Handlebars.registerHelper('getTime', function (date) {
+
+  logger.info('intial date: ', date);
+  logger.info('returning time', dateformat(date, 'HH:MM'));
+  return  dateformat(date, 'HH:MM');
 });
 
 module.exports = Handlebars;

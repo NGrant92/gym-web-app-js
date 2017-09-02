@@ -3,6 +3,7 @@
     <tr>
       <th>Goal</th>
       <th>Achieve by:</th>
+      <th>Status</th>
       <th></th>
     </tr>
   </thead>
@@ -14,10 +15,11 @@
             {{goal}}
           </td>
           <td>
-            {{date}}
+            {{longDateNoTime date}}
           </td>
+          <td></td>
           <td>
-            <a href="/dashboard/{{../../member.id}}/deletegoal/{{id}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>
+            <a href="/dashboard/{{../../member.id}}/deletegoal/{{goalid}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>
           </td>
         </tr>
       {{/each}}

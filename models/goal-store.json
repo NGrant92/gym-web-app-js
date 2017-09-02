@@ -4,14 +4,14 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "goals": [
         {
-          "id": "d0788422-92d9-4e34-b109-6132c7b44683",
-          "goal": "buy duff",
-          "date": "01 January"
+          "goalid": "5ed30178-f561-44d9-bfef-b052eb65734f",
+          "goal": "buy less duff",
+          "date": "2017-09-30T00:00:00.000Z"
         },
         {
-          "id": "e0788422-92d9-4e34-b109-6132c7b44683",
-          "goal": "get buff",
-          "date": "01 January"
+          "goalid": "675a6f4b-952e-4e01-a41a-dce34853e578",
+          "goal": "get more buff",
+          "date": "2017-10-01T00:00:00.000Z"
         }
       ]
     },
@@ -22,62 +22,6 @@
           "id": "73c80563-e682-43e2-88f5-bc636524633e",
           "goal": "make homer get buff not duff",
           "date": "01 January"
-        }
-      ]
-    },
-    {
-      "id": "484b9173-ba71-47b3-9512-d8fe6e2bd495",
-      "userid": "61c184e5-30fc-4d9f-b653-202cc0f8e970",
-      "goals": []
-    },
-    {
-      "id": "42fc4577-f6d2-4c80-b2cc-ce23a48ef7f0",
-      "userid": "2a8498da-1da6-401c-bb8c-14a246e765ae",
-      "goals": []
-    },
-    {
-      "id": "9a6612f8-41c8-4eff-bc27-fae5b9a2ee92",
-      "userid": "7955d028-6fce-40a3-8a7d-a2294b950678",
-      "goals": []
-    },
-    {
-      "id": "d9aeeb4b-809b-498f-8d19-fec0e24184fe",
-      "userid": "49c08b88-5978-4fd4-9354-0b1188471bc1",
-      "goals": []
-    },
-    {
-      "id": "1eb73fdb-074a-4ee4-b8e0-5bfa877b6ea3",
-      "userid": "fa5b714b-121f-4f0c-82f7-5dbbf70c0123",
-      "goals": []
-    },
-    {
-      "id": "36dcb63a-0bd7-4b92-8557-a41633f2dc7a",
-      "userid": "3d6edc5f-e295-4f7d-a6e8-097b7a970556",
-      "goals": []
-    },
-    {
-      "id": "b5d3e9d8-fc7f-4c9d-93b0-35d6f40702ad",
-      "userid": "4cf07dbb-ee7d-4396-a326-6f2bec1b02ef",
-      "goals": []
-    },
-    {
-      "id": "18a9a62d-9f2b-46eb-a557-ed72343dd906",
-      "userid": "f47d9d42-f4a6-417e-b2ef-8fe4b306a0bf",
-      "goals": []
-    },
-    {
-      "id": "b1cb0600-b692-48f7-99c0-5ba42227c78f",
-      "userid": "b382ba18-46ea-49d9-b089-22cc69068809",
-      "goals": []
-    },
-    {
-      "id": "e5719128-f95b-422f-a61e-80366003463a",
-      "userid": "316c6e7b-9706-4337-b198-13f9e92733d0",
-      "goals": [
-        {
-          "id": "55e2733d-0226-4031-bf4c-a07a484a461b",
-          "goal": "1111111111",
-          "date": "14 October"
         }
       ]
     }

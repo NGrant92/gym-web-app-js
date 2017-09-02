@@ -6,36 +6,29 @@ const uuid = require('uuid');
 
 const goals = {
 
-  index(request, response) {
-    const goalId = request.params.id;
-    logger.debug('Playlist id = ', goalId);
-    const viewData = {
-      title: 'Goals',
-      goalList: goalStore.getGoalList(goalId),
+  addGoal(request, response) {
+
+    const userId = request.params.id;
+
+    const newGoal = {
+      goalid: uuid(),
+      goal: request.body.goal,
+      date: new Date(request.body.goalDate),
     };
-    response.render('goal', viewData);
+
+    logger.debug('New Goal = ', newGoal);
+    goalStore.addGoal(userId, newGoal);
+    goalStore.store.save();
+    response.redirect('/dashboard/');
   },
 
   deleteGoal(request, response) {
-    const playlistId = request.params.id;
-    const songId = request.params.songid;
-    logger.debug(`Deleting Song ${songId} from Playlist ${playlistId}`);
-    playlistStore.removeSong(playlistId, songId);
-    response.redirect('/playlist/' + playlistId);
-  },
-
-  addGoal(request, response) {
-    const goalId = request.params.id;
-    const newGoal = {
-      id: uuid(),
-      title: request.body.title,
-      artist: request.body.artist,
-      duration: Number(request.body.duration),
-    };
-
-    logger.debug('New Goall: ', newGoal);
-    goalStore.addGoal(goalId, newGoal);
-    response.redirect('/playlist/' + playlistId);
+    const userId = request.params.id;
+    const goalId = request.params.goalid;
+    logger.debug(`Deleting Song ${goalId} from Member ${userId}`);
+    goalStore.removeGoal(userId, goalId);
+    goalStore.store.save();
+    response.redirect('/dashboard/');
   },
 };
 

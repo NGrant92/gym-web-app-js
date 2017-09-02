@@ -8,7 +8,6 @@ const logger = require('../utils/logger');
 const goalStore = require('../models/goal-store');
 const userStore = require('../models/user-store');
 const assessStore = require('../models/assess-store.js');
-const classStore = require('../models/class-store.js');
 const analytics = require('../utils/analytics.js');
 
 const dashboard = {
@@ -56,29 +55,6 @@ const dashboard = {
       logger.info('about to render', viewData.title);
       response.render('dashboard', viewData);
     }
-  },
-
-  addGoal(request, response) {
-
-    const userId = request.params.id;
-
-    const newGoal = {
-      id: uuid(),
-      goal: request.body.goal,
-      date: request.body.date + ' ' + request.body.month,
-    };
-
-    logger.debug('New Goal = ', newGoal);
-    goalStore.addGoal(userId, newGoal);
-    response.redirect('/dashboard/');
-  },
-
-  deleteGoal(request, response) {
-    const userId = request.params.id;
-    const goalId = request.params.goalid;
-    logger.debug(`Deleting Song ${goalId} from Member ${userId}`);
-    goalStore.removeGoal(userId, goalId);
-    response.redirect('/dashboard/');
   },
 
   addAssessment(request, response) {

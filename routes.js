@@ -5,6 +5,7 @@ const router = express.Router();
 
 const accounts = require('./controllers/accounts.js');
 const dashboard = require('./controllers/dashboard.js');
+const goals = require('./controllers/goals.js');
 const about = require('./controllers/about.js');
 const trainerboard = require('./controllers/trainerboard.js');
 const trainerassess = require('./controllers/trainerassess.js');
@@ -24,12 +25,13 @@ router.get('/trainerassess/:memberid', trainerassess.index);
 router.post('/trainerassess/setcomment/:memberid/:assessid', trainerassess.setComment);
 
 router.get('/dashboard', dashboard.index);
-router.get('/dashboard/:id/deletegoal/:goalid', dashboard.deleteGoal);
-router.post('/dashboard/:id/addgoal', dashboard.addGoal);
+router.get('/dashboard/:id/deletegoal/:goalid', goals.deleteGoal);
+router.post('/dashboard/:id/addgoal', goals.addGoal);
 router.post('/dashboard/:id/addassessment', dashboard.addAssessment);
 router.get('/dashboard/:id/deleteassessment/:assessid', dashboard.deleteAssessment);
 router.post('/dashboard/:id/bookassessment', dashboard.bookAssessment);
 router.get('/dashboard/:bookid/booking', dashboard.bookingIndex);
+
 router.post('/editbooking/:id/:bookid/setbooking', dashboard.setBooking);
 router.get('/dashboard/:bookid/:bookedid/rembooking', dashboard.remBooking);
 
