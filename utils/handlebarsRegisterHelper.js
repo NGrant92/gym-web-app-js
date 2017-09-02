@@ -65,6 +65,13 @@ Handlebars.registerHelper('shortDate', function (date) {
   return  dateformat(date, 'yyyy-mm-dd');
 });
 
+Handlebars.registerHelper('shortDateDayFirst', function (date) {
+
+  logger.info('intial date: ', date);
+  logger.info('returning shortDate', dateformat(date, 'dd-mm-yy'));
+  return  dateformat(date, 'dd-mm-yy');
+});
+
 Handlebars.registerHelper('getTime', function (date) {
 
   logger.info('intial date: ', date);

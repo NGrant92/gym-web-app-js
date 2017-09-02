@@ -10,6 +10,7 @@ const assessStore = require('../models/assess-store.js');
 const analytics = require('../utils/analytics.js');
 const userStore = require('../models/user-store');
 const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
+const dateSort = require('../utils/dateSort.js');
 
 const trainerassess = {
   
@@ -18,15 +19,7 @@ const trainerassess = {
     let member = userStore.getUserById(request.params.memberid);
     const memberbmi = [];
 
-    const assessmentArr = assessStore.getUserAssessmentList(member.id)[0].assessments;
-
-    //This sort function is used to sort the assessments by date in descending order
-    assessmentArr.sort(function (a, b) {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-
-      return dateB - dateA;
-    });
+    const assessmentArr = dateSort.sortByNewest(assessStore.getUserAssessmentList(member.id)[0].assessments);
 
     //bmi information of the member, determined by the calcualtions done by analytics.js
     memberbmi.latestweight = assessmentArr[0].weight;

@@ -9,6 +9,7 @@ const goalStore = require('../models/goal-store');
 const userStore = require('../models/user-store');
 const assessStore = require('../models/assess-store.js');
 const analytics = require('../utils/analytics.js');
+const dateSort = require('../utils/dateSort.js');
 
 const dashboard = {
   index(request, response) {
@@ -26,15 +27,7 @@ const dashboard = {
     //'else' is required to prevent a "Cannot read property 'assessments' of undefined" error message
     else {
       logger.info('user is a member');
-      const assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
-
-      //This sort function is used to sort the assessments by date in descending order
-      assessmentArr.sort(function (a, b) {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-
-        return dateB - dateA;
-      });
+      const assessmentArr = dateSort.sortByNewest(assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments);
 
       //bmi information of the member, determined by the calcualtions done by analytics.js
       userbmi.latestweight = assessmentArr[0].weight;
@@ -43,9 +36,11 @@ const dashboard = {
       userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
 
       //populating the viewData variable with the necessary information to load the page
+      logger.info('goalStore: ', goalStore.getUserGoalList(loggedInUser.id)[0].goals);
+
       const viewData = {
         title: 'Dashboard',
-        goallist: goalStore.getUserGoalList(loggedInUser.id),
+        goallist: dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals),
         member: loggedInUser,
         bmi: userbmi,
         assessments: assessmentArr,

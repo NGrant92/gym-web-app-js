@@ -13,20 +13,17 @@ It includes basic express setup, templating, routing and session support.
         -Delete account
         -Trends
         -View Fitness Programmes
-        -
 
     -Trainers:
-        -Goals To Members
         -Add Fitness Programmes
-        -Have Assessment Schedule
-        -Create Classes
+        -Delete members
+        -Classes
             -Edit class information
             -delete specific classes
 
     -Goals:
-        -Member can create for self
         -Trainer create for Member
-        -stores:
+        -Stores:
             Future assessment
             Status indicator[Open, achieved, missed, pending]
         -If 0 goals then prompt them to set a goal
