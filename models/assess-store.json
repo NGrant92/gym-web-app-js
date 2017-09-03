@@ -4,6 +4,17 @@
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "assessments": [
         {
+          "id": "35cbd9ab-2bb4-4919-9b24-308fd8e3bcfb",
+          "date": "2017-09-03T14:16:17.313Z",
+          "weight": "160",
+          "chest": "33",
+          "thigh": "33",
+          "upperArm": "33",
+          "waist": "33",
+          "hips": "33",
+          "comment": ""
+        },
+        {
           "id": "4e8206fa-6881-4506-bbbb-a5f14717f27b",
           "date": "2017-07-25T16:00:00.000Z",
           "weight": "180",
@@ -24,17 +35,6 @@
           "waist": "68",
           "hips": "58",
           "comment": "Lorem ipsum dolor sit amet, no has prima brute fabulas. Id omnis soluta instructior ius, eu agam platonem eum."
-        },
-        {
-          "id": "35cbd9ab-2bb4-4919-9b24-308fd8e3bcfb",
-          "date": "2017-09-03T14:16:17.313Z",
-          "weight": "160",
-          "chest": "33",
-          "thigh": "33",
-          "upperArm": "33",
-          "waist": "33",
-          "hips": "33",
-          "comment": ""
         }
       ]
     },
