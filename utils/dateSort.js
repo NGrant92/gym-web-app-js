@@ -8,6 +8,7 @@ const dateSort = {
   sortByNewest(sortArray) {
     logger.info('assessment array input: ' + sortArray);
     let newArray = [];
+
     //This sort function is used to sort the assessments by date in descending order
     newArray = sortArray.sort(function (a, b) {
       const dateA = new Date(a.date);
@@ -23,6 +24,7 @@ const dateSort = {
   sortByOldest(sortArray) {
     logger.info('assessment array input: ' + sortArray);
     let newArray = [];
+
     //This sort function is used to sort the assessments by date in descending order
     newArray = sortArray.sort(function (a, b) {
       const dateA = new Date(a.date);

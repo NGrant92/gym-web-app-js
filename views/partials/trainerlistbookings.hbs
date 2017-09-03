@@ -1,0 +1,20 @@
+<table class = "ui celled table" id="bookingTable" style="display: none;">
+  <thead>
+  <tr>
+    <th>Booked Appointments</th>
+    <th>Booked with</th>
+    <th class="collapsing">Edit</th>
+    <th class="collapsing">Remove</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each user.bookings}}
+    <tr>
+      <td>{{longDate date}}</td>
+      <td>{{memberName}}</td>
+      <td><a href="/dashboard/{{bookid}}/booking" class="ui blue icon button"><i class="write icon"></i></a>
+      <td><a href="/dashboard/{{bookid}}/{{memberid}}/rembooking" class="ui red icon button"><i class="trash icon"></i></a>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

@@ -15,19 +15,37 @@
       "trainer": false,
       "bookings": [
         {
+          "bookid": "cc24f073-07e8-4537-a086-d306111f31af",
+          "date": "2017-09-08T14:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        },
+        {
           "bookid": "book00",
           "date": "2017-09-08T15:00:00.000Z",
           "trainerid": "t00",
           "trainerName": "Arnold Schwarz"
         },
         {
-          "bookid": "5de11d6d-45f2-42fc-8646-6149825b65bf",
-          "date": "2017-09-15T15:00:00.000Z",
+          "bookid": "8816014c-fa55-48fb-9108-4a901d0bcb81",
+          "date": "2017-09-08T16:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        },
+        {
+          "bookid": "56c32923-dcce-4226-811a-7f6b8e74d94f",
+          "date": "2017-09-10T16:00:00.000Z",
           "trainerid": "t01",
           "trainerName": "Terry Crews"
+        },
+        {
+          "bookid": "c778a94c-bda7-4c56-817b-4bc09b310160",
+          "date": "2017-09-08T11:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
         }
       ],
-      "assessmentSize": 2
+      "assessmentSize": 3
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -47,12 +65,6 @@
           "date": "2017-09-03T16:00:00.000Z",
           "trainerid": "t01",
           "trainerName": "Terry Crews"
-        },
-        {
-          "bookid": "24c940dc-f36b-4392-a988-ed447c7d769d",
-          "date": "2017-09-10T16:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
         }
       ],
       "assessmentSize": 2
@@ -71,22 +83,40 @@
       "trainer": true,
       "bookings": [
         {
+          "bookid": "d9e89497-7abc-4eb4-9a55-5199fc6f8171",
+          "date": "2017-09-08T14:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
+        },
+        {
           "bookid": "book02",
           "date": "2017-09-08T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
         },
         {
-          "bookid": "afc6dd40-356c-474c-a616-09eaebcf989c",
-          "date": "2017-09-10T16:00:00.000Z",
-          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-          "memberName": "Marge Simpson"
+          "bookid": "86335a55-d7d4-4191-b8e5-860d6b23adac",
+          "date": "2017-09-08T16:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
+        },
+        {
+          "bookid": "5613bdd1-524b-4772-9ddf-3a0ce9cf4dec",
+          "date": "2017-09-09T15:00:00.000Z",
+          "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
+          "memberName": "Niall Grant"
         },
         {
           "bookid": "f9f14686-9e8b-41cf-abb4-a4b11480b4d4",
-          "date": "2017-09-09T16:00:00.000Z",
+          "date": "2017-09-10T15:00:00.000Z",
           "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
           "memberName": "Niall Grant"
+        },
+        {
+          "bookid": "aa184d8b-9edb-4c45-85a9-fd3878e894f4",
+          "date": "2017-09-08T11:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
         }
       ]
     },
@@ -110,8 +140,8 @@
           "trainerName": "Marge Simpson"
         },
         {
-          "bookid": "8c5bf8ec-15c9-4916-8132-cbf7ebb99ca7",
-          "date": "2017-09-15T15:00:00.000Z",
+          "bookid": "da870845-e817-4e6c-934f-dafc528cc475",
+          "date": "2017-09-10T16:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
         }
@@ -133,7 +163,13 @@
       "bookings": [
         {
           "bookid": "473878b6-8b06-4e06-84f6-c4af4d8fd899",
-          "date": "2017-09-09T16:00:00.000Z",
+          "date": "2017-09-10T15:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        },
+        {
+          "bookid": "8cf1522e-516e-40fc-84c3-df0d7f143146",
+          "date": "2017-09-09T15:00:00.000Z",
           "trainerid": "t00",
           "trainerName": "Arnold Schwarz"
         }

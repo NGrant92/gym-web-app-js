@@ -1,7 +1,11 @@
-{{> menu id="settings"}}
+{{> menu id="dashboard"}}
 
-{{#if user.trainer}}
-  {{> trainereditbook}}
-{{else}}
-  {{> membereditbook}}
-{{/if}}
+<section class="ui raised segment">
+  <form class="ui twelve wide form" action="/editbooking/{{user.id}}/{{booking.bookid}}/setbooking" method="POST">
+    {{#if user.trainer}}
+      {{> trainereditbook}}
+    {{else}}
+      {{> membereditbook}}
+    {{/if}}
+  </form>
+</section>

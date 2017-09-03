@@ -29,6 +29,10 @@ const dashboard = {
       logger.info('user is a member');
       const assessmentArr = dateSort.sortByNewest(assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments);
 
+      //sorting and then setting the status of each ongoing/pending goal
+      let goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals);
+      goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0]);
+
       //bmi information of the member, determined by the calcualtions done by analytics.js
       userbmi.latestweight = assessmentArr[0].weight;
       userbmi.bmi = analytics.calculateBMI(loggedInUser.height, userbmi.latestweight);
@@ -40,7 +44,7 @@ const dashboard = {
       //populating the viewData variable with the necessary information to load the page
       const viewData = {
         title: 'Dashboard',
-        goallist: dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals),
+        goallist: goalsArr,
         member: loggedInUser,
         bmi: userbmi,
         assessments: assessmentArr,

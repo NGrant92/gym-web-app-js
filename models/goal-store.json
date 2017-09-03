@@ -18,20 +18,33 @@
         {
           "goalid": "c2f689ae-4438-4785-9f47-ec1391bcf174",
           "goal": "arnolds goal",
-          "date": "2017-09-22T00:00:00.000Z",
-          "status": "pending"
+          "date": "2017-09-03T00:00:00.000Z",
+          "status": "pending",
+          "assessment": [
+            {
+              "id": "35cbd9ab-2bb4-4919-9b24-308fd8e3bcfb",
+              "date": "2017-09-03T14:16:17.313Z",
+              "weight": "160",
+              "chest": "33",
+              "thigh": "33",
+              "upperArm": "33",
+              "waist": "33",
+              "hips": "33",
+              "comment": ""
+            }
+          ]
         },
         {
           "goalid": "5ed30178-f561-44d9-bfef-b052eb65734f",
           "goal": "buy less duff",
           "date": "2017-09-30T00:00:00.000Z",
-          "status": "pending"
+          "status": "ongoing"
         },
         {
           "goalid": "675a6f4b-952e-4e01-a41a-dce34853e578",
           "goal": "get more buff",
           "date": "2017-10-01T00:00:00.000Z",
-          "status": "pending"
+          "status": "ongoing"
         }
       ]
     },

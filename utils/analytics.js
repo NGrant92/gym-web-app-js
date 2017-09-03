@@ -1,6 +1,67 @@
+// jscs:disable disallowKeywordsOnNewLine
 'use strict';
 
+const _ = require('lodash');
+const logger = require('../utils/logger');
+
 const analytics = {
+
+  /**
+   * A method used to check a member's array of goals and check their ongoing or pending goals
+   *
+   * @param goals The array list of goals to be checked
+   * @param lastAssessment Member's most recent assessment
+   */
+  checkGoalStatus(goals, lastAssessment) {
+
+    let today = new Date();
+    let isRecentAssess = false;
+
+    //An if statement to check if member's most recent assessment is no more than 3 days old
+    if (lastAssessment.date >= today.setDate(today.getDate() - 3)) {
+      isRecentAssess = true;
+    }
+
+    //a for each loop to go through the goals object
+    for (let singleKey in goals) {
+
+      let currGoal = goals[singleKey];
+
+      //checking if the goal status is tagged 'ongoing' and if it's the day of or days after the stored date
+      if (currGoal.status === 'ongoing' && currGoal.date <= today) {
+
+        //if there is no assessment made in the last 3 days it'll set the goal status to pending
+        if (!isRecentAssess) {
+          currGoal.status = 'pending';
+        }
+
+        //if there is a recent assessment then it'll check if the assessment achieved
+        //otherwise status is set to missed
+        else if (_.isEqual(lastAssessment, currGoal.assessment)) {
+          currGoal.status = 'achieved';
+        }
+        else {
+          currGoal.status = 'missed';
+        }
+      }
+
+      //checking if a goal status is set to 'pending' and there is a recent assessment
+      else if (currGoal.status === 'pending' && isRecentAssess) {
+
+        //checking if the recent assessment matches the goal's assessment
+        //otherwise status is set to missed
+        if (_.isEqual(lastAssessment, currGoal.assessment)) {
+          currGoal.status = 'achieved';
+        }
+        else {
+          currGoal.status = 'missed';
+        }
+      }
+    }
+
+    //returning the processed array
+    return goals;
+  },
 
   /**
    * This method calculate the BMI value for the member. BMI = KG x (Height x Height)

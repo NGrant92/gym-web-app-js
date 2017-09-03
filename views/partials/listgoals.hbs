@@ -5,6 +5,7 @@
     <th>Achieve by:</th>
     <th>Status</th>
     <th></th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -16,8 +17,12 @@
       <td>
         {{longDateNoTime date}}
       </td>
-      <td>
-        <div class="ui label" id="checkStatus{{goalid}}"><i class="spinner icon"></i> Ongoing</div>
+      <td class="collapsing">
+        <div class="ui label" id="checkStatus{{goalid}}"><i class="hourglass full icon"></i> Ongoing</div>
+        <div class="ui blue label" id="pendingStatus{{goalid}}" style="float: left;display: none;"><i class="spinner icon"></i> Pending</div>
+      </td>
+      <td class="collapsing">
+        <div class="ui blue mini icon button" id="pendingButton{{goalid}}" style="float: left;display: none;" onclick="window.location='/bookings/{{member.id}}/addBooking'"><i class="plus icon"></i> Booking</div>
       </td>
       <td>
         <a href="/dashboard/{{../member.id}}/deletegoal/{{goalid}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>
@@ -34,6 +39,18 @@
         document.getElementById("checkStatus{{goalid}}").className = 'ui red label';
         document.getElementById("checkStatus{{goalid}}").innerHTML = '<i class="remove icon"></i> Missed';
       }
+      else if ("{{status}}" === "pending"){
+        document.getElementById("checkStatus{{goalid}}").style.display = "none";
+        document.getElementById("pendingStatus{{goalid}}").style.display = "block";
+        document.getElementById("pendingButton{{goalid}}").style.display = "block";
+      }
+
+      $('.example .blue.mini.icon.button')
+          .popup({
+            popup: '.custom.popup',
+            on    : 'click'
+          })
+      ;
     </script>
   {{/each}}
   </tbody>

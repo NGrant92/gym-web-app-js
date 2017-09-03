@@ -2,7 +2,7 @@
 
 <div class="ui equal width padded grid">
   <div class = "four wide column">
-      {{> profilecard}}
+    {{> profilecard}}
   </div>
 
   <div class = "twelve wide align right column padded">
@@ -20,7 +20,12 @@
 
       <div class="ui active tab" data-tab="first">{{> listassessments}}</div>
       <div class="ui tab" data-tab="second" style="padding: 10px;">{{> addassessments}}</div>
-      <div class="ui tab" data-tab="third" style="padding: 10px;">{{>bookassessment}}</div>
+      <div class="ui tab" data-tab="third" style="padding: 10px;">
+        <form class="ui twelve wide form" action="/dashboard/{{member.id}}/bookassessment" method="POST">
+          {{> listbookings}}
+          {{> bookassessment}}
+        </form>
+      </div>
     </section>
     <script type="text/javascript">
       $(document).ready(function(){

@@ -10,7 +10,12 @@
 
   <div class="ui active tab" data-tab="first">{{> listMembers}}</div>
   <div class="ui tab" data-tab="second" style="padding: 10px;">{{> addclasses}}</div>
-  <div class="ui tab" data-tab="third" style="padding: 10px;">{{> trainerbookassess}}</div>
+  <div class="ui tab" data-tab="third" style="padding: 10px;">
+    <form class="ui twelve wide form" action="/dashboard/{{user.id}}/bookassessment" method="POST">
+      {{> trainerlistbookings}}
+      {{> trainerbookassess}}
+    </form>
+  </div>
 </section>
 <script type="text/javascript">
   $(document).ready(function(){
