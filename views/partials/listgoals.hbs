@@ -22,7 +22,7 @@
         <div class="ui blue label" id="pendingStatus{{goalid}}" style="float: left;display: none;"><i class="spinner icon"></i> Pending</div>
       </td>
       <td class="collapsing">
-        <div class="ui blue mini icon button" id="pendingButton{{goalid}}" style="float: left;display: none;" onclick="window.location='/bookings/{{member.id}}/addBooking'"><i class="plus icon"></i> Booking</div>
+        <div class="ui yellow label" id="bookingRequired{{goalid}}"style="display: none;">New Assessment Required</div>
       </td>
       <td>
         <a href="/dashboard/{{../member.id}}/deletegoal/{{goalid}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>
@@ -42,7 +42,7 @@
       else if ("{{status}}" === "pending"){
         document.getElementById("checkStatus{{goalid}}").style.display = "none";
         document.getElementById("pendingStatus{{goalid}}").style.display = "block";
-        document.getElementById("pendingButton{{goalid}}").style.display = "block";
+        document.getElementById("bookingRequired{{goalid}}").style.display = "block";
       }
 
       $('.example .blue.mini.icon.button')

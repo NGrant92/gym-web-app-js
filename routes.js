@@ -35,7 +35,8 @@ router.post('/dashboard/:id/addassessment', assessments.addAssessment);
 router.get('/dashboard/:id/deleteassessment/:assessid', assessments.deleteAssessment);
 
 router.post('/dashboard/:id/bookassessment', bookings.bookAssessment);
-router.get('/dashboard/:bookid/booking', bookings.bookingIndex);
+router.get('/dashboard/:bookid/booking', bookings.editBookingIndex);
+router.get('/dashboard/:id/booking', bookings.editBookingIndex);
 router.post('/editbooking/:id/:bookid/setbooking', bookings.setBooking);
 router.get('/dashboard/:bookid/:bookedid/rembooking', bookings.remBooking);
 

@@ -72,7 +72,7 @@ const bookings = {
     response.redirect('/dashboard/');
   },
 
-  bookingIndex(request, response) {
+  editBookingIndex(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     let userArr = [];
 
