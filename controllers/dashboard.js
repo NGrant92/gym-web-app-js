@@ -59,7 +59,7 @@ const dashboard = {
 
     const newAssess = {
       id: uuid(),
-      date: dateformat(new Date(), 'dd-mm-yy'),
+      date: new Date(),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,

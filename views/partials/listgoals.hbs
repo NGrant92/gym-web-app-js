@@ -1,26 +1,40 @@
 <table class="ui table">
   <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Achieve by:</th>
-      <th>Status</th>
-      <th></th>
-    </tr>
+  <tr>
+    <th>Goal</th>
+    <th>Achieve by:</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
   </thead>
   <tbody>
-    {{#each goallist}}
-        <tr>
-          <td>
-            {{goal}}
-          </td>
-          <td>
-            {{longDateNoTime date}}
-          </td>
-          <td></td>
-          <td>
-            <a href="/dashboard/{{../member.id}}/deletegoal/{{goalid}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>
-          </td>
-        </tr>
-    {{/each}}
+  {{#each goallist}}
+    <tr>
+      <td>
+        {{goal}}
+      </td>
+      <td>
+        {{longDateNoTime date}}
+      </td>
+      <td>
+        <div class="ui label" id="checkStatus{{goalid}}"><i class="spinner icon"></i> Ongoing</div>
+      </td>
+      <td>
+        <a href="/dashboard/{{../member.id}}/deletegoal/{{goalid}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>
+      </td>
+    </tr>
+    <script>
+      console.log('{{status}}');
+      console.log('{{shortDate date}}');
+      if("{{status}}" === "achieved") {
+        document.getElementById("checkStatus{{goalid}}").className = 'ui green label';
+        document.getElementById("checkStatus{{goalid}}").innerHTML = '<i class="checkmark icon"></i> Achieved';
+      }
+      else if ("{{status}}" === "missed"){
+        document.getElementById("checkStatus{{goalid}}").className = 'ui red label';
+        document.getElementById("checkStatus{{goalid}}").innerHTML = '<i class="remove icon"></i> Missed';
+      }
+    </script>
+  {{/each}}
   </tbody>
 </table>
