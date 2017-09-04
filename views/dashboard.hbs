@@ -31,7 +31,10 @@
       <h2 class="ui dividing header">Goals</h2>
       <div class="ui pointing secondary demo menu">
         <a class="active item" data-tab="fourth"><i class="file text outline icon"></i>List</a>
-        <a class="item" data-tab="fifth"><i class="plus square outline icon"></i>Add</a>
+        <a class="item" data-tab="fifth"><i class="plus square outline icon"></i>
+          Add
+          <div class="ui left pointing red basic label" id="noOngoingGoals" style="display: none;">0 Ongoing Goals!</div>
+        </a>
       </div>
 
       <div class="ui active tab" data-tab="fourth">{{> listgoals}}</div>
@@ -44,4 +47,18 @@
   $(document).ready(function(){
     $('.menu .item').tab({history:false});
   });
+
+  let goalsArr = [{{{json goallist}}}];
+  let isOngoing = false;
+
+  for(let i = 0; i < goalsArr[0].length; i++){
+    if(goalsArr[0][i].status === 'ongoing'){
+      isOngoing = true;
+      break;
+    }
+  }
+
+  if(!isOngoing){
+    document.getElementById("noOngoingGoals").style.display = "block";
+  }
 </script>

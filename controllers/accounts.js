@@ -60,7 +60,6 @@ const accounts = {
     }
 
     const newGoalList = {
-      id: uuid(),
       userid: newUserId,
       goals: [],
     };

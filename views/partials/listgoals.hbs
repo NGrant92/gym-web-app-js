@@ -1,4 +1,4 @@
-<table class = "ui table">
+<table class = "ui table" id="goalListTable">
   <thead>
   <tr>
     <th class="collapsing">Status</th>
@@ -49,4 +49,8 @@
   {{/each}}
   </tbody>
 </table>
-
+<script>
+  if(!{{goallist.length}} > 0){
+    document.getElementById('goalListTable').style.display = "none";
+  }
+</script>
