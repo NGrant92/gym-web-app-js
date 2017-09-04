@@ -63,7 +63,7 @@ const analytics = {
       }
     }
 
-    //goalStore.store.save();
+    goalStore.store.save();
 
     //returning the processed array
     return goals;
