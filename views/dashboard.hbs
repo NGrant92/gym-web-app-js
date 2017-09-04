@@ -10,12 +10,12 @@
       <h2 class="ui dividing header">BMI</h2>
       {{> bmi}}
     </section>
-    <section class="ui segment" id="assessmentTabs">
+    <section class="ui segment" id="assessmentTabs" style="overflow:auto;max-height:600px;min-height:250px;">
       <h2 class="ui dividing header">Assessments</h2>
       <div class="ui pointing secondary demo menu">
-        <a class="active item" data-tab="first">List</a>
-        <a class="item" data-tab="second">Add</a>
-        <a class=" item" data-tab="third">Book</a>
+        <a class="active item" data-tab="first"><i class="file text outline icon"></i>List</a>
+        <a class="item" data-tab="second"><i class="plus square outline icon"></i>Add</a>
+        <a class="item" data-tab="third"><i class="add to calendar icon"></i>Book</a>
       </div>
 
       <div class="ui active tab" data-tab="first">{{> listassessments}}</div>
@@ -27,15 +27,21 @@
         </form>
       </div>
     </section>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('.menu .item').tab({history:false});
-      });
-    </script>
-    <section class="ui raised segment">
+    <section class="ui raised segment" id="goalTabs" style="overflow:auto;max-height:600px;min-height:250px;">
       <h2 class="ui dividing header">Goals</h2>
-      {{> listgoals}}
-      {{> addgoal}}
+      <div class="ui pointing secondary demo menu">
+        <a class="active item" data-tab="fourth"><i class="file text outline icon"></i>List</a>
+        <a class="item" data-tab="fifth"><i class="plus square outline icon"></i>Add</a>
+      </div>
+
+      <div class="ui active tab" data-tab="fourth">{{> listgoals}}</div>
+      <div class="ui tab" data-tab="fifth" style="padding: 10px;">{{> addgoal}}</div>
     </section>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.menu .item').tab({history:false});
+  });
+</script>

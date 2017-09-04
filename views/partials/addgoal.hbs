@@ -1,13 +1,41 @@
-<form class="ui segment form" action="/dashboard/{{member.id}}/addgoal" method="POST">
-  <div class="two fields">
-    <div class="twelve wide field">
-      <label>Goal</label>
-      <input placeholder="Goal" type="text" name="goal">
+<form class="ui form" action="/dashboard/{{member.id}}/addgoal" method="POST">
+  <div class="three fields">
+    <div class="field">
+      <label>&nbsp; &nbsp; &nbsp; Weight (kg)</label>
+      <input placeholder="Weight (kg)" type="text" name="weight" required>
     </div>
     <div class="field">
-      <label>Achieved by:</label>
+      <label>&nbsp; &nbsp; &nbsp; Chest (mm)</label>
+      <input placeholder="Chest (mm)" type="text" name="chest" required>
+    </div>
+    <div class="field">
+      <label>&nbsp; &nbsp; &nbsp; Thigh (mm)</label>
+      <input placeholder="Thigh (mm)" type="text" name="thigh" required>
+    </div>
+  </div>
+  <div class="three fields">
+    <div class="field">
+      <label>&nbsp; &nbsp; &nbsp; Upper Arm (mm)</label>
+      <input placeholder="Upper Arm (mm)" type="text" name="upperArm" required>
+    </div>
+    <div class="field">
+      <label>&nbsp; &nbsp; &nbsp; Waist (mm)</label>
+      <input placeholder="Waist (mm)" type="text" name="waist" required>
+    </div>
+    <div class="field">
+      <label>&nbsp; &nbsp; &nbsp; Hips (mm)</label>
+      <input placeholder="Hips (mm)" type="text" name="hips" required>
+    </div>
+  </div>
+  <div class="two fields">
+    <div class="sixteen wide field">
+      <label>&nbsp; &nbsp; &nbsp; Comment</label>
+      <textarea name="goal" rows="3" maxlength="300" placeholder="Comment here..." required></textarea>
+    </div>
+    <div class="field">
+      <label>&nbsp; &nbsp; &nbsp; Achieved by:</label>
       <div class="field">
-        <input placeholder="Date" type="date" name="goalDate">
+        <input placeholder="Date" type="date" name="goalDate" required>
       </div>
     </div>
   </div>
