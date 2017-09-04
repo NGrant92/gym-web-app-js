@@ -19,7 +19,7 @@ const assessments = {
 
     const newAssess = {
       id: uuid(),
-      date: new Date(),
+      date: new Date().toISOString(),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,

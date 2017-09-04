@@ -3,6 +3,7 @@
 
 const _ = require('lodash');
 const logger = require('../utils/logger');
+const goalStore = require('../models/goal-store');
 
 const analytics = {
 
@@ -11,14 +12,16 @@ const analytics = {
    *
    * @param goals The array list of goals to be checked
    * @param lastAssessment Member's most recent assessment
+   * @param memberHeight Member's height used for calculations to check if goals were achieved or not
    */
-  checkGoalStatus(goals, lastAssessment) {
+  checkGoalStatus(goals, lastAssessment, memberHeight) {
 
     let today = new Date();
+    let daysBefore = today.setDate(today.getDate() - 3);
     let isRecentAssess = false;
 
     //An if statement to check if member's most recent assessment is no more than 3 days old
-    if (lastAssessment.date >= today.setDate(today.getDate() - 3)) {
+    if (new Date(lastAssessment.date) >= daysBefore) {
       isRecentAssess = true;
     }
 
@@ -28,7 +31,7 @@ const analytics = {
       let currGoal = goals[singleKey];
 
       //checking if the goal status is tagged 'ongoing' and if it's the day of or days after the stored date
-      if (currGoal.status === 'ongoing' && currGoal.date <= new Date().toISOString()) {
+      if (currGoal.status === 'ongoing' && currGoal.date <= today.toISOString()) {
 
         //if there is no assessment made in the last 3 days it'll set the goal status to pending
         if (!isRecentAssess) {
@@ -37,7 +40,7 @@ const analytics = {
 
         //if there is a recent assessment then it'll check if the assessment achieved
         //otherwise status is set to missed
-        else if (_.isEqual(lastAssessment, currGoal.assessment)) {
+        else if (this.isGoalAchieved(memberHeight, currGoal.assessment, lastAssessment)) {
           currGoal.status = 'achieved';
         }
         else {
@@ -50,17 +53,34 @@ const analytics = {
 
         //checking if the recent assessment matches the goal's assessment
         //otherwise status is set to missed
-        if (_.isEqual(lastAssessment, currGoal.assessment)) {
+        if (this.isGoalAchieved(memberHeight, currGoal.assessment, lastAssessment)) {
           currGoal.status = 'achieved';
         }
         else {
           currGoal.status = 'missed';
         }
+
       }
     }
 
+    //goalStore.store.save();
+
     //returning the processed array
     return goals;
+  },
+
+  /**
+   * To calculate if goal was achieved or not
+   * @param memberHeight Member's height measurement to be used for calculations
+   * @param goalAssess the assessment from the goal being tested
+   * @param lastAssess the most recent assessment added to the member's assessment store
+   * @returns if latest assessment is within 2 points of the goal's bmi then it returns true
+   */
+  isGoalAchieved(memberHeight, goalAssess, lastAssess) {
+    const goalBMI = this.calculateBMI(memberHeight, goalAssess.weight);
+    const lastBMI = this.calculateBMI(memberHeight, lastAssess.weight);
+
+    return lastBMI <= goalBMI + 2 && lastBMI >= goalBMI - 2;
   },
 
   /**

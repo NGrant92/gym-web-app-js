@@ -7,44 +7,63 @@
           "goalid": "a2f689ae-4438-4785-9f47-ec1391bcf174",
           "goal": "arnolds goal",
           "date": "2017-07-22T00:00:00.000Z",
-          "status": "missed"
+          "status": "missed",
+          "assessment": {
+            "weight": "166",
+            "chest": "66",
+            "thigh": "66",
+            "upperArm": "66",
+            "waist": "66",
+            "hips": "66",
+            "comment": "",
+            "date": "2017-07-22T00:00:00.000Z"
+          }
         },
         {
           "goalid": "b2f689ae-4438-4785-9f47-ec1391bcf174",
-          "goal": "arnolds goal",
           "date": "2017-08-22T00:00:00.000Z",
-          "status": "achieved"
+          "status": "achieved",
+          "assessment": {
+            "weight": "180",
+            "chest": "99",
+            "thigh": "88",
+            "upperArm": "77",
+            "waist": "66",
+            "hips": "55",
+            "comment": "buy less duff",
+            "date": "2017-08-22T00:00:00.000Z"
+          }
         },
         {
-          "goalid": "c2f689ae-4438-4785-9f47-ec1391bcf174",
-          "goal": "arnolds goal",
-          "date": "2017-09-03T00:00:00.000Z",
+          "goalid": "acc3d197-754c-4fa8-8c89-b6faba72bed3",
+          "date": "2017-09-04T00:00:00.000Z",
           "status": "pending",
-          "assessment": [
-            {
-              "id": "35cbd9ab-2bb4-4919-9b24-308fd8e3bcfb",
-              "date": "2017-09-03T14:16:17.313Z",
-              "weight": "160",
-              "chest": "33",
-              "thigh": "33",
-              "upperArm": "33",
-              "waist": "33",
-              "hips": "33",
-              "comment": ""
-            }
-          ]
+          "assessment": {
+            "weight": "160",
+            "chest": "66",
+            "thigh": "66",
+            "upperArm": "66",
+            "waist": "66",
+            "hips": "66",
+            "comment": "",
+            "date": "2017-09-04T00:00:00.000Z"
+          }
         },
         {
           "goalid": "cb0f931e-4687-4772-bee3-d5d298c08801",
           "goal": "test",
           "date": "2017-09-29T00:00:00.000Z",
-          "status": "ongoing"
-        },
-        {
-          "goalid": "5ed30178-f561-44d9-bfef-b052eb65734f",
-          "goal": "buy less duff",
-          "date": "2017-09-30T00:00:00.000Z",
-          "status": "ongoing"
+          "status": "ongoing",
+          "assessment": {
+            "weight": "160",
+            "chest": "66",
+            "thigh": "66",
+            "upperArm": "66",
+            "waist": "66",
+            "hips": "66",
+            "comment": "",
+            "date": "2017-09-29T00:00:00.000Z"
+          }
         }
       ]
     },
@@ -54,8 +73,18 @@
         {
           "id": "73c80563-e682-43e2-88f5-bc636524633e",
           "goal": "make homer get buff not duff",
-          "date": "01 January",
-          "status": "achieved"
+          "date": "2017-09-30T00:00:00.000Z",
+          "status": "achieved",
+          "assessment": {
+            "weight": "160",
+            "chest": "66",
+            "thigh": "66",
+            "upperArm": "66",
+            "waist": "66",
+            "hips": "66",
+            "comment": "",
+            "date": "2017-09-30T00:00:00.000Z"
+          }
         }
       ]
     }

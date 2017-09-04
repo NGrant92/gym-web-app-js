@@ -15,9 +15,18 @@ const goals = {
 
     const newGoal = {
       goalid: uuid(),
-      goal: request.body.goal,
       date: new Date(request.body.goalDate).toISOString(),
       status: 'ongoing',
+      assessment: {
+        weight: request.body.goalWeight,
+        chest: request.body.goalChest,
+        thigh: request.body.goalThigh,
+        upperArm: request.body.goalUpperArm,
+        waist: request.body.goalWaist,
+        hips: request.body.goalHips,
+        comment: request.body.goalComment,
+        date: new Date(request.body.goalDate).toISOString(),
+      },
     };
 
     logger.debug('New Goal: ', newGoal);

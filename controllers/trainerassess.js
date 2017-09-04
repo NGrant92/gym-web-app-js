@@ -27,12 +27,17 @@ const trainerassess = {
     memberbmi.bmiCategory = analytics.determineBMICategory(memberbmi.bmi);
     memberbmi.idealWeight = analytics.idealWeightIndicator(member.height, memberbmi.latestweight, member.gender);
 
+
+    //sorting and then setting the status of each ongoing/pending goal
+    let goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(member.id)[0].goals);
+    goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], member.height);
+
     //populating the viewData variable with the nwecessary information to load the page
     const viewData = {
       title: 'Assessments',
       user: loggedInUser,
       member: member,
-      goallist: dateSort.sortByOldest(goalStore.getUserGoalList(member.id)[0].goals),
+      goallist: goalsArr,
       assessments: assessmentArr,
       bmi: memberbmi,
     };
