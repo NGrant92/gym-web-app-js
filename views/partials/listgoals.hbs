@@ -19,10 +19,10 @@
       </td>
       <td class="collapsing">
         <div class="ui label" id="checkStatus{{goalid}}"><i class="hourglass full icon"></i> Ongoing</div>
-        <div class="ui blue label" id="pendingStatus{{goalid}}" style="float: left;display: none;"><i class="spinner icon"></i> Pending</div>
+        <div class="ui blue label" id="pendingStatus{{goalid}}" style="float: left;display: none;"><i class="spinner icon"></i> Add/Book Assessment</div>
       </td>
       <td class="collapsing">
-        <div class="ui yellow label" id="bookingRequired{{goalid}}"style="display: none;">New Assessment Required</div>
+        <a href="/dashboard/{{../member.id}}/addbooking" id="bookingRequired{{goalid}}" style="display: none;" class="ui mini blue icon button"><i class = "add to calendar icon"></i></a>
       </td>
       <td>
         <a href="/dashboard/{{../member.id}}/deletegoal/{{goalid}}" style="float:right;" class="ui red icon button"><i class = "trash icon"></i></a>

@@ -8,6 +8,50 @@ const userStore = require('../models/user-store');
 
 const bookings = {
 
+  addBookingIndex(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    let userArr = [];
+
+    if (loggedInUser.trainer) {
+      userArr =  userStore.getAllMembers();
+    }
+    else {
+      userArr = userStore.getAllTrainers();
+    }
+
+    const viewData = {
+      title: 'Booking',
+      member: loggedInUser,
+      booking: _.find(loggedInUser.bookings, { bookid: request.params.bookid }),
+      trainerList: userArr,
+    };
+
+    logger.info('ID: ', request.params.bookid);
+    response.render('addbooking', viewData);
+  },
+
+  editBookingIndex(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    let userArr = [];
+
+    if (loggedInUser.trainer) {
+      userArr =  userStore.getAllMembers();
+    }
+    else {
+      userArr = userStore.getAllTrainers();
+    }
+
+    const viewData = {
+      title: 'Edit Booking',
+      user: loggedInUser,
+      booking: _.find(loggedInUser.bookings, { bookid: request.params.bookid }),
+      userList: userArr,
+    };
+
+    logger.info('ID: ', request.params.bookid);
+    response.render('editbooking', viewData);
+  },
+
   bookAssessment(request, response) {
     let trainer = [];
     let member = [];
@@ -70,28 +114,6 @@ const bookings = {
     userStore.store.save();
     logger.info('Booking removes from users');
     response.redirect('/dashboard/');
-  },
-
-  editBookingIndex(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    let userArr = [];
-
-    if (loggedInUser.trainer) {
-      userArr =  userStore.getAllMembers();
-    }
-    else {
-      userArr = userStore.getAllTrainers();
-    }
-
-    const viewData = {
-      title: 'Edit Booking',
-      user: loggedInUser,
-      booking: _.find(loggedInUser.bookings, { bookid: request.params.bookid }),
-      userList: userArr,
-    };
-
-    logger.info('ID: ', request.params.bookid);
-    response.render('editbooking', viewData);
   },
 
   setBooking(request, response) {

@@ -1,0 +1,21 @@
+{{> menu id="dashboard"}}
+
+
+
+{{#if user.trainer}}
+  <section class="ui raised segment">
+    <form class="ui twelve wide form" action="/dashboard/{{member.id}}/bookassessment" method="POST">
+      {{> trainerbookassess}}
+    </form>
+  </section>
+{{else}}
+  <section class="ui raised segment">
+    <form class="ui twelve wide form" action="/dashboard/{{member.id}}/bookassessment" method="POST">
+      {{> bookassessment}}
+    </form>
+  </section>
+  <section class="ui raised segment">
+    <h4 class="ui dividing header">Add Assessment</h4>
+    {{> addassessments}}
+  </section>
+{{/if}}

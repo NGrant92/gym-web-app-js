@@ -19,15 +19,17 @@
   </div>
 </div>
 <button class="ui blue submit button">Submit</button>
-
 <div class="ui error message"></div>
 <script>
   $('.dropdown').dropdown();
+
   const today = new Date().toISOString().split('T')[0];
   document.getElementsByName("bookDate")[0].setAttribute('min', today);
+
   if({{member.bookings.length}} > 0){
     document.getElementById("bookingTable").style.display = "table";
   }
+
   $.fn.form.settings.rules.isMemberBooked = function() {
     const bookedDate = new Date(document.getElementsByName("bookDate")[0].value + " " + document.getElementsByName("bookTime")[0].value).toISOString();
     const memberBookings = [{{{json member.bookings}}}];

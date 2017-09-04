@@ -15,32 +15,20 @@
       "trainer": false,
       "bookings": [
         {
+          "bookid": "c778a94c-bda7-4c56-817b-4bc09b310160",
+          "date": "2017-09-08T11:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        },
+        {
           "bookid": "cc24f073-07e8-4537-a086-d306111f31af",
           "date": "2017-09-08T14:00:00.000Z",
           "trainerid": "t00",
           "trainerName": "Arnold Schwarz"
         },
         {
-          "bookid": "book00",
+          "bookid": "c5734d64-fd7d-4538-9854-de127bf4d3d8",
           "date": "2017-09-08T15:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        },
-        {
-          "bookid": "8816014c-fa55-48fb-9108-4a901d0bcb81",
-          "date": "2017-09-08T16:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        },
-        {
-          "bookid": "56c32923-dcce-4226-811a-7f6b8e74d94f",
-          "date": "2017-09-10T16:00:00.000Z",
-          "trainerid": "t01",
-          "trainerName": "Terry Crews"
-        },
-        {
-          "bookid": "c778a94c-bda7-4c56-817b-4bc09b310160",
-          "date": "2017-09-08T11:00:00.000Z",
           "trainerid": "t00",
           "trainerName": "Arnold Schwarz"
         }
@@ -89,18 +77,6 @@
           "memberName": "Homer Simpson"
         },
         {
-          "bookid": "book02",
-          "date": "2017-09-08T15:00:00.000Z",
-          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "memberName": "Homer Simpson"
-        },
-        {
-          "bookid": "86335a55-d7d4-4191-b8e5-860d6b23adac",
-          "date": "2017-09-08T16:00:00.000Z",
-          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "memberName": "Homer Simpson"
-        },
-        {
           "bookid": "5613bdd1-524b-4772-9ddf-3a0ce9cf4dec",
           "date": "2017-09-09T15:00:00.000Z",
           "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
@@ -115,6 +91,12 @@
         {
           "bookid": "aa184d8b-9edb-4c45-85a9-fd3878e894f4",
           "date": "2017-09-08T11:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
+        },
+        {
+          "bookid": "18835636-890a-4295-b52e-a7b6bf77b4b1",
+          "date": "2017-09-08T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
         }
@@ -138,12 +120,6 @@
           "date": "2017-09-10T15:00:00.000Z",
           "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
           "trainerName": "Marge Simpson"
-        },
-        {
-          "bookid": "da870845-e817-4e6c-934f-dafc528cc475",
-          "date": "2017-09-10T16:00:00.000Z",
-          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "memberName": "Homer Simpson"
         }
       ]
     },

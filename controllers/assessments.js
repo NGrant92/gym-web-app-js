@@ -15,7 +15,6 @@ const assessments = {
 
   addAssessment(request, response) {
 
-    const loggedInUser = accounts.getCurrentUser(request);
     const userId = request.params.id;
 
     const newAssess = {
