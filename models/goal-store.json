@@ -35,6 +35,12 @@
           ]
         },
         {
+          "goalid": "cb0f931e-4687-4772-bee3-d5d298c08801",
+          "goal": "test",
+          "date": "2017-09-29T00:00:00.000Z",
+          "status": "ongoing"
+        },
+        {
           "goalid": "5ed30178-f561-44d9-bfef-b052eb65734f",
           "goal": "buy less duff",
           "date": "2017-09-30T00:00:00.000Z",

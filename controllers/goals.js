@@ -1,3 +1,4 @@
+// jscs:disable disallowKeywordsOnNewLine
 'use strict';
 
 const logger = require('../utils/logger');
@@ -15,17 +16,17 @@ const goals = {
     const newGoal = {
       goalid: uuid(),
       goal: request.body.goal,
-      date: new Date(request.body.goalDate),
+      date: new Date(request.body.goalDate).toISOString(),
+      status: 'ongoing',
     };
 
-    logger.debug('New Goal = ', newGoal);
+    logger.debug('New Goal: ', newGoal);
     goalStore.addGoal(memberId, newGoal);
-    goalStore.store.save();
 
-    if(loggedInUser.trainer){
+    if (loggedInUser.trainer) {
       response.redirect(`/trainerassess/${memberId}`);
     }
-    else{
+    else {
       response.redirect('/dashboard/');
     }
   },
@@ -38,12 +39,11 @@ const goals = {
     logger.debug(`Deleting Song ${goalId} from Member ${memberId}`);
 
     goalStore.removeGoal(memberId, goalId);
-    goalStore.store.save();
 
-    if(loggedInUser.trainer){
+    if (loggedInUser.trainer) {
       response.redirect(`/trainerassess/${memberId}`);
     }
-    else{
+    else {
       response.redirect('/dashboard/');
     }
   },

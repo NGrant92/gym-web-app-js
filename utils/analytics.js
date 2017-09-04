@@ -28,7 +28,7 @@ const analytics = {
       let currGoal = goals[singleKey];
 
       //checking if the goal status is tagged 'ongoing' and if it's the day of or days after the stored date
-      if (currGoal.status === 'ongoing' && currGoal.date <= today) {
+      if (currGoal.status === 'ongoing' && currGoal.date <= new Date().toISOString()) {
 
         //if there is no assessment made in the last 3 days it'll set the goal status to pending
         if (!isRecentAssess) {

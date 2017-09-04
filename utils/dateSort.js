@@ -6,7 +6,6 @@ const assessStore = require('../models/assess-store.js');
 const dateSort = {
 
   sortByNewest(sortArray) {
-    logger.info('assessment array input: ' + sortArray);
     let newArray = [];
 
     //This sort function is used to sort the assessments by date in descending order
@@ -14,7 +13,7 @@ const dateSort = {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
 
-      logger.info('assessment array: ' + sortArray);
+      logger.info('sorting Array by Newest');
       return dateB - dateA;
     });
 
@@ -22,7 +21,6 @@ const dateSort = {
   },
 
   sortByOldest(sortArray) {
-    logger.info('assessment array input: ' + sortArray);
     let newArray = [];
 
     //This sort function is used to sort the assessments by date in descending order
@@ -30,7 +28,7 @@ const dateSort = {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
 
-      logger.info('assessment array: ' + sortArray);
+      logger.info('sorting Array by Oldest');
       return dateA - dateB;
     });
 
