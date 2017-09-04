@@ -11,20 +11,24 @@ const bookings = {
   addBookingIndex(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     let userArr = [];
+    let viewData = [];
 
     if (loggedInUser.trainer) {
-      userArr =  userStore.getAllMembers();
+      viewData = {
+        title: 'Booking',
+        user: loggedInUser,
+        booking: _.find(loggedInUser.bookings, { bookid: request.params.bookid }),
+        members: userStore.getAllMembers(),
+      };
     }
     else {
-      userArr = userStore.getAllTrainers();
+      viewData = {
+        title: 'Booking',
+        member: loggedInUser,
+        booking: _.find(loggedInUser.bookings, { bookid: request.params.bookid }),
+        trainerList: userStore.getAllTrainers(),
+      };
     }
-
-    const viewData = {
-      title: 'Booking',
-      member: loggedInUser,
-      booking: _.find(loggedInUser.bookings, { bookid: request.params.bookid }),
-      trainerList: userArr,
-    };
 
     logger.info('ID: ', request.params.bookid);
     response.render('addbooking', viewData);

@@ -71,8 +71,20 @@
       "trainer": true,
       "bookings": [
         {
+          "bookid": "aa184d8b-9edb-4c45-85a9-fd3878e894f4",
+          "date": "2017-09-08T11:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
+        },
+        {
           "bookid": "d9e89497-7abc-4eb4-9a55-5199fc6f8171",
           "date": "2017-09-08T14:00:00.000Z",
+          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+          "memberName": "Homer Simpson"
+        },
+        {
+          "bookid": "18835636-890a-4295-b52e-a7b6bf77b4b1",
+          "date": "2017-09-08T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
         },
@@ -87,18 +99,6 @@
           "date": "2017-09-10T15:00:00.000Z",
           "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
           "memberName": "Niall Grant"
-        },
-        {
-          "bookid": "aa184d8b-9edb-4c45-85a9-fd3878e894f4",
-          "date": "2017-09-08T11:00:00.000Z",
-          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "memberName": "Homer Simpson"
-        },
-        {
-          "bookid": "18835636-890a-4295-b52e-a7b6bf77b4b1",
-          "date": "2017-09-08T15:00:00.000Z",
-          "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-          "memberName": "Homer Simpson"
         }
       ]
     },
