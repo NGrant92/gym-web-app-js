@@ -30,15 +30,137 @@ const classes = {
 
     let loggedInUser = accounts.getCurrentUser(request);
 
-    logger.info('edit classe rendering');
     const viewData = {
       title: 'Edit Class',
       user: loggedInUser,
-      class: classStore.getClassList(request.params.classid),
+      class: classStore.getClassList(request.params.classid)[0],
       imgs: pictureStore.getAlbum('qad52697-6d98-4d80-8273-084de55a86c0'),
+      stockAlbum: pictureStore.getStockAlbum().album,
     };
     logger.info('about to render', viewData.title);
     response.render('editclass', viewData);
+  },
+
+  /**
+   * A method that will process and sort information from the form a trainer has used to create a new class
+   * @param request
+   * @param response
+   */
+  addClass(request, response) {
+
+    //putting the days the trainer selected into an array to be used later
+    const lessonDays = request.body.days.toString().split(',');
+    let startDate = new Date(request.body.startDate).toISOString();
+    let endDate = new Date(request.body.endDate).toISOString();
+
+    //new class array that will be added to the class store
+    const newClass = {
+      classid: uuid(),
+      name: request.body.className,
+      duration: '',
+      startDate: startDate,
+      endDate: endDate,
+      startTime: request.body.startTime,
+      endTime: request.body.endTime,
+      maxMembers: request.body.maxMembers,
+      bio: request.body.bio,
+      difficulty: request.body.difficulty,
+      days: [],
+      img: request.body.image,
+      lessonList: [],
+    };
+
+    //appending the duration value with the correct unit
+    //if it's less than an hour then durHour information will not be added
+    if (request.body.durHours >= 1) {
+      newClass.duration = request.body.durHours + 'hr';
+    }
+
+    //appending duration value with minutes. If 0 mins then it wont be added
+    if (request.body.durMins > 0) {
+      newClass.duration = newClass.duration + request.body.durMins + 'mins';
+    }
+
+    logger.info('newClass.duration is populated: ', newClass.duration);
+
+    //creating a "00:00 - 00:00 dddd" format and pushing it to 'days[]'
+    for (let singleKey in lessonDays) {
+      newClass.days.push(lessonDays[singleKey]);
+    }
+
+    logger.info('newClass.days[] is populated: ', newClass.days);
+
+    //today's date to be used to help create objects to populate the lessonList
+    let lessonDate = new Date(startDate);
+    logger.debug('new lesson date ', lessonDate);
+    logger.debug('Start date ', startDate);
+    logger.debug('End date ', endDate);
+
+    //a while loop to create an object for each individual lesson
+    while (lessonDate <= new Date(endDate)) {
+
+      //it's checking if the day of lessonDate matches the days input by the user
+      if (lessonDays.indexOf(dateformat(lessonDate, 'dddd')) >= 0) {
+
+        //creation and population of new object
+        let newLesson = {
+
+          lessonid: uuid(),
+          date: lessonDate.toISOString(),
+          memberList: [],
+        };
+
+        //adding new object to lessonList array
+        newClass.lessonList.push(newLesson);
+        logger.info('Added new lesson: ', newLesson);
+      }
+
+      //incrementing the lesson date and will keep happening until end date is reached
+      lessonDate.setDate(lessonDate.getDate() + 1);
+      logger.debug('lessonDate++ ', lessonDate);
+    }
+
+    logger.info('New Class:', newClass);
+    classStore.addClass(newClass);
+    response.redirect('/trainerboard/');
+  },
+
+  /**
+   * A basic method to remove a class from the class store
+   * @param request used to get the class ID
+   * @param response will redirect to the classes index page
+   */
+  setClass(request, response) {
+    const classid = request.params.classid;
+    const newClass = {
+      name: request.body.name,
+      difficulty: request.body.difficulty,
+      maxMembers: request.body.maxMembers,
+      hours: request.body.durHours,
+      mins: request.body.durMins,
+      startDate: request.body.startDate,
+      endDate: request.body.endDate,
+      startTime: request.body.startTime,
+      endTime: request.body.endTime,
+      days: request.body.days,
+      bio: request.body.bio,
+      img: request.body.image,
+    };
+
+    logger.debug('Setting Class: ', newClass);
+    response.redirect('/classes');
+  },
+
+  /**
+   * A basic method to remove a class from the class store
+   * @param request used to get the class ID
+   * @param response will redirect to the classes index page
+   */
+  remClass(request, response) {
+    const classid = request.params.classid;
+    logger.info('Removing Class: ', classid);
+    classStore.removeClass(classid);
+    response.redirect('/classes');
   },
 
   /**
@@ -132,103 +254,6 @@ const classes = {
       classStore.store.save();
     }
 
-    response.redirect('/classes');
-  },
-
-  /**
-   * A method that will process and sort information from the form a trainer has used to create a new class
-   * @param request
-   * @param response
-   */
-  addClass(request, response) {
-
-    //putting the days the trainer selected into an array to be used later
-    const lessonDays = request.body.days.toString().split(',');
-    let startDate = new Date(request.body.startDate).toISOString();
-    let endDate = new Date(request.body.endDate).toISOString();
-
-    //new class array that will be added to the class store
-    const newClass = {
-      classid: uuid(),
-      name: request.body.className,
-      duration: '',
-      timespan: '',
-      maxMembers: request.body.maxMembers,
-      bio: request.body.bio,
-      difficulty: request.body.difficulty,
-      days: [],
-      img: request.body.image,
-      lessonList: [],
-    };
-
-    //appending the duration value with the correct unit
-    //if it's less than an hour then durHour information will not be added
-    if (request.body.durHours >= 1) {
-      newClass.duration = request.body.durHours + 'hr';
-    }
-
-    //appending duration value with minutes. If 0 mins then it wont be added
-    if (request.body.durMins > 0) {
-      newClass.duration = newClass.duration + request.body.durMins + 'mins';
-    }
-
-    logger.info('newClass.duration is populated: ', newClass.duration);
-
-    //creating a "00:00 - 00:00 dddd" format and pushing it to 'days[]'
-    for (let singleKey in lessonDays) {
-      newClass.days.push(request.body.timeStart + ' - ' + request.body.timeEnd + ' ' + lessonDays[singleKey]);
-    }
-
-    logger.info('newClass.days[] is populated: ', newClass.days);
-
-    //timespan will be used to display information on the classes.hbs page
-    newClass.timespan = dateformat(startDate, 'dS mmmm') + ' - ' + dateformat(endDate, 'dS mmmm');
-    logger.info('newClass.timespan is populated: ', newClass.timespan);
-
-    //today's date to be used to help create objects to populate the lessonList
-    let lessonDate = new Date();
-    logger.debug('new lesson date ', lessonDate);
-    logger.debug('Start date ', startDate);
-    logger.debug('End date ', endDate);
-
-    //a while loop to create an object for each individual lesson
-    while (lessonDate <= new Date(endDate)) {
-
-      //it's checking if the day of lessonDate matches the days input by the user
-      if (lessonDays.indexOf(dateformat(lessonDate, 'dddd')) >= 0) {
-
-        //creation and population of new object
-        let newLesson = {
-
-          lessonid: uuid(),
-          date: dateformat(lessonDate, 'dddd, mmmm dS'),
-          memberList: [],
-        };
-
-        //adding new object to lessonList array
-        newClass.lessonList.push(newLesson);
-        logger.info('Added new lesson: ', newLesson);
-      }
-
-      //incrementing the lesson date and will keep happening until end date is reached
-      lessonDate.setDate(lessonDate.getDate() + 1);
-      logger.debug('lessonDate++ ', lessonDate);
-    }
-
-    logger.info('New Class:', newClass);
-    classStore.addClass(newClass);
-    response.redirect('/trainerboard/');
-  },
-
-  /**
-   * A basic method to remove a class from the class store
-   * @param request used to get the class ID
-   * @param response will redirect to the classes index page
-   */
-  remClass(request, response) {
-    const classid = request.params.classid;
-    logger.info('Removing Class: ', classid);
-    classStore.removeClass(classid);
     response.redirect('/classes');
   },
 };

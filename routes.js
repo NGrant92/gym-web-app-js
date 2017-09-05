@@ -49,6 +49,7 @@ router.get('/classes/:classid/unenroll/:lessonid', classes.unenroll);
 router.get('/classes/:classid/enroll/:lessonid', classes.enroll);
 router.get('/classes/remClass/:classid', classes.remClass);
 router.get('/classes/editClass/:classid', classes.editClassIndex);
+router.post('/classes/setClass/:classid', classes.setClass);
 router.post('/classes/addClass', classes.addClass);
 
 router.get('/settings', settings.index);

@@ -40,7 +40,7 @@
             <td>
               <b>Length</b>
             </td>
-            <td>{{timespan}}</td>
+            <td>{{dateMonth startDate}} - {{dateMonth endDate}}</td>
           </tr>
           <tr>
             <td class="collapsing">
@@ -48,7 +48,7 @@
             </td>
             <td>
               {{#each days}}
-                {{this}}
+                {{../startTime}} - {{../endTime}} {{this}}
                 <br>
               {{/each}}
             </td>
@@ -98,7 +98,7 @@
             {{#each lessonList}}
               <tr>
                 <td>
-                  {{this.date}}
+                  {{dayMonthDate this.date}}
                 </td>
                 <td  class="six wide" id="attendance{{lessonid}}">
                   <script>

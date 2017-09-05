@@ -4,18 +4,21 @@
       "classid": "class00",
       "name": "Yoga",
       "duration": "30mins",
-      "timespan": "5th October - 16th October",
+      "startDate": "2017-10-05T00:00:00.000Z",
+      "endDate": "2017-11-06T00:00:00.000Z",
+      "startTime": "17:00",
+      "endTime": "17:30",
       "maxMembers": "10",
       "bio": "There are two way you can start yoga. The best way is to join a beginners yoga course, also known as a foundation course and get the basics down. As you might expect a beginners yoga course is specifically designed for people new to yoga.  Our teachers explain the yoga terms and the etiquette of yoga classes and taking you slowly through the basic poses building up your confidence and strength so you can explore more of the yoga world  when you are finished. By the end of the beginners yoga course weeks you will know your elbow from your asana.",
       "difficulty": "Beginners",
       "days": [
-        "17:00 - 17:30 Monday"
+        "Thursday"
       ],
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "lessonList": [
         {
           "lessonid": "lesson00",
-          "date": "Thursday, October 5th",
+          "date": "2017-10-05T00:00:00.000Z",
           "memberList": [
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
             "316c6e7b-9706-4337-b198-13f9e92733d0",
@@ -24,14 +27,14 @@
         },
         {
           "lessonid": "lesson05",
-          "date": "Thursday, October 12th",
+          "date": "2017-10-12T00:00:00.000Z",
           "memberList": [
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
         },
         {
           "lessonid": "lesson06",
-          "date": "Thursday, October 19th",
+          "date": "2017-10-19T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -40,7 +43,7 @@
         },
         {
           "lessonid": "lesson07",
-          "date": "Thursday, October 26th",
+          "date": "2017-10-26T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -49,7 +52,7 @@
         },
         {
           "lessonid": "lesson08",
-          "date": "Thursday, November 2nd",
+          "date": "2017-11-02T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -58,7 +61,7 @@
         },
         {
           "lessonid": "lesson09",
-          "date": "Thursday, November 9th",
+          "date": "2017-11-09T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -67,7 +70,7 @@
         },
         {
           "lessonid": "lesson10",
-          "date": "Thursday, November 16th",
+          "date": "2017-11-16T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -80,20 +83,23 @@
       "classid": "class01",
       "name": "Yoga",
       "duration": "1hr",
-      "timespan": "5th October - 9th October",
+      "startDate": "2017-10-05T00:00:00.000Z",
+      "endDate": "2017-10-09T00:00:00.000Z",
+      "startTime": "06:00",
+      "endTime": "07:00",
       "maxMembers": "10",
       "bio": "A traditional class from Mysore in India where students self practice the ashtanga primary series under the guidance of a teacher who corrects alignment and gives adjustments to deepen postures. A wonderful chance to explore your practice whilst receiving hands on realignments.",
       "difficulty": "Advanced",
       "days": [
-        "06:00 - 07:00 Monday",
-        "06:00 - 07:00 Wednesday",
-        "06:00 - 07:00 Friday"
+        "Monday",
+        "Wednesday",
+        "Friday"
       ],
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136234/yoga-pose_fsuir3.png",
       "lessonList": [
         {
           "lessonid": "lesson01",
-          "date": "Monday, October 5th",
+          "date": "2017-10-05T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -101,14 +107,14 @@
         },
         {
           "lessonid": "lesson02",
-          "date": "Wednesday, October 7th",
+          "date": "2017-10-07T00:00:00.000Z",
           "memberList": [
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
           ]
         },
         {
           "lessonid": "lesson14",
-          "date": "Friday, October 9th",
+          "date": "2017-10-09T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -120,19 +126,22 @@
       "classid": "class02",
       "name": "Boxercise",
       "duration": "30mins",
-      "timespan": "4th October - 7th October",
+      "startDate": "2017-10-04T00:00:00.000Z",
+      "endDate": "2017-10-07T00:00:00.000Z",
+      "startTime": "18:00",
+      "endTime": "18:30",
       "maxMembers": "2",
       "bio": "Boxercise is a cardiovascular workout with classes lasting one hour. It is based on the training used for boxing so it includes cardio exercises, skipping, boxing drills including footwork and abdominal workouts – all focusing on fitness and toning.",
       "difficulty": "Intermediate",
       "days": [
-        "18:00 - 18:30 Wednesday",
-        "18:00 - 18:30 Friday"
+        "Wednesday",
+        "Friday"
       ],
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing_tcrpg2.png",
       "lessonList": [
         {
           "lessonid": "lesson03",
-          "date": "Friday, October 4th",
+          "date": "2017-10-04T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0",
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
@@ -140,7 +149,7 @@
         },
         {
           "lessonid": "lesson04",
-          "date": "Wednesday, October 7th",
+          "date": "2017-10-07T00:00:00.000Z",
           "memberList": [
             "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
             "316c6e7b-9706-4337-b198-13f9e92733d0"
@@ -152,75 +161,71 @@
       "classid": "80303f21-5a9c-4ffe-8215-0cf688a3cc71",
       "name": "Test Class",
       "duration": "1hr15mins",
-      "timespan": "1st September - 1st October",
+      "startDate": "2017-09-04T00:00:00.000Z",
+      "endDate": "2017-09-26T00:00:00.000Z",
+      "startTime": "17:00",
+      "endTime": "18:00",
       "maxMembers": "10",
       "bio": "Lorem ipsum dolor sit amet, no has prima brute fabulas. Id omnis soluta instructior ius, eu agam platonem eum. Ea vel choro nonumy tacimates, nec et zril labore inimicus. Vel cu altera labitur. Vis no equidem convenire maiestatis, est meis falli detraxit in, at per nihil dicant.",
       "difficulty": "Beginners",
       "days": [
-        "17:00 - 18:00 Monday",
-        "17:00 - 18:00 Tuesday"
+        "Monday",
+        "Tuesday"
       ],
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136232/woman-dumbbell_h4xhzy.png",
       "lessonList": [
         {
-          "lessonid": "07526385-b843-44ea-ba34-b1151d2d5ded",
-          "date": "Tuesday, August 29th",
-          "memberList": [
-            "3ad52697-6d98-4d80-8273-084de55a86c0"
-          ]
-        },
-        {
           "lessonid": "a7d48ed5-1c09-48dc-b64d-4961476c2648",
-          "date": "Monday, September 4th",
+          "date": "2017-09-04T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "0c2da1d3-557d-4f9e-a6d3-aa8ad7192ca0",
-          "date": "Tuesday, September 5th",
+          "date": "2017-09-05T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "1035bbc3-4846-4650-8e53-744072852865",
-          "date": "Monday, September 11th",
+          "date": "2017-09-11T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "ce2e31f9-adde-4a2c-b6d4-b668a87548eb",
-          "date": "Tuesday, September 12th",
+          "date": "2017-09-12T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "cd90cb57-7e37-4cb0-800c-ceae17a88ea6",
-          "date": "Monday, September 18th",
+          "date": "2017-09-18T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "380e3c62-14dc-4554-bdb8-cd52eb067fc1",
-          "date": "Tuesday, September 19th",
+          "date": "2017-09-19T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "3a5406a0-abb4-4c66-b1de-ba59596a116d",
-          "date": "Monday, September 25th",
+          "date": "2017-09-25T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
         },
         {
           "lessonid": "8a6a9edd-10ee-443b-b2e1-8e083980d640",
-          "date": "Tuesday, September 26th",
+          "date": "2017-09-26T00:00:00.000Z",
           "memberList": [
             "3ad52697-6d98-4d80-8273-084de55a86c0"
           ]
@@ -231,65 +236,138 @@
       "classid": "7d8f6c9c-70c9-4a34-8765-f138294e747e",
       "name": "REEEEEEEEEEEEEE",
       "duration": "1hr30mins",
-      "timespan": "8th September - 29th September",
+      "startDate": "2017-09-08T00:00:00.000Z",
+      "endDate": "2017-09-29T00:00:00.000Z",
+      "startTime": "17:00",
+      "endTime": "18:30",
       "maxMembers": "5",
       "bio": "qwertyuiop",
       "difficulty": "Intermediate",
       "days": [
-        "17:00 - 18:30 Monday",
-        "17:00 - 18:30 Wednesday",
-        "17:00 - 18:30 Friday"
+        "Monday",
+        "Wednesday",
+        "Friday"
       ],
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136233/weightlift-gorilla_y6ocet.png",
       "lessonList": [
         {
-          "lessonid": "a708f2c8-e732-4afa-a257-22332b93f5fc",
-          "date": "Wednesday, September 6th",
-          "memberList": []
-        },
-        {
           "lessonid": "5a0801ab-f79c-4ab5-9ee3-55417d79964a",
-          "date": "Friday, September 8th",
+          "date": "2017-09-08T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "712d34a6-77e4-41e7-8621-26f4d2e653f8",
-          "date": "Monday, September 11th",
+          "date": "2017-09-11T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "c48bff26-5c8b-4893-be38-a6afa858d986",
-          "date": "Wednesday, September 13th",
+          "date": "2017-09-13T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "72861a60-8905-4c9b-bec0-802a2184047d",
-          "date": "Friday, September 15th",
+          "date": "2017-09-15T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "0ba27218-bfc0-4b3c-8f1a-db01152cbb86",
-          "date": "Monday, September 18th",
+          "date": "2017-09-18T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "c6c5bb93-26c0-48b4-bcd4-50c13864201d",
-          "date": "Wednesday, September 20th",
+          "date": "2017-09-20T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "2b810867-1c66-4c12-8a2e-b9f7e1477ce5",
-          "date": "Friday, September 22nd",
+          "date": "2017-09-22T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "8997bac7-0223-4e21-b0c2-c84ef86dc870",
-          "date": "Monday, September 25th",
+          "date": "2017-09-25T00:00:00.000Z",
           "memberList": []
         },
         {
           "lessonid": "ed3bf198-6aca-4496-a4b1-2007960ecd27",
-          "date": "Wednesday, September 27th",
+          "date": "2017-09-27T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "ed3bf198-6aca-4496-a4b1-2007960ecd27",
+          "date": "2017-09-29T00:00:00.000Z",
+          "memberList": []
+        }
+      ]
+    },
+    {
+      "classid": "0c47b570-2c9f-4633-8baf-7eae5984f11f",
+      "name": "REEEEEEEEEEEEEEEEEEEEEst",
+      "duration": "1hr",
+      "startDate": "2017-09-08T00:00:00.000Z",
+      "endDate": "2017-09-29T00:00:00.000Z",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "maxMembers": "2",
+      "bio": "REEEEEEEEEEEEEEEEEEEEEEE",
+      "difficulty": "Advanced",
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136216/boxing-m_bkhlv0.png",
+      "lessonList": [
+        {
+          "lessonid": "28241790-b175-45de-b3ea-a38b3494b370",
+          "date": "2017-09-08T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "a480f6f7-b826-453b-ad7e-86aad9afe94b",
+          "date": "2017-09-11T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "42916e0f-15ff-4a89-ad42-d60a69536259",
+          "date": "2017-09-13T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "54fe98d0-bb50-42c0-97e3-488d656ef5cc",
+          "date": "2017-09-15T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "22fd8d4a-1bd0-4a9f-9752-631b87865dc3",
+          "date": "2017-09-18T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "3d2ec6d3-9c06-44d0-b1fd-905a56696a74",
+          "date": "2017-09-20T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "75a2ab33-bf6c-4ef1-8926-57061b3242e5",
+          "date": "2017-09-22T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "f7182078-5bb5-4cec-b515-069645baa742",
+          "date": "2017-09-25T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "b6e01d74-37dd-48ff-b4df-0994e85dcaf7",
+          "date": "2017-09-27T00:00:00.000Z",
+          "memberList": []
+        },
+        {
+          "lessonid": "3495ca95-1486-4b4b-9784-29fe000a8fa4",
+          "date": "2017-09-29T00:00:00.000Z",
           "memberList": []
         }
       ]

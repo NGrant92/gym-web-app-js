@@ -48,6 +48,14 @@ Handlebars.registerHelper('longDate', function (date) {
   return dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
 });
 
+Handlebars.registerHelper('dateMonth', function (date) {
+  return dateformat(date, 'dS mmmm');
+});
+
+Handlebars.registerHelper('dayMonthDate', function (date) {
+  return dateformat(date, 'dddd, mmmm dS');
+});
+
 Handlebars.registerHelper('longDateNoTime', function (date) {
   return dateformat(date, 'dddd mmmm dS, yyyy');
 });
@@ -62,6 +70,31 @@ Handlebars.registerHelper('shortDateDayFirst', function (date) {
 
 Handlebars.registerHelper('getTime', function (date) {
   return dateformat(date, 'HH:MM');
+});
+
+Handlebars.registerHelper('getHour', function (duration) {
+
+  const hr = duration.indexOf('hr');
+
+  if ( hr >= 0){
+    return duration.substr(0, hr);
+  }
+  else{
+    return 0;
+  }
+});
+
+Handlebars.registerHelper('getMins', function (duration) {
+  const mins = duration.indexOf('mins');
+
+  logger.debug(mins);
+  if(mins >= 0){
+    logger.debug(duration.substring(mins, duration.length - 1));
+    return duration.substring(mins - 2, mins);
+  }
+  else{
+    return 0;
+  }
 });
 
 module.exports = Handlebars;
