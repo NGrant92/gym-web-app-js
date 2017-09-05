@@ -132,37 +132,42 @@ const classes = {
    */
   setClass(request, response) {
     const oldClass = classStore.getClassList(request.params.classid)[0];
-    const newClass = {
 
-      name: request.body.name,
-      difficulty: request.body.difficulty,
-      maxMembers: request.body.maxMembers,
-      hours: request.body.durHours,
-      mins: request.body.durMins,
-      startTime: request.body.startTime,
-      endTime: request.body.endTime,
-      days: request.body.days,
-      bio: request.body.bio,
-      img: request.body.image,
-    };
-
-    oldClass.name = request.body.name;
+    oldClass.name = request.body.className;
 
     const newDifficulty = request.body.difficulty;
-    if(newDifficulty.length > 0 && !newDifficulty === oldClass.difficulty){
+    if (newDifficulty.length > 0 && !newDifficulty === oldClass.difficulty) {
       oldClass.difficulty = newDifficulty;
     }
 
+    oldClass.maxMembers = request.body.maxMembers;
 
+    const hours = request.body.durHours;
+    const mins = request.body.durMins;
+    let newDuration = '';
+    if (hours > 0) {
+      newDuration = hours + 'hr';
+    }
 
+    if (mins > 0) {
+      newDuration = newDuration + mins + 'mins';
+    }
 
-    oldClass.name = request.body.name;
-    oldClass.name = request.body.name;
-    oldClass.name = request.body.name;
-    oldClass.name = request.body.name;
+    oldClass.duration = newDuration;
 
+    oldClass.startTime = request.body.timeStart;
+    oldClass.endTime = request.body.timeEnd;
+    oldClass.bio = request.body.bio;
 
-    logger.debug('Setting Class: ', oldClass);
+    const newImage = request.body.image;
+    logger.debug('new image', newImage);
+    if (newImage.length > 0) {
+      logger.debug('setting image');
+      logger.debug('old image' + oldClass.img);
+      oldClass.img = newImage;
+    }
+
+    logger.debug('Setting Class');
     response.redirect('/classes');
   },
 

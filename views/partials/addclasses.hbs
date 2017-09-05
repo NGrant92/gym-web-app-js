@@ -97,3 +97,42 @@
     <button class="ui blue submit button">Submit</button>
   </form>
 </div>
+<script>
+
+  $.fn.form.settings.rules.checkTime = function() {
+    const startTime = document.getElementsByName("timeStart")[0].value;
+    const endTime = document.getElementsByName("timeEnd")[0].value;
+
+    return startTime <= endTime;
+  };
+
+  $.fn.form.settings.rules.checkDate = function() {
+    const startDate = document.getElementsByName("startDate")[0].value;
+    const endDate = document.getElementsByName("endDate")[0].value;
+
+    return startDate <= endDate;
+  };
+
+  $('.ui.form').form({
+    fields: {
+      checkDate: {
+        identifier  : 'checkDate',
+        rules: [
+          {
+            type   : 'endDate',
+            prompt : 'Date incorrectly input'
+          }
+        ]
+      },
+      checkTime: {
+        identifier  : 'timeEnd',
+        rules: [
+          {
+            type   : 'checkTime',
+            prompt : 'Time incorrectly input'
+          }
+        ]
+      }
+    }
+  });
+</script>
