@@ -41,27 +41,27 @@ Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
 });
 
 Handlebars.registerHelper('json', function (arrayList) {
-  return  JSON.stringify(arrayList);
+  return JSON.stringify(arrayList);
 });
 
 Handlebars.registerHelper('longDate', function (date) {
-  return  dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
+  return dateformat(date, 'dddd mmmm dS, yyyy HH:MM');
 });
 
 Handlebars.registerHelper('longDateNoTime', function (date) {
-  return  dateformat(date, 'dddd mmmm dS, yyyy');
+  return dateformat(date, 'dddd mmmm dS, yyyy');
 });
 
 Handlebars.registerHelper('shortDate', function (date) {
-  return  dateformat(date, 'yyyy-mm-dd');
+  return dateformat(date, 'yyyy-mm-dd');
 });
 
 Handlebars.registerHelper('shortDateDayFirst', function (date) {
-  return  dateformat(date, 'dd-mm-yy');
+  return dateformat(date, 'dd-mm-yy');
 });
 
 Handlebars.registerHelper('getTime', function (date) {
-  return  dateformat(date, 'HH:MM');
+  return dateformat(date, 'HH:MM');
 });
 
 module.exports = Handlebars;

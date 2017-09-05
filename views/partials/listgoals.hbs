@@ -17,7 +17,7 @@
   {{#each goallist}}
     <tr>
       <td class="collapsing">
-        <a class="ui ribbon label" id="checkStatus{{goalid}}"><i class="hourglass full icon"></i> Ongoing</a>
+        <a class="ui ribbon label" style="pointer-events: none;" id="checkStatus{{goalid}}"><i class="hourglass full icon"></i> Ongoing</a>
         <a class="ui blue ribbon label" onclick="window.location='/dashboard/{{../member.id}}/addbooking'" id="pendingStatus{{goalid}}" style="float: left;display: none;"><i class="plus icon"></i>Add/Book</a>
       </td>
       <td class="collapsing">{{shortDateDayFirst date}}</td>
