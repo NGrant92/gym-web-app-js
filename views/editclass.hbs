@@ -113,7 +113,6 @@
   document.getElementsByName("startDate")[0].setAttribute('min', today);
   document.getElementsByName("endDate")[0].setAttribute('min', today);
 
-
   $.fn.form.settings.rules.isMaxCap = function() {
     const lessonArr = [{{{json class.lessonList}}}];
     console.log(lessonArr);
@@ -122,21 +121,38 @@
 
     for(let i = 0; i < lessonArr[0].length; i++){
       if(lessonArr[0][i].memberList.length > newMaxCap){
-        console.log('newMaxCap: ' + newMaxCap + '... maxMembers: ' + lessonArr[i].memberList);
         return false;
       }
     }
 
     return true;
   };
+
+  $.fn.form.settings.rules.checkTime = function() {
+    const startTime = document.getElementsByName("timeStart")[0].value;
+    const endTime = document.getElementsByName("timeEnd")[0].value;
+
+    console.log('timeStart: ' + startTime + '... timeEnd: ' + endTime);
+    return startTime <= endTime;
+  };
+
   $('.ui.form').form({
     fields: {
-      bookDate: {
+      maxMembers: {
         identifier  : 'maxMembers',
         rules: [
           {
             type   : 'isMaxCap',
             prompt : 'Too members already enrolled for new max capacity'
+          }
+        ]
+      },
+      checkTime: {
+        identifier  : 'timeEnd',
+        rules: [
+          {
+            type   : 'checkTime',
+            prompt : 'Time incorrectly input'
           }
         ]
       }
