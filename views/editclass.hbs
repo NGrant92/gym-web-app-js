@@ -1,0 +1,103 @@
+{{> menu id="dashboard"}}
+
+<section class="ui raised segment">
+  <h2 class="ui dividing header">Edit Class Information</h2>
+  <div class="ui two column">
+    <form class="ui form" action="/classes/addClass" method="POST">
+      <h4 class="ui dividing header">Basic Information</h4>
+      <div class="three fields">
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Class Name</label>
+          <input placeholder="Class Name" value="{{class.name}}" name="className" required>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; Difficulty</label>
+          <select class="ui fluid search dropdown" name="difficulty" required>
+            <option value="{{class.difficulty}}" hidden>{{class.difficulty}}</option>
+            <option value="Beginners">Beginners</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Max Members</label>
+          <input placeholder="Max Members" value="{{class.maxMembers}}" type="number" step="1.00" maxlength="2" min="00" name="maxMembers" required>
+        </div>
+      </div>
+
+      <h4 class="ui dividing header">Duration</h4>
+      <div class="four fields">
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Hours</label>
+          <input placeholder="Hours" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours" required>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Mins</label>
+          <input placeholder="Mins" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins" required>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Start Date</label>
+          <input placeholder="Date" type="date" name="startDate">
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; End Date</label>
+          <input placeholder="Date" type="date" name="endDate">
+        </div>
+      </div>
+
+      <h4 class="ui dividing header">Time and Days</h4>
+      <div class="three fields">
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Start Time</label>
+          <input placeholder="Start Time" type="time" name="timeStart" required>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; End Time</label>
+          <input placeholder="End Time" type="time" name="timeEnd" required>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Days</label>
+          <select name="days" multiple="" class="ui fluid dropdown" required>
+            <option value="">Days</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+      </div>
+
+      <h4 class="ui dividing header">Details</h4>
+      <div class="two fields">
+        <div class="sixteen wide field">
+          <label>&nbsp; &nbsp; &nbsp; Bio (100 words max)</label>
+          <textarea name="bio" rows="3" maxlength="600" placeholder="Description here..." required></textarea>
+        </div>
+        <div class="field">
+          <label>&nbsp; &nbsp; &nbsp; Images</label>
+          <div class="ui fluid simple selection dropdown" style="height:75px;" required>
+            <input type="hidden" name="image">
+            <i class="dropdown icon"></i>
+            <div class="default text">Pick an image...</div>
+            <div class="menu" style="overflow:auto;max-height:239px;">
+              {{#each stockAlbum}}
+                <div class="item" data-value="{{this.image}}">
+                  <img class="ui massive image" src="{{this.image}}">
+                  {{this.title}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <script>
+            $('.dropdown').dropdown();
+          </script>
+        </div>
+      </div>
+      <br>
+      <button class="ui blue submit button">Submit</button>
+    </form>
+  </div>
+</section>

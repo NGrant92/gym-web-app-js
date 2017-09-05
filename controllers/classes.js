@@ -26,6 +26,21 @@ const classes = {
     response.render('classes', viewData);
   },
 
+  editClassIndex(request, response) {
+
+    let loggedInUser = accounts.getCurrentUser(request);
+
+    logger.info('edit classe rendering');
+    const viewData = {
+      title: 'Edit Class',
+      user: loggedInUser,
+      class: classStore.getClassList(request.params.classid),
+      imgs: pictureStore.getAlbum('qad52697-6d98-4d80-8273-084de55a86c0'),
+    };
+    logger.info('about to render', viewData.title);
+    response.render('editclass', viewData);
+  },
+
   /**
    * To enroll a member in all possible classes
    * @param request
@@ -112,9 +127,7 @@ const classes = {
 
     if (memberList.indexOf(userid) < 0) {
 
-      logger.info('Member to be added to lesson: ', memberList);
       memberList.push(userid);
-      logger.info('Member added to lesson: ', memberList);
       logger.info('Member added to lesson: ', memberList);
       classStore.store.save();
     }
@@ -131,8 +144,8 @@ const classes = {
 
     //putting the days the trainer selected into an array to be used later
     const lessonDays = request.body.days.toString().split(',');
-    let startDate = new Date(request.body.dateStartMonth + '-' + request.body.dateStartDay + '-' + new Date().getFullYear());
-    let endDate = new Date(request.body.dateEndMonth + '-' + request.body.dateEndDay + '-' + new Date().getFullYear());
+    let startDate = new Date(request.body.startDate).toISOString();
+    let endDate = new Date(request.body.endDate).toISOString();
 
     //new class array that will be added to the class store
     const newClass = {
@@ -178,12 +191,13 @@ const classes = {
     logger.debug('Start date ', startDate);
     logger.debug('End date ', endDate);
 
-    logger.debug('lesson date loop: ', lessonDays.indexOf('Tuesday'));
-
     //a while loop to create an object for each individual lesson
-    while (lessonDate <= endDate) {
+    while (lessonDate <= new Date(endDate)) {
+
+      //it's checking if the day of lessonDate matches the days input by the user
       if (lessonDays.indexOf(dateformat(lessonDate, 'dddd')) >= 0) {
 
+        //creation and population of new object
         let newLesson = {
 
           lessonid: uuid(),
@@ -191,10 +205,12 @@ const classes = {
           memberList: [],
         };
 
+        //adding new object to lessonList array
         newClass.lessonList.push(newLesson);
         logger.info('Added new lesson: ', newLesson);
       }
 
+      //incrementing the lesson date and will keep happening until end date is reached
       lessonDate.setDate(lessonDate.getDate() + 1);
       logger.debug('lessonDate++ ', lessonDate);
     }
@@ -204,6 +220,11 @@ const classes = {
     response.redirect('/trainerboard/');
   },
 
+  /**
+   * A basic method to remove a class from the class store
+   * @param request used to get the class ID
+   * @param response will redirect to the classes index page
+   */
   remClass(request, response) {
     const classid = request.params.classid;
     logger.info('Removing Class: ', classid);

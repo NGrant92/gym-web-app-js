@@ -226,6 +226,73 @@
           ]
         }
       ]
+    },
+    {
+      "classid": "7d8f6c9c-70c9-4a34-8765-f138294e747e",
+      "name": "REEEEEEEEEEEEEE",
+      "duration": "1hr30mins",
+      "timespan": "8th September - 29th September",
+      "maxMembers": "5",
+      "bio": "qwertyuiop",
+      "difficulty": "Intermediate",
+      "days": [
+        "17:00 - 18:30 Monday",
+        "17:00 - 18:30 Wednesday",
+        "17:00 - 18:30 Friday"
+      ],
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503136233/weightlift-gorilla_y6ocet.png",
+      "lessonList": [
+        {
+          "lessonid": "a708f2c8-e732-4afa-a257-22332b93f5fc",
+          "date": "Wednesday, September 6th",
+          "memberList": []
+        },
+        {
+          "lessonid": "5a0801ab-f79c-4ab5-9ee3-55417d79964a",
+          "date": "Friday, September 8th",
+          "memberList": []
+        },
+        {
+          "lessonid": "712d34a6-77e4-41e7-8621-26f4d2e653f8",
+          "date": "Monday, September 11th",
+          "memberList": []
+        },
+        {
+          "lessonid": "c48bff26-5c8b-4893-be38-a6afa858d986",
+          "date": "Wednesday, September 13th",
+          "memberList": []
+        },
+        {
+          "lessonid": "72861a60-8905-4c9b-bec0-802a2184047d",
+          "date": "Friday, September 15th",
+          "memberList": []
+        },
+        {
+          "lessonid": "0ba27218-bfc0-4b3c-8f1a-db01152cbb86",
+          "date": "Monday, September 18th",
+          "memberList": []
+        },
+        {
+          "lessonid": "c6c5bb93-26c0-48b4-bcd4-50c13864201d",
+          "date": "Wednesday, September 20th",
+          "memberList": []
+        },
+        {
+          "lessonid": "2b810867-1c66-4c12-8a2e-b9f7e1477ce5",
+          "date": "Friday, September 22nd",
+          "memberList": []
+        },
+        {
+          "lessonid": "8997bac7-0223-4e21-b0c2-c84ef86dc870",
+          "date": "Monday, September 25th",
+          "memberList": []
+        },
+        {
+          "lessonid": "ed3bf198-6aca-4496-a4b1-2007960ecd27",
+          "date": "Wednesday, September 27th",
+          "memberList": []
+        }
+      ]
     }
   ]
 }

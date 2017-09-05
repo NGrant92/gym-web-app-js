@@ -13,6 +13,7 @@ It includes basic express setup, templating, routing and session support.
         -Delete account
         -Trends
         -View Fitness Programmes
+        -Search classes
 
     -Trainers:
         -Add Fitness Programmes

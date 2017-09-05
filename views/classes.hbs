@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class = "six wide middle aligned column padded">
-        <button class="ui red mini icon button" id="remClass{{classid}}" style="display: none; float: right;" onclick="window.location='/classes/remClass/{{classid}}'"><i class="delete icon"></i></button>
+        <button class="ui mini icon button" id="remClass{{classid}}" style="display: none; float: right;" onclick="window.location='/classes/editClass/{{classid}}'"><i class="edit icon"></i></button>
         <br><br>
         <table class="ui celled striped table">
           <thead>
@@ -113,7 +113,7 @@
                     if({{../../user.trainer}}){
                       document.getElementById("lessonButton{{lessonid}}").className = "ui disabled icon button";
                     }
-                    else if({{checkLesson this.memberList ../../user.id}} >= 0){
+                    else if({{checkLesson this.memberList ../../user.id}} >= 0) {
                       document.getElementById("noLesson{{lessonid}}").style.display = "block";
                       document.getElementById("lessonButton{{lessonid}}").className = "ui disabled icon button";
                     }
