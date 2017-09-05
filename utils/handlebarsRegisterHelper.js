@@ -89,7 +89,6 @@ Handlebars.registerHelper('getMins', function (duration) {
 
   logger.debug(mins);
   if(mins >= 0){
-    logger.debug(duration.substring(mins, duration.length - 1));
     return duration.substring(mins - 2, mins);
   }
   else{

@@ -12,11 +12,9 @@ It includes basic express setup, templating, routing and session support.
     -Members:
         -Delete account
         -Trends
-        -View Fitness Programmes
         -Search classes
 
     -Trainers:
-        -Add Fitness Programmes
         -Delete members
         -Classes
             -Edit class information

@@ -131,15 +131,14 @@ const classes = {
    * @param response will redirect to the classes index page
    */
   setClass(request, response) {
-    const classid = request.params.classid;
+    const oldClass = classStore.getClassList(request.params.classid)[0];
     const newClass = {
+
       name: request.body.name,
       difficulty: request.body.difficulty,
       maxMembers: request.body.maxMembers,
       hours: request.body.durHours,
       mins: request.body.durMins,
-      startDate: request.body.startDate,
-      endDate: request.body.endDate,
       startTime: request.body.startTime,
       endTime: request.body.endTime,
       days: request.body.days,
@@ -147,7 +146,23 @@ const classes = {
       img: request.body.image,
     };
 
-    logger.debug('Setting Class: ', newClass);
+    oldClass.name = request.body.name;
+
+    const newDifficulty = request.body.difficulty;
+    if(newDifficulty.length > 0 && !newDifficulty === oldClass.difficulty){
+      oldClass.difficulty = newDifficulty;
+    }
+
+
+
+
+    oldClass.name = request.body.name;
+    oldClass.name = request.body.name;
+    oldClass.name = request.body.name;
+    oldClass.name = request.body.name;
+
+
+    logger.debug('Setting Class: ', oldClass);
     response.redirect('/classes');
   },
 

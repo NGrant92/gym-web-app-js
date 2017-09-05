@@ -35,11 +35,11 @@
           <label>&nbsp; &nbsp; &nbsp; Mins</label>
           <input placeholder="Mins" value="{{getMins class.duration}}" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
         </div>
-        <div class="field">
+        <div class="field disabled">
           <label>&nbsp; &nbsp; &nbsp; Start Date</label>
           <input placeholder="Date" value="{{shortDate class.startDate}}" type="date" name="startDate">
         </div>
-        <div class="field">
+        <div class="field disabled">
           <label>&nbsp; &nbsp; &nbsp; End Date</label>
           <input placeholder="Date" value="{{shortDate class.endDate}}" type="date" name="endDate">
         </div>
@@ -49,13 +49,13 @@
       <div class="three fields">
         <div class="field">
           <label>&nbsp; &nbsp; &nbsp; Start Time</label>
-          <input placeholder="Start Time" value="{{class.startTime}}" type="time" name="timeStart">
+          <input placeholder="Start Time" value="{{class.startTime}}" type="time" name="timeStart" min="07:00" max="20:00">
         </div>
         <div class="field">
           <label>&nbsp; &nbsp; &nbsp; End Time</label>
-          <input placeholder="End Time" value="{{class.endTime}}" type="time" name="timeEnd">
+          <input placeholder="End Time" value="{{class.endTime}}" type="time" name="timeEnd" min="07:00" max="21:00">
         </div>
-        <div class="field">
+        <div class="field disabled">
           <label>&nbsp; &nbsp; &nbsp; Days</label>
           <select name="days" multiple="" class="ui fluid dropdown">
             <option value="">{{class.days}}</option>
@@ -102,6 +102,44 @@
       </div>
       <br>
       <button class="ui blue submit button">Submit</button>
+      <div class="ui error message"></div>
     </form>
   </div>
 </section>
+<script>
+  $('.dropdown').dropdown();
+
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementsByName("startDate")[0].setAttribute('min', today);
+  document.getElementsByName("endDate")[0].setAttribute('min', today);
+
+
+  $.fn.form.settings.rules.isMaxCap = function() {
+    const lessonArr = [{{{json class.lessonList}}}];
+    console.log(lessonArr);
+    const newMaxCap = document.getElementsByName("maxMembers")[0].value;
+
+
+    for(let i = 0; i < lessonArr[0].length; i++){
+      if(lessonArr[0][i].memberList.length > newMaxCap){
+        console.log('newMaxCap: ' + newMaxCap + '... maxMembers: ' + lessonArr[i].memberList);
+        return false;
+      }
+    }
+
+    return true;
+  };
+  $('.ui.form').form({
+    fields: {
+      bookDate: {
+        identifier  : 'maxMembers',
+        rules: [
+          {
+            type   : 'isMaxCap',
+            prompt : 'Too members already enrolled for new max capacity'
+          }
+        ]
+      }
+    }
+  });
+</script>
