@@ -302,13 +302,24 @@ const classes = {
   setLesson(request, response) {
     const currClass = classStore.getClassList(request.params.classid);
     const currLesson = _.find(currClass[0].lessonList, { lessonid: request.params.lessonid });
-    const newDate = new Date(request.body.lessonDate).toISOString();
 
-    currLesson.date = newDate;
+    currLesson.date = new Date(request.body.lessonDate).toISOString();
+    logger.debug('Updating class Date ' + currLesson.date);
+    response.redirect('/classes');
+  },
 
-    logger.debug('currClass ', currClass[0].name);
-    logger.debug('newDate ' + newDate);
-    logger.debug('currLesson new date ' + currLesson.date);
+  /**
+   * To delete a specific class
+   * @param request To gather and process information
+   * @param response To redirect to edit class index page
+   */
+  remLesson(request, response) {
+    const lessonList = classStore.getClassList(request.params.classid)[0].lessonList;
+    const lessonIndex = _.findIndex(lessonList, { lessonid: request.params.lessonid });
+
+    classStore.removeLesson(lessonIndex, lessonList);
+
+    logger.debug('Reloading classes');
     response.redirect('/classes');
   },
 };

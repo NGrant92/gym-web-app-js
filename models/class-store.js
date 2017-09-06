@@ -39,6 +39,13 @@ const classStore = {
     logger.debug(`new member list: `, memberList);
     this.store.save();
   },
+
+  removeLesson(lessonIndex, lessonList){
+    logger.debug('old lesson list', lessonList);
+    _.pullAt(lessonList, lessonIndex);
+    logger.debug(`new lesson list: `, lessonList);
+    this.store.save();
+  }
 };
 
 module.exports = classStore;
