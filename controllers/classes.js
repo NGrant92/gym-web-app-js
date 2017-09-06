@@ -26,6 +26,11 @@ const classes = {
     response.render('classes', viewData);
   },
 
+  /**
+   * Method to load information for editclass.hbs before rendering
+   * @param request To gather and process information
+   * @param response To render page
+   */
   editClassIndex(request, response) {
 
     let loggedInUser = accounts.getCurrentUser(request);
@@ -43,8 +48,8 @@ const classes = {
 
   /**
    * A method that will process and sort information from the form a trainer has used to create a new class
-   * @param request
-   * @param response
+   * @param request To gather and process information
+   * @param response To render page
    */
   addClass(request, response) {
 
@@ -126,8 +131,8 @@ const classes = {
   },
 
   /**
-   * A basic method to remove a class from the class store
-   * @param request used to get the class ID
+   * A method to update/edit basic class info
+   * @param request Used to get and process information
    * @param response will redirect to the classes index page
    */
   setClass(request, response) {
@@ -186,8 +191,8 @@ const classes = {
 
   /**
    * To enroll a member in all possible classes
-   * @param request
-   * @param response
+   * @param request To gather and process information
+   * @param response To redirect to classes index page
    */
   fullEnroll(request, response) {
     let user = accounts.getCurrentUser(request);
@@ -229,9 +234,29 @@ const classes = {
   },
 
   /**
+   * To enroll a member to a lesson in a class
+   * @param request To gather and process information
+   * @param response To redirect to classes index page
+   */
+  enroll(request, response) {
+    let userid = accounts.getCurrentUser(request).id;
+    let classArr = classStore.getClassList(request.params.classid)[0];
+    let memberList = _.filter(classArr.lessonList, { lessonid: request.params.lessonid })[0].memberList;
+
+    if (memberList.indexOf(userid) < 0) {
+
+      memberList.push(userid);
+      logger.info('Member added to lesson: ', memberList);
+      classStore.store.save();
+    }
+
+    response.redirect('/classes');
+  },
+
+  /**
    * To unenroll a member from every lesson in a class
-   * @param request
-   * @param response
+   * @param request To gather and process information
+   * @param response To redirect to classes index page
    */
   fullUnenroll(request, response) {
     let user = accounts.getCurrentUser(request);
@@ -252,6 +277,11 @@ const classes = {
     response.redirect('/classes');
   },
 
+  /**
+   * To unenroll a member from a specific lesson in a class
+   * @param request To gather and process information
+   * @param response To redirect to classes index page
+   */
   unenroll(request, response) {
     let userid = accounts.getCurrentUser(request).id;
     let lessonList = classStore.getClassList(request.params.classid)[0].lessonList;
@@ -263,18 +293,22 @@ const classes = {
     response.redirect('/classes');
   },
 
-  enroll(request, response) {
-    let userid = accounts.getCurrentUser(request).id;
-    let classArr = classStore.getClassList(request.params.classid)[0];
-    let memberList = _.filter(classArr.lessonList, { lessonid: request.params.lessonid })[0].memberList;
+  /**
+   * To edit the information of a specific class
+   * @param request To gather and process information
+   * @param response To redirect to edit class index page
+   *
+   */
+  setLesson(request, response) {
+    const currClass = classStore.getClassList(request.params.classid);
+    const currLesson = _.find(currClass[0].lessonList, { lessonid: request.params.lessonid });
+    const newDate = new Date(request.body.lessonDate).toISOString();
 
-    if (memberList.indexOf(userid) < 0) {
+    currLesson.date = newDate;
 
-      memberList.push(userid);
-      logger.info('Member added to lesson: ', memberList);
-      classStore.store.save();
-    }
-
+    logger.debug('currClass ', currClass[0].name);
+    logger.debug('newDate ' + newDate);
+    logger.debug('currLesson new date ' + currLesson.date);
     response.redirect('/classes');
   },
 };

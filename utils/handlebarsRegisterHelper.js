@@ -90,7 +90,6 @@ Handlebars.registerHelper('getHour', function (duration) {
 Handlebars.registerHelper('getMins', function (duration) {
   const mins = duration.indexOf('mins');
 
-  logger.debug(mins);
   if (mins >= 0) {
     return duration.substring(mins - 2, mins);
   }

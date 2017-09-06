@@ -116,8 +116,6 @@
   $.fn.form.settings.rules.checkTime = function() {
     const startTime = document.getElementsByName("timeStart")[0].value;
     const endTime = document.getElementsByName("timeEnd")[0].value;
-
-    console.log('timeStart: ' + startTime + '... timeEnd: ' + endTime);
     return startTime <= endTime;
   };
 

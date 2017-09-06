@@ -1,6 +1,6 @@
 <div class="ui two column">
   {{#each class.lessonList}}
-    <form class="ui form" action="/classes/setLesson/{{lessonid}}" method="POST">
+    <form class="ui form" action="/classes/setlesson/{{../class.classid}}/{{this.lessonid}}" method="POST">
       <table class = "ui table">
         <thead>
         <tr>
@@ -12,14 +12,14 @@
         </thead>
         <tbody>
         <tr>
-          <td>{{dayMonthDate date}}</td>
+          <td><input placeholder="Date" value="{{shortDate date}}" type="date" name="lessonDate"></td>
           <td id="attendance{{lessonid}}">
             <script>
               document.getElementById("attendance{{lessonid}}").textContent = ({{../class.maxMembers}} - {{memberList.length}}) + ' spaces remaining';
             </script>
           </td>
           <td style="float: right;"><button class="ui blue submit button">Update</button></td>
-          <td><a href="/dashboard/{{../member.id}}/deleteAssessment/{{id}}" class="ui red icon button"><i class="trash icon"></i></a></td>
+          <td><a href="/classes/remlesson/{{../classid}}/{{lessonid}}" class="ui red icon button"><i class="trash icon"></i></a></td>
         </tr>
         </tbody>
       </table>

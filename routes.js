@@ -51,6 +51,8 @@ router.get('/classes/remClass/:classid', classes.remClass);
 router.get('/classes/editClass/:classid', classes.editClassIndex);
 router.post('/classes/setClass/:classid', classes.setClass);
 router.post('/classes/addClass', classes.addClass);
+router.post('/classes/setlesson/:classid/:lessonid', classes.setLesson);
+//router.post('/classes/remlesson/:classid/:lessonid', classes.remLesson);
 
 router.get('/settings', settings.index);
 router.post('/settings/update', accounts.setAccount);
