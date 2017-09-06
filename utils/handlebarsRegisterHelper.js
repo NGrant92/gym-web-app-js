@@ -1,3 +1,4 @@
+// jscs:disable disallowKeywordsOnNewLine
 'use strict';
 
 const dateformat = require('dateformat');
@@ -28,11 +29,13 @@ Handlebars.registerHelper('checkLesson', function (memberList, userid) {
 });
 
 Handlebars.registerHelper('checkAllMemLessons', function (lessonList, userid) {
-  let isEnrolled = true;
+  let isEnrolled = false;
 
+  //a for loop that is going through the lesson list and checking if member is enrolled
+  //if it returns false then the 'Unenroll All' button will not be viewable
   for (let i = 0; i < lessonList.length; i++) {
-    if (lessonList[i].memberList.indexOf(userid) < 0) {
-      isEnrolled = false;
+    if (lessonList[i].memberList.indexOf(userid) >= 0) {
+      isEnrolled = true;
       break;
     }
   }
@@ -76,10 +79,10 @@ Handlebars.registerHelper('getHour', function (duration) {
 
   const hr = duration.indexOf('hr');
 
-  if ( hr >= 0){
+  if (hr >= 0) {
     return duration.substr(0, hr);
   }
-  else{
+  else {
     return 0;
   }
 });
@@ -88,10 +91,10 @@ Handlebars.registerHelper('getMins', function (duration) {
   const mins = duration.indexOf('mins');
 
   logger.debug(mins);
-  if(mins >= 0){
+  if (mins >= 0) {
     return duration.substring(mins - 2, mins);
   }
-  else{
+  else {
     return 0;
   }
 });
