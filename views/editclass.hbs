@@ -1,161 +1,23 @@
 {{> menu id="dashboard"}}
 
-<section class="ui raised segment">
+<section class="ui padded segment" id="assessmentTabs">
   <h2 class="ui dividing header">Edit Class Information</h2>
-  <div class="ui two column">
-    <form class="ui form" action="/classes/setClass/{{class.classid}}" method="POST">
-      <h4 class="ui dividing header">Basic Information</h4>
-      <div class="three fields">
-        <div class="field">
-          <label>&nbsp; &nbsp; &nbsp; Class Name</label>
-          <input placeholder="Class Name" value="{{class.name}}" name="className">
-        </div>
-        <div class="field">
-          <label>&nbsp; &nbsp; Difficulty</label>
-          <select class="ui fluid search dropdown" name="difficulty">
-            <option value="">{{class.difficulty}}</option>
-            <option value="Beginners">Beginners</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>&nbsp; &nbsp; &nbsp; Max Members</label>
-          <input placeholder="Max Members" value="{{class.maxMembers}}" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
-        </div>
-      </div>
-
-      <h4 class="ui dividing header">Duration</h4>
-      <div class="four fields">
-        <div class="field">
-          <label>&nbsp; &nbsp; &nbsp; Hours</label>
-          <input placeholder="Hours" value="{{getHour class.duration}}" type="number" step="1.00" max="23" min="00" maxlength="2" name="durHours">
-        </div>
-        <div class="field">
-          <label>&nbsp; &nbsp; &nbsp; Mins</label>
-          <input placeholder="Mins" value="{{getMins class.duration}}" type="number" step="15.0" max="59" min="00" maxlength="2" name="durMins">
-        </div>
-        <div class="field disabled">
-          <label>&nbsp; &nbsp; &nbsp; Start Date</label>
-          <input placeholder="Date" value="{{shortDate class.startDate}}" type="date" name="startDate">
-        </div>
-        <div class="field disabled">
-          <label>&nbsp; &nbsp; &nbsp; End Date</label>
-          <input placeholder="Date" value="{{shortDate class.endDate}}" type="date" name="endDate">
-        </div>
-      </div>
-
-      <h4 class="ui dividing header">Time and Days</h4>
-      <div class="three fields">
-        <div class="field">
-          <label>&nbsp; &nbsp; &nbsp; Start Time</label>
-          <input placeholder="Start Time" value="{{class.startTime}}" type="time" name="timeStart" min="07:00" max="20:00">
-        </div>
-        <div class="field">
-          <label>&nbsp; &nbsp; &nbsp; End Time</label>
-          <input placeholder="End Time" value="{{class.endTime}}" type="time" name="timeEnd" min="07:00" max="21:00">
-        </div>
-        <div class="field disabled">
-          <label>&nbsp; &nbsp; &nbsp; Days</label>
-          <select name="days" multiple="" class="ui fluid dropdown">
-            <option value="">{{class.days}}</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-          </select>
-        </div>
-      </div>
-
-      <h4 class="ui dividing header">Details</h4>
-      <div class="fields">
-        <div class="sixteen wide field">
-          <label>&nbsp; &nbsp; &nbsp; Bio (100 words max)</label>
-          <textarea name="bio" rows="3" maxlength="600">{{class.bio}}</textarea>
-        </div>
-        <div class="three wide field">
-          <label> Current Image</label>
-          <img class="ui tiny image" src="{{class.img}}">
-        </div>
-        <div class="ten wide field">
-          <label>&nbsp; &nbsp; &nbsp; Images</label>
-          <div class="ui fluid simple selection dropdown" style="height:75px;">
-            <input type="hidden" name="image">
-            <i class="dropdown icon"></i>
-            <div class="default text">Pick an image...</div>
-            <div class="menu" style="overflow:auto;max-height:239px;">
-              {{#each stockAlbum}}
-                <div class="item" data-value="{{this.image}}">
-                  <img class="ui massive image" src="{{this.image}}">
-                  {{this.title}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-          <script>
-            $('.dropdown').dropdown();
-          </script>
-        </div>
-      </div>
-      <br>
-      <button class="ui blue submit button">Submit</button>
-      <div class="ui error message"></div>
-    </form>
+  <div class="ui pointing secondary demo menu">
+    <a class="active item" data-tab="first">Basic Info</a>
+    <a class="item" data-tab="second">Lesson Info</a>
   </div>
+
+  <div class="ui active tab" data-tab="first" style="padding: 10px;">{{> editclassbasic}}</div>
+  <div class="ui tab" data-tab="second" style="padding: 10px;">{{> editclasslesson}}</div>
 </section>
-<script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.demo.menu .item').tab({history:false});
+  });
+
   $('.dropdown').dropdown();
 
   const today = new Date().toISOString().split('T')[0];
   document.getElementsByName("startDate")[0].setAttribute('min', today);
   document.getElementsByName("endDate")[0].setAttribute('min', today);
-
-  $.fn.form.settings.rules.isMaxCap = function() {
-    const lessonArr = [{{{json class.lessonList}}}];
-    console.log(lessonArr);
-    const newMaxCap = document.getElementsByName("maxMembers")[0].value;
-
-
-    for(let i = 0; i < lessonArr[0].length; i++){
-      if(lessonArr[0][i].memberList.length > newMaxCap){
-        return false;
-      }
-    }
-
-    return true;
-  };
-
-  $.fn.form.settings.rules.checkTime = function() {
-    const startTime = document.getElementsByName("timeStart")[0].value;
-    const endTime = document.getElementsByName("timeEnd")[0].value;
-
-    console.log('timeStart: ' + startTime + '... timeEnd: ' + endTime);
-    return startTime <= endTime;
-  };
-
-  $('.ui.form').form({
-    fields: {
-      maxMembers: {
-        identifier  : 'maxMembers',
-        rules: [
-          {
-            type   : 'isMaxCap',
-            prompt : 'Too members already enrolled for new max capacity'
-          }
-        ]
-      },
-      checkTime: {
-        identifier  : 'timeEnd',
-        rules: [
-          {
-            type   : 'checkTime',
-            prompt : 'Time incorrectly input'
-          }
-        ]
-      }
-    }
-  });
 </script>

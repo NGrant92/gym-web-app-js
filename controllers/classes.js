@@ -167,6 +167,7 @@ const classes = {
       oldClass.img = newImage;
     }
 
+    classStore.store.save();
     logger.debug('Setting Class');
     response.redirect('/classes');
   },

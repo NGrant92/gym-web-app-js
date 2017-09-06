@@ -17,5 +17,5 @@ It includes basic express setup, templating, routing and session support.
     -Trainers:
         -Delete members
         -Classes
-            -Edit class information
+            -Edit specific class information
             -delete specific classes
