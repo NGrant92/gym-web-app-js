@@ -1,6 +1,31 @@
 {{> menu id="classes"}}
 <div class = "twelve wide align right column padded">
-  <h2 class="ui dividing header">Classes</h2>
+  <h2 class="ui dividing header">Search Classes</h2>
+  <form class="ui segment form" action="/classes" method="POST">
+    <div class="fields">
+      <div class="ten wide field">
+        <label>&nbsp; &nbsp; &nbsp;Search for a Class </label>
+        <div class="ui fluid icon input">
+          <input type="text" placeholder="Search..." name="classSearch">
+          <i class="search icon"></i>
+        </div>
+      </div>
+      <div class="four wide field">
+        <label>&nbsp; &nbsp; &nbsp;Difficulty </label>
+        <select class="ui dropdown" name="classDifficulty">
+          <option value="" hidden> Difficulty</option>
+          <option value="Beginners"> Beginners</option>
+          <option value="Intermediate"> Intermediate</option>
+          <option value="Advanced"> Advanced</option>
+        </select>
+      </div>
+      <div class="field">
+        <label> &nbsp; </label>
+        <button class="ui right floated blue submit button" style="float: right;">Find Classes</button>
+      </div>
+    </div>
+  </form>
+  <h2 class="ui dividing header">List of Classes</h2>
   {{#each classList}}
     <div class="ui equal width padded raised segment grid">
       <div class = "four wide column middle aligned grid">

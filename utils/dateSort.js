@@ -13,7 +13,6 @@ const dateSort = {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
 
-      logger.info('sorting Array by Newest');
       return dateB - dateA;
     });
 
@@ -28,7 +27,6 @@ const dateSort = {
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
 
-      logger.info('sorting Array by Oldest');
       return dateA - dateB;
     });
 

@@ -12,14 +12,24 @@ const HandlebarHelper = require('../utils/handlebarsRegisterHelper.js');
 
 const classes = {
   index(request, response) {
-
+    let classList = [];
     let loggedInUser = accounts.getCurrentUser(request);
 
     logger.info('classes rendering');
+
+    const searchbar = request.body.classSearch;
+    const difficulty = request.body.classDifficulty;
+    if (!searchbar && !difficulty) {
+      classList = classStore.getAllClasses();
+    }
+    else{
+      classList = classStore.searchClasses(searchbar, difficulty);
+    }
+
     const viewData = {
       title: 'Classes',
       user: loggedInUser,
-      classList: classStore.getAllClasses(),
+      classList: classList,
       imgs: pictureStore.getAlbum('qad52697-6d98-4d80-8273-084de55a86c0'),
     };
     logger.info('about to render', viewData.title);

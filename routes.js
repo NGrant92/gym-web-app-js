@@ -44,6 +44,7 @@ router.get('/dashboard/:bookid/:bookedid/rembooking', bookings.remBooking);
 router.get('/about', about.index);
 
 router.get('/classes', classes.index);
+router.post('/classes', classes.index);
 router.get('/classes/:classid/fullEnroll', classes.fullEnroll);
 router.get('/classes/:classid/fullUnenroll', classes.fullUnenroll);
 router.get('/classes/:classid/unenroll/:lessonid', classes.unenroll);

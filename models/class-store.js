@@ -13,10 +13,6 @@ const classStore = {
     return this.store.findAll(this.collection);
   },
 
-  getClass(id) {
-    return this.store.findOneBy(this.collection, { id: id });
-  },
-
   getClassList(classid) {
     return this.store.findBy(this.collection, { classid: classid });
   },
@@ -45,6 +41,24 @@ const classStore = {
     _.pullAt(lessonList, lessonIndex);
     logger.debug(`new lesson list: `, lessonList);
     this.store.save();
+  },
+
+  searchClasses(searchbar, difficulty){
+    const classList = this.getAllClasses();
+    let classesFound = [];
+
+    for (let i = 0; i < classList.length; i++) {
+      if (classList[i].name.toLowerCase().indexOf(searchbar.toLowerCase()) >= 0) {
+        logger.debug('searchbar = true');
+        if(difficulty === '' || difficulty === classList[i].difficulty){
+          logger.debug('difficulty = true');
+          classesFound.push(classList[i]);
+        }
+      }
+    }
+
+    logger.debug(classesFound);
+    return classesFound;
   }
 };
 
