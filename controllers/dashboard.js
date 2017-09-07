@@ -41,12 +41,9 @@ const dashboard = {
       userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
 
       //sorting and then setting the status of each ongoing/pending goal
-      logger.debug('goals list:', goalStore.getUserGoalList(loggedInUser.id)[0].goals);
-
-
       let goalsArr = goalStore.getUserGoalList(loggedInUser.id)[0].goals;
-      if(goalsArr){
-        goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals);
+      if (goalsArr.length >= 1) {
+        goalsArr = dateSort.sortByOldest(goalsArr);
         goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], loggedInUser.height);
       }
 
@@ -62,7 +59,7 @@ const dashboard = {
         trainerList: userStore.getAllTrainers(),
       };
 
-      logger.info('about to render', viewData.title);
+      logger.info('about to render', loggedInUser);
       response.render('dashboard', viewData);
     }
   },

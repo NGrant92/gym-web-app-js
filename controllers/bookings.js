@@ -89,6 +89,7 @@ const bookings = {
       trainerName: trainer.firstname + ' ' + trainer.lastname,
     };
     userStore.addBooking(member, newMemberBooking);
+    userStore.store.save();
     logger.info(`newMemberBooking`, newMemberBooking);
     logger.info(`Assessment Booked. Reloading to dashboard`, member.bookings);
     response.redirect('/dashboard/');

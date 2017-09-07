@@ -87,6 +87,12 @@
           "date": "2017-09-08T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
+        },
+        {
+          "bookid": "94cabf6a-0fcb-45ae-81f7-5883599ea88c",
+          "date": "2017-09-29T16:00:00.000Z",
+          "memberid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
+          "memberName": "ned flanders"
         }
       ]
     },
@@ -104,10 +110,10 @@
       "trainer": true,
       "bookings": [
         {
-          "bookid": "book03",
-          "date": "2017-09-10T15:00:00.000Z",
-          "memberid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
-          "trainerName": "Marge Simpson"
+          "bookid": "ea43332f-4529-465a-bd66-d2e1de78c434",
+          "date": "2017-09-23T10:00:00.000Z",
+          "memberid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
+          "memberName": "ned flanders"
         }
       ]
     },
@@ -144,8 +150,16 @@
       "startWeight": "170",
       "trainer": false,
       "id": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
-      "bookings": [],
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg"
+      "bookings": [
+        {
+          "bookid": "82928fdd-620c-4496-a258-18961a64c8cd",
+          "date": "2017-09-23T10:00:00.000Z",
+          "trainerid": "t01",
+          "trainerName": "Terry Crews"
+        }
+      ],
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
+      "assessmentSize": 2
     }
   ]
 }

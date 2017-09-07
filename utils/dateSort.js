@@ -7,7 +7,6 @@ const dateSort = {
 
   sortByNewest(sortArray) {
     let newArray = [];
-    logger.debug(sortArray);
 
     let currArray = [];
 
@@ -27,7 +26,6 @@ const dateSort = {
 
   sortByOldest(sortArray) {
     let newArray = [];
-    logger.debug(sortArray);
 
     if(sortArray.length > 1) {
       //This sort function is used to sort the assessments by date in descending order

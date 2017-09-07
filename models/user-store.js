@@ -22,7 +22,7 @@ const userStore = {
 
   remUser(userid) {
     this.store.remove(this.collection, this.getUserById(userid));
-    //this.store.save();
+    this.store.save();
   },
 
   addBooking(user, booking) {
