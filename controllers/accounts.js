@@ -51,6 +51,7 @@ const accounts = {
 
     user.trainer = false;
     user.id = newUserId;
+    user.bookings = [];
     userstore.addUser(user);
     logger.info(`registering ${user.email}`);
 

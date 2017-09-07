@@ -7,28 +7,37 @@ const dateSort = {
 
   sortByNewest(sortArray) {
     let newArray = [];
+    logger.debug(sortArray);
 
-    //This sort function is used to sort the assessments by date in descending order
-    newArray = sortArray.sort(function (a, b) {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
+    let currArray = [];
 
-      return dateB - dateA;
-    });
+    if(sortArray.length > 1){
+      //This sort function is used to sort the assessments by date in descending order
+      newArray = sortArray.sort(function (a, b) {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+
+        return dateB - dateA;
+      });
+    }
+
 
     return newArray;
   },
 
   sortByOldest(sortArray) {
     let newArray = [];
+    logger.debug(sortArray);
 
-    //This sort function is used to sort the assessments by date in descending order
-    newArray = sortArray.sort(function (a, b) {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
+    if(sortArray.length > 1) {
+      //This sort function is used to sort the assessments by date in descending order
+      newArray = sortArray.sort(function (a, b) {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
 
-      return dateA - dateB;
-    });
+        return dateA - dateB;
+      });
+    }
 
     return newArray;
   },

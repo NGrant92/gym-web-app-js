@@ -27,7 +27,13 @@ const dashboard = {
     //'else' is required to prevent a "Cannot read property 'assessments' of undefined" error message
     else {
       logger.info('user is a member');
-      const assessmentArr = dateSort.sortByNewest(assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments);
+
+      let assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
+      logger.debug('assessment', assessmentArr.length);
+
+      if (assessmentArr.length > 1) {
+        assessmentArr = dateSort.sortByNewest(assessmentArr);
+      }
 
       //bmi information of the member, determined by the calcualtions done by analytics.js
       userbmi.latestweight = assessmentArr[0].weight;
@@ -36,8 +42,14 @@ const dashboard = {
       userbmi.idealWeight = analytics.idealWeightIndicator(loggedInUser.height, userbmi.latestweight, loggedInUser.gender);
 
       //sorting and then setting the status of each ongoing/pending goal
-      let goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals);
-      goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], loggedInUser.height);
+      logger.debug('goals list:', goalStore.getUserGoalList(loggedInUser.id)[0].goals);
+
+
+      let goalsArr = goalStore.getUserGoalList(loggedInUser.id)[0].goals;
+      if(goalsArr){
+        goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(loggedInUser.id)[0].goals);
+        goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], loggedInUser.height);
+      }
 
       loggedInUser.bookings = dateSort.sortByOldest(loggedInUser.bookings);
 

@@ -94,6 +94,36 @@
           "comment": ""
         }
       ]
+    },
+    {
+      "userid": "8dad4faa-1c3f-4516-8eb9-426a8f7befd0",
+      "assessments": [
+        {
+          "id": "a2981159-9f04-4bf4-a0ae-ebc2f4bcbcf2",
+          "date": "07-09-17",
+          "weight": "135",
+          "chest": 0,
+          "thigh": 0,
+          "upperArm": 0,
+          "waist": 0,
+          "hips": 0
+        }
+      ]
+    },
+    {
+      "userid": "adfa03a0-5e0a-4e3e-ae01-60eb0f57a780",
+      "assessments": [
+        {
+          "id": "f1772312-9598-4d00-8ab7-9dc729e5467f",
+          "date": "07-09-17",
+          "weight": "77",
+          "chest": 0,
+          "thigh": 0,
+          "upperArm": 0,
+          "waist": 0,
+          "hips": 0
+        }
+      ]
     }
   ]
 }
