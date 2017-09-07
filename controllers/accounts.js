@@ -157,6 +157,7 @@ const accounts = {
         }
       }
     }
+    classStore.store.save();
 
     logger.info('Removed member from all classes');
 
@@ -164,6 +165,7 @@ const accounts = {
     for(let i = 0; i < trainerList.length; i++){
       _.remove(trainerList[i].bookings, {memberid: memberid});
     }
+    userstore.store.save();
 
     logger.info('Removed member from all bookings');
     logger.debug('User unenrolled');
@@ -173,7 +175,7 @@ const accounts = {
       response.redirect('/dashboard');
     }
     else{
-      response.redirect('/index');
+      response.redirect('/');
     }
   },
 

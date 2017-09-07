@@ -28,7 +28,7 @@ const assessStore = {
 
   removeAssessmentList(id) {
     this.store.remove(this.collection, this.getUserAssessmentList(id));
-    //this.store.save();
+    this.store.save();
   },
 
   removeAllAssessments() {

@@ -28,7 +28,7 @@ const goalStore = {
 
   removeGoalList(id) {
     this.store.remove(this.collection, this.getUserGoalList(id));
-    //this.store.save();
+    this.store.save();
   },
 
   removeAllGoals() {

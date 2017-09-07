@@ -87,18 +87,6 @@
           "date": "2017-09-08T15:00:00.000Z",
           "memberid": "3ad52697-6d98-4d80-8273-084de55a86c0",
           "memberName": "Homer Simpson"
-        },
-        {
-          "bookid": "5613bdd1-524b-4772-9ddf-3a0ce9cf4dec",
-          "date": "2017-09-09T15:00:00.000Z",
-          "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
-          "memberName": "Niall Grant"
-        },
-        {
-          "bookid": "f9f14686-9e8b-41cf-abb4-a4b11480b4d4",
-          "date": "2017-09-10T15:00:00.000Z",
-          "memberid": "b382ba18-46ea-49d9-b089-22cc69068809",
-          "memberName": "Niall Grant"
         }
       ]
     },
@@ -144,35 +132,6 @@
         }
       ],
       "assessmentSize": 2
-    },
-    {
-      "firstname": "Niall",
-      "lastname": "Grant",
-      "gender": "Male",
-      "email": "niall@simpson.com",
-      "password": "secret",
-      "address": "Ireland",
-      "height": "1.75",
-      "weight": "68",
-      "trainer": false,
-      "id": "b382ba18-46ea-49d9-b089-22cc69068809",
-      "startWeight": "68",
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
-      "bookings": [
-        {
-          "bookid": "473878b6-8b06-4e06-84f6-c4af4d8fd899",
-          "date": "2017-09-10T15:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        },
-        {
-          "bookid": "8cf1522e-516e-40fc-84c3-df0d7f143146",
-          "date": "2017-09-09T15:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        }
-      ],
-      "assessmentSize": 1
     }
   ]
 }
