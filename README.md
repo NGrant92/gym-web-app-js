@@ -37,7 +37,7 @@ The project is preloaded with member and trainer information.
     Email: bart@simpson.com
     Password: secret
 
-    ###Trainer Test Login Info:
+### Trainer Test Login Info:
 
     Email: t1000@tmail.com
     Password: secret
@@ -45,7 +45,7 @@ The project is preloaded with member and trainer information.
     Email: t2000@tmail.com
     Password: secret
 
-## Software Used:
+## Software Used
 
     [Node.js](https://nodejs.org/en/)
     [Lowdb](https://github.com/typicode/lowdb)
@@ -53,5 +53,6 @@ The project is preloaded with member and trainer information.
     [Semantic-UI-Calendar](https://github.com/mdehoog/Semantic-UI-Calendar)
     [Dateformat-NPM-Plugin](https://www.npmjs.com/package/dateformat)
 
-## Author:
+## Author
+
     Niall Grant ([NGrant92](https://github.com/NGrant92))
