@@ -81,5 +81,8 @@
   "maximumLineLength": {
     "value": 140,
     "allExcept": ["urlComments"]
-  }
+  },
+  "excludeFiles": [
+    "./controllers/accounts.js"
+  ]
 }

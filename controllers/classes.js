@@ -309,7 +309,7 @@ const classes = {
   },
 
   /**
-   * To delete a specific class
+   * To delete a specific lesson
    * @param request To gather and process information
    * @param response To redirect to edit class index page
    */

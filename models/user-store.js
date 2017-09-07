@@ -20,6 +20,11 @@ const userStore = {
     this.store.save();
   },
 
+  remUser(userid) {
+    this.store.remove(this.collection, this.getUserById(userid));
+    //this.store.save();
+  },
+
   addBooking(user, booking) {
     user.bookings.push(booking);
     this.store.save();

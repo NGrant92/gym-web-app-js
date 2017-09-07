@@ -3,7 +3,9 @@
 const userstore = require('../models/user-store');
 const goalStore = require('../models/goal-store');
 const assessStore = require('../models/assess-store');
+const classStore = require('../models/class-store');
 const logger = require('../utils/logger');
+const _ = require('lodash');
 const uuid = require('uuid');
 const dateformat = require('dateformat');
 
@@ -54,8 +56,7 @@ const accounts = {
 
     if (user.gender === 'Male') {
       user.img = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg';
-    }
-    else {
+    } else {
       user.img = 'http://res.cloudinary.com/ngrant/image/upload/v1499768660/woman-flex_nttlf7.jpg';
     }
 
@@ -129,6 +130,51 @@ const accounts = {
     userstore.store.save();
     logger.info(`updating ${newUser.email}`);
     response.redirect('/dashboard');
+  },
+
+  remMember(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    const memberid = request.params.id;
+    const classList = classStore.getAllClasses();
+    const trainerList = userstore.getAllTrainers();
+
+    userstore.remUser(memberid);
+    logger.info('User removed');
+    assessStore.removeAssessmentList(memberid);
+    logger.info('User assessment removed');
+    goalStore.removeGoalList(memberid);
+    logger.info('User goal list removed');
+
+    //to unenroll a member from all classes that they might be enrolled in
+    for (let i = 0; i < classList.length; i++) {
+      let currLessons = classList[i].lessonList;
+
+      for (let j = 0; j < currLessons.length; j++) {
+        let memberList = currLessons[j].memberList;
+        let memberIndex = memberList.indexOf(memberid);
+        if (memberList.length > 0 && memberIndex >= 0) {
+          _.pullAt(memberList, memberIndex);
+        }
+      }
+    }
+
+    logger.info('Removed member from all classes');
+
+    //to delete all bookings a trainer may have with the member
+    for(let i = 0; i < trainerList.length; i++){
+      _.remove(trainerList[i].bookings, {memberid: memberid});
+    }
+
+    logger.info('Removed member from all bookings');
+    logger.debug('User unenrolled');
+
+    //if member deletes account then it redirects to the main page
+    if(loggedInUser. trainer){
+      response.redirect('/dashboard');
+    }
+    else{
+      response.redirect('/index');
+    }
   },
 
   uploadPicture(request, response) {

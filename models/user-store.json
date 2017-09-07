@@ -33,7 +33,7 @@
           "trainerName": "Arnold Schwarz"
         }
       ],
-      "assessmentSize": 3
+      "assessmentSize": 2
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -124,6 +124,28 @@
       ]
     },
     {
+      "firstname": "Bart",
+      "lastname": "Simpson",
+      "gender": "Male",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "address": "Springfield",
+      "height": "1.70",
+      "startWeight": "77",
+      "trainer": false,
+      "id": "316c6e7b-9706-4337-b198-13f9e92733d0",
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503767824/gteyxykqycd8zu2jwtiy.png",
+      "bookings": [
+        {
+          "bookid": "book04",
+          "date": "2017-09-01T16:00:00.000Z",
+          "trainerid": "t00",
+          "trainerName": "Arnold Schwarz"
+        }
+      ],
+      "assessmentSize": 2
+    },
+    {
       "firstname": "Niall",
       "lastname": "Grant",
       "gender": "Male",
@@ -151,28 +173,6 @@
         }
       ],
       "assessmentSize": 1
-    },
-    {
-      "firstname": "Bart",
-      "lastname": "Simpson",
-      "gender": "Male",
-      "email": "bart@simpson.com",
-      "password": "secret",
-      "address": "Springfield",
-      "height": "1.70",
-      "startWeight": "77",
-      "trainer": false,
-      "id": "316c6e7b-9706-4337-b198-13f9e92733d0",
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1503767824/gteyxykqycd8zu2jwtiy.png",
-      "bookings": [
-        {
-          "bookid": "book04",
-          "date": "2017-09-01T16:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        }
-      ],
-      "assessmentSize": 2
     }
   ]
 }

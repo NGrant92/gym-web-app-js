@@ -11,7 +11,6 @@ It includes basic express setup, templating, routing and session support.
 
     -Members:
         -Delete account
-        -Trends
         -Search classes
 
     -Trainers:
