@@ -47,11 +47,11 @@ The project is preloaded with member and trainer information.
 
 ## Software Used
 
-[Node.js](https://nodejs.org/en/)
-[Lowdb](https://github.com/typicode/lowdb)
-[WebStorm](https://www.jetbrains.com/webstorm/)
-[Semantic-UI-Calendar](https://github.com/mdehoog/Semantic-UI-Calendar)
-[Dateformat-NPM-Plugin](https://www.npmjs.com/package/dateformat)
+- [Node.js](https://nodejs.org/en/)
+- [Lowdb](https://github.com/typicode/lowdb)
+- [WebStorm](https://www.jetbrains.com/webstorm/)
+- [Semantic-UI-Calendar](https://github.com/mdehoog/Semantic-UI-Calendar)
+- [Dateformat-NPM-Plugin](https://www.npmjs.com/package/dateformat)
 
 ## Author
 
