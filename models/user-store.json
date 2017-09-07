@@ -93,6 +93,12 @@
           "date": "2017-09-29T16:00:00.000Z",
           "memberid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
           "memberName": "ned flanders"
+        },
+        {
+          "bookid": "9bc14236-f744-47fd-ac8c-3484e89098b6",
+          "date": "2017-09-23T16:00:00.000Z",
+          "memberid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
+          "memberName": "ned flanders"
         }
       ]
     },
@@ -110,10 +116,10 @@
       "trainer": true,
       "bookings": [
         {
-          "bookid": "ea43332f-4529-465a-bd66-d2e1de78c434",
-          "date": "2017-09-23T10:00:00.000Z",
-          "memberid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
-          "memberName": "ned flanders"
+          "bookid": "b9d71917-cda2-4461-be10-a75bb348b3a6",
+          "date": "2017-09-29T16:00:00.000Z",
+          "memberid": "316c6e7b-9706-4337-b198-13f9e92733d0",
+          "memberName": "Bart Simpson"
         }
       ]
     },
@@ -131,34 +137,12 @@
       "img": "http://res.cloudinary.com/ngrant/image/upload/v1503767824/gteyxykqycd8zu2jwtiy.png",
       "bookings": [
         {
-          "bookid": "book04",
-          "date": "2017-09-01T16:00:00.000Z",
-          "trainerid": "t00",
-          "trainerName": "Arnold Schwarz"
-        }
-      ],
-      "assessmentSize": 2
-    },
-    {
-      "firstname": "ned",
-      "lastname": "flanders",
-      "gender": "Male",
-      "email": "ned@simpson.com",
-      "password": "secret",
-      "address": "springfield",
-      "height": "2",
-      "startWeight": "170",
-      "trainer": false,
-      "id": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
-      "bookings": [
-        {
-          "bookid": "82928fdd-620c-4496-a258-18961a64c8cd",
-          "date": "2017-09-23T10:00:00.000Z",
+          "bookid": "6d3fb8a1-dc95-437c-a6f6-869a8247e7c3",
+          "date": "2017-09-29T16:00:00.000Z",
           "trainerid": "t01",
           "trainerName": "Terry Crews"
         }
       ],
-      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg",
       "assessmentSize": 2
     }
   ]

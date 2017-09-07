@@ -94,7 +94,23 @@
     },
     {
       "userid": "316c6e7b-9706-4337-b198-13f9e92733d0",
-      "goals": []
+      "goals": [
+        {
+          "goalid": "c409f5a4-9bfa-4889-b679-4bc980ae609f",
+          "date": "2017-09-29T00:00:00.000Z",
+          "status": "ongoing",
+          "assessment": {
+            "weight": "150",
+            "chest": "11",
+            "thigh": "11",
+            "upperArm": "11",
+            "waist": "11",
+            "hips": "11",
+            "comment": "111111111",
+            "date": "2017-09-29T00:00:00.000Z"
+          }
+        }
+      ]
     },
     {
       "userid": "8dad4faa-1c3f-4516-8eb9-426a8f7befd0",
@@ -107,21 +123,6 @@
     {
       "userid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
       "goals": [
-        {
-          "goalid": "09382091-8ee9-44ad-b4b9-005c8494149a",
-          "date": "2017-09-09T00:00:00.000Z",
-          "status": "ongoing",
-          "assessment": {
-            "weight": "150",
-            "chest": "222",
-            "thigh": "222",
-            "upperArm": "22",
-            "waist": "22",
-            "hips": "22",
-            "comment": "22222",
-            "date": "2017-09-09T00:00:00.000Z"
-          }
-        },
         {
           "goalid": "4348c51c-5e72-4be5-803e-994416964b24",
           "date": "2017-09-15T00:00:00.000Z",
@@ -138,6 +139,10 @@
           }
         }
       ]
+    },
+    {
+      "userid": "15694196-85ed-4400-8d11-39604fd31672",
+      "goals": []
     }
   ]
 }

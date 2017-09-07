@@ -150,6 +150,21 @@
           "comment": ""
         }
       ]
+    },
+    {
+      "userid": "15694196-85ed-4400-8d11-39604fd31672",
+      "assessments": [
+        {
+          "id": "00d964ad-6d7c-46aa-8813-a7b1a2ae7b0a",
+          "date": "07-09-17",
+          "weight": "137",
+          "chest": 0,
+          "thigh": 0,
+          "upperArm": 0,
+          "waist": 0,
+          "hips": 0
+        }
+      ]
     }
   ]
 }

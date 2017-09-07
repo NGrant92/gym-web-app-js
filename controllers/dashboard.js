@@ -42,12 +42,15 @@ const dashboard = {
 
       //sorting and then setting the status of each ongoing/pending goal
       let goalsArr = goalStore.getUserGoalList(loggedInUser.id)[0].goals;
-      if (goalsArr.length >= 1) {
+      if (goalsArr.length > 1) {
         goalsArr = dateSort.sortByOldest(goalsArr);
         goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], loggedInUser.height);
       }
 
-      loggedInUser.bookings = dateSort.sortByOldest(loggedInUser.bookings);
+      logger.debug('goalsArr', goalsArr);
+      if (loggedInUser.bookings.length > 1){
+        loggedInUser.bookings = dateSort.sortByOldest(loggedInUser.bookings);
+      }
 
       //populating the viewData variable with the necessary information to load the page
       const viewData = {
