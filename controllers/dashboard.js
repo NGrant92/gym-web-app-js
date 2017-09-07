@@ -29,7 +29,6 @@ const dashboard = {
       logger.info('user is a member');
 
       let assessmentArr = assessStore.getUserAssessmentList(loggedInUser.id)[0].assessments;
-      logger.debug('assessment', assessmentArr.length);
 
       if (assessmentArr.length > 1) {
         assessmentArr = dateSort.sortByNewest(assessmentArr);

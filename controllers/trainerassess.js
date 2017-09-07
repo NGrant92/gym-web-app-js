@@ -19,7 +19,11 @@ const trainerassess = {
     let member = userStore.getUserById(request.params.memberid);
     const memberbmi = [];
 
-    const assessmentArr = dateSort.sortByNewest(assessStore.getUserAssessmentList(member.id)[0].assessments);
+    let assessmentArr = assessStore.getUserAssessmentList(member.id)[0].assessments;
+
+    if (assessmentArr.length > 1) {
+      assessmentArr = dateSort.sortByNewest(assessmentArr);
+    }
 
     //bmi information of the member, determined by the calcualtions done by analytics.js
     memberbmi.latestweight = assessmentArr[0].weight;
@@ -29,8 +33,11 @@ const trainerassess = {
 
 
     //sorting and then setting the status of each ongoing/pending goal
-    let goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(member.id)[0].goals);
-    goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], member.height);
+    let goalsArr = goalStore.getUserGoalList(member.id)[0].goals;
+    if(goalsArr){
+      goalsArr = dateSort.sortByOldest(goalStore.getUserGoalList(member.id)[0].goals);
+      goalsArr = analytics.checkGoalStatus(goalsArr, assessmentArr[0], member.height);
+    }
 
     //populating the viewData variable with the nwecessary information to load the page
     const viewData = {

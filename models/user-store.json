@@ -132,6 +132,20 @@
         }
       ],
       "assessmentSize": 2
+    },
+    {
+      "firstname": "ned",
+      "lastname": "flanders",
+      "gender": "Male",
+      "email": "ned@simpson.com",
+      "password": "secret",
+      "address": "springfield",
+      "height": "2",
+      "startWeight": "170",
+      "trainer": false,
+      "id": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
+      "bookings": [],
+      "img": "http://res.cloudinary.com/ngrant/image/upload/v1499768660/arnold-flex_mk0w3g.jpg"
     }
   ]
 }

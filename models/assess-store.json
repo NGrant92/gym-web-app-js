@@ -124,6 +124,21 @@
           "hips": 0
         }
       ]
+    },
+    {
+      "userid": "0af0fc4e-f726-4f78-9529-5f45a4096b86",
+      "assessments": [
+        {
+          "id": "cc72d543-89db-4752-8f88-79be769d8201",
+          "date": "07-09-17",
+          "weight": "170",
+          "chest": 0,
+          "thigh": 0,
+          "upperArm": 0,
+          "waist": 0,
+          "hips": 0
+        }
+      ]
     }
   ]
 }
