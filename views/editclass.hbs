@@ -10,6 +10,14 @@
   <div class="ui active tab" data-tab="first" style="padding: 10px;">{{> editclassbasic}}</div>
   <div class="ui tab" data-tab="second" style="padding: 10px;">{{> editclasslesson}}</div>
 </section>
+
+<section class="ui raised segment">
+  <h3 class="ui dividing header">Delete Class</h3>
+  <section>
+    <a href="/classes/remClass/{{class.classid}}" class="ui red icon button"><i class = "trash outline icon"></i> Delete Class</a>
+  </section>
+</section>
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('.demo.menu .item').tab({history:false});

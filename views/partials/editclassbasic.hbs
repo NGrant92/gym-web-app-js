@@ -1,24 +1,24 @@
 <div class="ui two column">
   <form class="ui form" action="/classes/setClass/{{class.classid}}" method="POST">
     <div class="three fields">
-    <div class="field">
-      <label>&nbsp; &nbsp; &nbsp; Class Name</label>
-      <input placeholder="Class Name" value="{{class.name}}" name="className">
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Class Name</label>
+        <input placeholder="Class Name" value="{{class.name}}" name="className">
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; Difficulty</label>
+        <select class="ui fluid search dropdown" name="difficulty">
+          <option value="">{{class.difficulty}}</option>
+          <option value="Beginners">Beginners</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>&nbsp; &nbsp; &nbsp; Max Members</label>
+        <input placeholder="Max Members" value="{{class.maxMembers}}" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
+      </div>
     </div>
-    <div class="field">
-      <label>&nbsp; &nbsp; Difficulty</label>
-      <select class="ui fluid search dropdown" name="difficulty">
-        <option value="">{{class.difficulty}}</option>
-        <option value="Beginners">Beginners</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>&nbsp; &nbsp; &nbsp; Max Members</label>
-      <input placeholder="Max Members" value="{{class.maxMembers}}" type="number" step="1.00" maxlength="2" min="00" name="maxMembers">
-    </div>
-  </div>
 
     <h4 class="ui dividing header">Duration</h4>
     <div class="four fields">
