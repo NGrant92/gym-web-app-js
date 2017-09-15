@@ -2,7 +2,7 @@
 Node and Javascript based
 <https://github.com/NGrant92/gym-web-app-js>
 
-##Description:
+## Description:
 
 This project is a revised and improved version of the previous [Play/Java project](https://github.com/NGrant92/ca-gym-web-app).
 It has all the features of the original project along with some major additions that make it more robust and useful to a member's fitness.
